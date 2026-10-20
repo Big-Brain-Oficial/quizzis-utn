@@ -33,6 +33,7 @@ Materias y parciales incluidos:
 | Redes de Datos | 1er parcial | `subjects/redes/1er-parcial/` | 97 (89 con link a la página de la teoría) |
 | | 2do parcial | `subjects/redes/2do-parcial/` | 219 del PDF de parciales (las revisiones del cuestionario de estudio), por unidad (4 a 8), 120 con la retroalimentación de la cátedra como imagen y 186 con link a la página de la teoría (175 con el recorte de la diapositiva) |
 | Sistemas de Información Geográfica | 1er parcial | `subjects/gis/1er-parcial/` | 84 (las ★ importantes y las 33 del 1er parcial 2025, con la página del apunte) |
+| Tecnologías para la Automatización (TEPLA) | 1er parcial | `subjects/tepla/1er-parcial/` | 104 elaboradas a partir de *Apunte Solana P1 - TPLA*, separadas por unidad (24 de U1, 36 de U2, 22 de U3 y 22 de U4), todas con explicación y página del PDF |
 
 Las de GIS salen del banco de [matiasgzlez/GIS](https://github.com/matiasgzlez/GIS): solo las marcadas como
 importantes en clase y las del parcial 2025 (con sus variantes), en el orden de lectura de los apuntes.
@@ -81,6 +82,12 @@ subjects/
       questions.json
       img/              # figuras de los apuntes
       slides/           # página del apunte de donde sale cada pregunta (sin los PDFs)
+  tepla/
+    index.html, subject.json
+    1er-parcial/
+      index.html
+      questions.json    # Unidades 1 a 4: opción simple, múltiple, V/F y relacionar
+      sources/          # Apunte Solana P1 - TPLA, referenciado por página
 scripts/
   validate.mjs          # valida todos los questions.json
   rank-sources.mjs      # sugiere páginas de la teoría para cada pregunta

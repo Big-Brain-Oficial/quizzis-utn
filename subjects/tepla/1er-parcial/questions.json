@@ -1,0 +1,2494 @@
+{
+  "subject": "Tecnologías para la Automatización",
+  "exam": "1er parcial",
+  "description": "Repaso de las Unidades 1 a 4: sistemas de control, componentes, estabilidad, error y lugar de las raíces.",
+  "accent": "#087F8C",
+  "accentDark": "#42C5CF",
+  "emptyFeedback": null,
+  "topicFilter": "multi",
+  "labels": {
+    "topics": "Unidades",
+    "allTopics": "Todas las unidades",
+    "noTopics": "Ninguna",
+    "feedback": "Explicación basada en el apunte"
+  },
+  "about": [
+    "<p>Preguntas elaboradas a partir de <a href=\"sources/apunte-solana-p1-tpla.pdf\" target=\"_blank\" rel=\"noopener\">Apunte Solana P1 - TPLA</a>, organizado en las Unidades 1 a 4. Incluyen ejercicios breves que aplican las relaciones del material.</p>",
+    "<p>Este banco es material de práctica: las preguntas y opciones fueron redactadas para el repaso y no son una transcripción de un parcial o cuestionario oficial de la cátedra. Cada respuesta incluye una explicación y la página del apunte que la respalda.</p>"
+  ],
+  "topics": {
+    "1": {
+      "name": "U1 · Introducción a los sistemas de control",
+      "color": "#E8772E"
+    },
+    "2": {
+      "name": "U2 · Componentes básicos de un sistema de control",
+      "color": "#2E9E57"
+    },
+    "3": {
+      "name": "U3 · Estabilidad y error en estado estable",
+      "color": "#2F6FD6"
+    },
+    "4": {
+      "name": "U4 · Lugar de las raíces y respuesta en frecuencia",
+      "color": "#8E44AD"
+    }
+  },
+  "questions": [
+    {
+      "id": "tepla-p1-u1-teoria-control",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué estudia la teoría de control según el apunte?",
+      "opts": [
+        "El comportamiento de los sistemas dinámicos.",
+        "La transmisión de datos entre redes de sensores.",
+        "La construcción física de elementos de medición.",
+        "La conversión de señales analógicas a binarias."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La teoría de control es un campo interdisciplinario entre ingeniería y matemáticas que estudia sistemas dinámicos, es decir, sistemas que evolucionan con el tiempo.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 1,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-modelos",
+      "topic": "1",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué aspectos se definen al construir el modelo de un sistema?",
+      "opts": [
+        "La independencia de todos los subsistemas entre sí.",
+        "Los componentes y sus relaciones.",
+        "Los límites y el alcance del sistema.",
+        "Las relaciones con los elementos del entorno.",
+        "La ausencia de perturbaciones como requisito del modelo."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "fb": "El modelo identifica límites, componentes, relaciones internas y relaciones con el entorno. Las perturbaciones se consideran en el análisis; no se exige que desaparezcan ni que los componentes sean independientes.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 2,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-isomorfismo",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué permite el isomorfismo entre un sistema eléctrico y uno mecánico con la misma función de transferencia?",
+      "opts": [
+        "Reemplazar los sensores por actuadores equivalentes.",
+        "Reutilizar el modelo para estudiar su comportamiento.",
+        "Eliminar las perturbaciones externas de ambos sistemas.",
+        "Convertir ambos sistemas en dispositivos de lazo abierto."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El isomorfismo permite reutilizar modelos entre sistemas de distinta naturaleza que presentan un comportamiento equivalente. No implica eliminar perturbaciones ni modificar su estructura física.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 1,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-cibernetica",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué principio de la cibernética permite la autorregulación de un sistema?",
+      "opts": [
+        "La separación de los subsistemas.",
+        "La amplificación de la referencia.",
+        "La realimentación de la salida.",
+        "La discretización de las señales."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La cibernética se apoya en la realimentación: la salida se compara con la referencia y el resultado se utiliza para controlar la nueva salida.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 2,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-accion-control",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuál es la secuencia de la acción de control presentada en el apunte?",
+      "opts": [
+        "Medir la referencia, anular la salida y comparar el proceso.",
+        "Comparar la referencia, actuar y fijar la salida medida.",
+        "Medir la salida, compararla con la referencia y actuar.",
+        "Actuar sobre el proceso, fijar el error y medir la entrada."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La acción de control comienza midiendo lo que se desea controlar, continúa con la comparación respecto del valor deseado y termina actuando según esa diferencia. La secuencia comienza en la página 2 y continúa en la 3.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 3,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-control-moderno",
+      "topic": "1",
+      "type": "tf",
+      "catedra": false,
+      "text": "La teoría moderna de control contempla sistemas con múltiples entradas y múltiples salidas.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El apunte distingue la teoría clásica, orientada a una entrada y una salida, de la moderna, que incorpora múltiples entradas y salidas y el análisis mediante variables de estado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 3,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-componentes",
+      "topic": "1",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada componente del modelo clásico con su función.",
+      "stems": [
+        "Comparador",
+        "Elemento de control",
+        "Elemento de corrección",
+        "Elemento de medición"
+      ],
+      "choices": [
+        "Recibe el error y decide qué acción tomar.",
+        "Mide la salida y proporciona la realimentación.",
+        "Ejecuta el cambio requerido en el proceso.",
+        "Compara la referencia con el valor realimentado."
+      ],
+      "correct": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "fb": "El comparador obtiene la diferencia; el controlador decide; el elemento de corrección actúa sobre el proceso; y el de medición aporta la señal que vuelve al comparador.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-error",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "En un sistema con realimentación negativa, ¿cómo se obtiene la señal de error?",
+      "opts": [
+        "Restando la señal realimentada a la referencia.",
+        "Sumando la señal realimentada a la referencia.",
+        "Multiplicando la salida por la señal de referencia.",
+        "Dividiendo la realimentación por la salida medida."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La señal de error combina la referencia y la realimentación. Con realimentación negativa, el comparador resta la señal medida a la referencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-realimentacion-positiva",
+      "topic": "1",
+      "type": "tf",
+      "catedra": false,
+      "text": "La palabra «positiva» en realimentación positiva significa que su efecto es necesariamente beneficioso para el control.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "«Positiva» indica que la realimentación amplifica la respuesta original. El apunte aclara que ese efecto puede ser deseado o puede conducir a la desestabilización.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-superposicion",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "Si una entrada x₁ produce y₁ y una entrada x₂ produce y₂ en un sistema lineal, ¿qué salida corresponde a a·x₁ + b·x₂?",
+      "opts": [
+        "a·y₂ + b·y₁",
+        "a·y₁ + b·y₂",
+        "a·b·y₁·y₂",
+        "(a + b)·(y₁ + y₂)"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Por homogeneidad y aditividad, la misma combinación lineal aplicada a las entradas se conserva en las salidas: a·y₁ + b·y₂.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-lazo-abierto",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué caracteriza a un sistema de control de lazo abierto?",
+      "opts": [
+        "No ajusta la acción a partir de la salida realimentada.",
+        "Mide el error y corrige la respuesta del proceso.",
+        "Compara continuamente la salida con la referencia.",
+        "Utiliza la salida medida para decidir la próxima acción."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El lazo abierto no dispone de información obtenida por realimentación. El ajuste basado en la salida medida es propio del lazo cerrado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 6,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-horno",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "En el ejemplo del horno eléctrico, ¿para qué se utiliza el convertidor A/D?",
+      "opts": [
+        "Para abrir el relé que acciona la resistencia del horno.",
+        "Para elevar la potencia eléctrica que recibe el calefactor.",
+        "Para comparar la temperatura programada con la referencia.",
+        "Para digitalizar la temperatura medida por el termómetro."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El termómetro entrega una señal analógica. El convertidor A/D la convierte a formato digital para que el controlador pueda procesarla y compararla con la temperatura programada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 6,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-capas",
+      "topic": "1",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada capa de un sistema de control con su responsabilidad.",
+      "stems": [
+        "Capa física",
+        "Capa de conectividad",
+        "Capa de control",
+        "Capa de aplicación"
+      ],
+      "choices": [
+        "Software que gobierna la capa de control.",
+        "Comunicación mediante medios y protocolos.",
+        "Mando del sistema mediante procesadores.",
+        "Transmisión e integridad de las señales."
+      ],
+      "correct": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "fb": "El modelo separa la transmisión física, la conectividad, el mando mediante procesadores y el software de aplicación. Estas responsabilidades permiten organizar el crecimiento del sistema.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-perturbaciones",
+      "topic": "1",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué afirmaciones describen las perturbaciones de un sistema de control?",
+      "opts": [
+        "Definen el valor deseado de la variable controlada.",
+        "Las externas se consideran entradas adicionales.",
+        "Pueden originarse dentro del propio sistema.",
+        "Pueden provenir de elementos del entorno.",
+        "Cumplen la función de medir la salida del proceso."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "fb": "Las perturbaciones afectan adversamente la salida y pueden ser internas o externas. La referencia define el valor deseado y el sensor mide la salida; ninguna de esas funciones define una perturbación.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-servomecanismo",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuál de los siguientes ejemplos corresponde a un servomecanismo?",
+      "opts": [
+        "Un regulador del nivel de líquido de un tanque.",
+        "Un regulador de temperatura de una caldera.",
+        "Un control de pH de un proceso químico.",
+        "Un control realimentado de posición de un eje."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "En un servomecanismo la salida controlada es una magnitud mecánica, como posición, velocidad o aceleración. Temperatura, nivel y pH aparecen como variables de control de procesos.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 8,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-adaptable",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué distingue al sistema de control adaptable descrito en el apunte?",
+      "opts": [
+        "Mantiene una referencia fija ante cambios de temperatura exterior.",
+        "Procesa una señal digital que varía en instantes de muestreo.",
+        "Controla una salida mecánica mediante un lazo de realimentación.",
+        "Detecta cambios en parámetros internos y ajusta su comportamiento."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El control adaptable detecta cambios en los parámetros de la planta y los compensa para conservar un comportamiento adecuado. Mantener una referencia constante corresponde a regulación automática.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 8,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-regulacion",
+      "topic": "1",
+      "type": "tf",
+      "catedra": false,
+      "text": "En la regulación automática, la referencia es constante o varía muy lentamente.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La tarea del regulador es mantener la salida en el valor deseado a pesar de perturbaciones. El apunte menciona como ejemplos la regulación de temperatura de un horno o un aire acondicionado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 8,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-laplace",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué ventaja ofrece la transformada de Laplace al resolver un sistema de control?",
+      "opts": [
+        "Reemplaza la salida transitoria por una referencia constante.",
+        "Elimina los parámetros físicos de la ecuación del sistema.",
+        "Convierte ecuaciones diferenciales en ecuaciones algebraicas.",
+        "Convierte cualquier sistema no lineal en un sistema lineal."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Laplace permite trabajar algebraicamente en la variable compleja s. Una vez obtenida la respuesta en ese dominio, la transformada inversa permite volver al tiempo.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 10,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-bloques",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuál es el objetivo de reducir un diagrama de bloques?",
+      "opts": [
+        "Obtener la función de transferencia global del sistema.",
+        "Reemplazar la dinámica por una ganancia elegida libremente.",
+        "Eliminar físicamente los sensores del trayecto de retorno.",
+        "Fijar la señal de referencia en el valor de la perturbación."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La reducción sustituye conjuntos de bloques por bloques equivalentes para obtener la relación global entrada-salida a partir de las funciones de transferencia individuales.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 11,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-separacion",
+      "topic": "1",
+      "type": "tf",
+      "catedra": false,
+      "text": "En un punto de separación, la señal se divide en amplitud entre las ramas que salen de él.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Un punto de separación reproduce la misma señal en cada bifurcación. No reparte su amplitud como si cada rama recibiera una fracción.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 12,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-entradas",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "Al aplicar superposición a un sistema lineal con referencia y perturbaciones, ¿cómo se calcula la salida total?",
+      "opts": [
+        "Sumando las respuestas a cada entrada considerada por separado.",
+        "Restando todas las perturbaciones de la función de transferencia.",
+        "Multiplicando las respuestas de cada entrada por las otras.",
+        "Conservando la respuesta de la entrada de mayor amplitud."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Se deja activa una entrada por vez, se anulan las otras y se calcula su contribución. La salida final es la suma algebraica de las respuestas individuales.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 13,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-nodos",
+      "topic": "1",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada tipo de nodo del diagrama de flujo con sus ramas.",
+      "stems": [
+        "Nodo de entrada",
+        "Nodo de salida o sumidero",
+        "Nodo mixto"
+      ],
+      "choices": [
+        "Tiene ramas que entran y ninguna que sale.",
+        "Tiene tanto ramas de entrada como de salida.",
+        "Tiene ramas que salen y ninguna que entra."
+      ],
+      "correct": [
+        2,
+        0,
+        1
+      ],
+      "fb": "La clasificación depende del sentido de las ramas. El valor del nodo mixto resulta de la suma algebraica de sus entradas y se transmite por las ramas de salida.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 14,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-trayectoria",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué caracteriza a una trayectoria directa en un diagrama de flujo de señales?",
+      "opts": [
+        "Empieza y termina en el mismo nodo del diagrama.",
+        "Recorre cada rama en sentido contrario al de su flecha.",
+        "Incluye todos los nodos aunque deba repetir algunos.",
+        "Sigue las ramas sin pasar dos veces por un mismo nodo."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "La trayectoria sigue el sentido del flujo. Es directa cuando no repite nodos; una trayectoria que regresa al nodo inicial es cerrada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 15,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u1-mason",
+      "topic": "1",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Para qué se utiliza la fórmula de Mason?",
+      "opts": [
+        "Para medir la salida mecánica de un servomecanismo.",
+        "Para obtener la transferencia a partir de un gráfico de flujo.",
+        "Para elegir el protocolo de comunicación entre sensores.",
+        "Para digitalizar una señal aplicando intervalos de muestreo."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Mason permite hallar la relación entre el nodo de entrada y el nodo de salida mediante el gráfico de flujo de señales, como alternativa a resolver las ecuaciones algebraicas.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 15,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-sensor",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuál es la función de un sensor en un sistema de control?",
+      "opts": [
+        "Entregar la potencia que necesita el actuador principal.",
+        "Determinar la referencia deseada para todo el proceso.",
+        "Ejecutar una acción física indicada por el controlador.",
+        "Traducir un estado físico a una señal procesable."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El sensor recoge información del mundo físico y la entrega como una señal que el sistema de control puede procesar. La ejecución de acciones sobre el proceso corresponde al actuador.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-potenciometro",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Un potenciómetro cumple Vs = K·Pp. Si K = 0,5 V/mm y Pp = 6 mm, ¿qué tensión entrega?",
+      "opts": [
+        "6,5 V",
+        "3 V",
+        "0,5 V",
+        "12 V"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La tensión es proporcional al desplazamiento del cursor: Vs = 0,5 V/mm × 6 mm = 3 V.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-termistores",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná el tipo de termistor con su respuesta al aumentar la temperatura.",
+      "stems": [
+        "NTC",
+        "PTC"
+      ],
+      "choices": [
+        "La resistencia eléctrica disminuye.",
+        "La resistencia eléctrica aumenta."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "fb": "NTC significa coeficiente de temperatura negativo y PTC, positivo. El signo indica cómo cambia la resistencia cuando aumenta la temperatura.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 17,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-tacometro",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué magnitud convierte un tacómetro eléctrico en una tensión proporcional?",
+      "opts": [
+        "La distancia hasta un objeto.",
+        "La temperatura del bobinado.",
+        "La posición angular del cursor.",
+        "La velocidad angular del eje."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El tacómetro entrega V(t) = K·ω y permite medir velocidad de giro. El potenciómetro se utiliza para posición y los detectores térmicos para temperatura.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 17,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-ultrasonico",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué medición permite estimar la distancia con un sensor ultrasónico?",
+      "opts": [
+        "La atenuación del campo electromagnético de alta frecuencia.",
+        "El tiempo entre la emisión del pulso y el retorno del eco.",
+        "El cambio de capacidad entre los electrodos del sensor.",
+        "La variación de resistencia producida por la temperatura."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El sensor ultrasónico mide el tiempo de ida y vuelta del eco. Con la velocidad de propagación conocida puede determinar la distancia al objeto.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 18,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-fotoelectricos",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada sensor fotoeléctrico con su forma de detectar un objeto.",
+      "stems": [
+        "Difuso",
+        "Barrera"
+      ],
+      "choices": [
+        "Detecta el corte de luz entre emisor y receptor separados.",
+        "Recibe en el mismo sensor luz reflejada por el objeto."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "El sensor difuso utiliza parte de la luz reflejada por el objeto; el de barrera tiene dos cuerpos y detecta la interrupción del haz.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 18,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-proximidad",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada sensor de proximidad con el principio que utiliza.",
+      "stems": [
+        "Inductivo",
+        "Capacitivo"
+      ],
+      "choices": [
+        "Variación de capacidad al acercarse un objeto al sensor.",
+        "Atenuación de un campo al acercarse un objeto metálico."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "El inductivo detecta la alteración de un campo electromagnético (pág. 18). El capacitivo detecta cambios de capacidad y puede responder a materiales conductores y no conductores (pág. 19).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 19,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-actuadores",
+      "topic": "2",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué formas de mando de actuadores se mencionan en el apunte?",
+      "opts": [
+        "Órdenes mediante protocolos de comunicación.",
+        "Señales digitales de dos estados.",
+        "Variación de resistencia del termistor como orden del controlador.",
+        "Modulación de ancho de pulsos (PWM).",
+        "Señales analógicas de tensión o corriente."
+      ],
+      "correct": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "fb": "El apunte describe mando todo/nada, valores analógicos, PWM y protocolos por puertos, redes o buses. La variación de resistencia del termistor corresponde a la medición de temperatura, no a una orden de mando emitida por el controlador.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 19,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-reles",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada dispositivo de conmutación con su característica.",
+      "stems": [
+        "Relé electromecánico",
+        "Contactor",
+        "Relé de estado sólido"
+      ],
+      "choices": [
+        "Una construcción robusta permite manejar mayor potencia.",
+        "Un electroimán mueve contactos para conmutar la carga.",
+        "Un interruptor electrónico conmuta sin partes mecánicas."
+      ],
+      "correct": [
+        1,
+        0,
+        2
+      ],
+      "fb": "El contactor utiliza el mismo principio del relé, adaptado a mayor exigencia. El SSR realiza la conmutación electrónicamente, sin contactos móviles.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 20,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-dimmer",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "En el dimmer de 0–10 V del apunte, ¿qué representa una tensión de mando intermedia?",
+      "opts": [
+        "Un estado de alarma por una referencia fuera de rango.",
+        "La resistencia del sensor de temperatura del equipo.",
+        "La frecuencia de muestreo de la señal luminosa.",
+        "Un nivel de iluminación entre apagado y máximo."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El ejemplo asigna 0 V a apagado, 10 V a encendido máximo y tensiones intermedias a niveles de iluminación intermedios. Es un mando ajustable, no solo todo/nada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 21,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-transferencia-lazo",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Con realimentación negativa, T = 4 en el trayecto directo y R = 0,5 en el retorno, ¿cuánto vale la transferencia global T/(1 + TR)?",
+      "opts": [
+        "4/3",
+        "4/5",
+        "4/1",
+        "4/2"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Se aplica la expresión del apunte: T/(1 + TR) = 4/(1 + 4 × 0,5) = 4/3. La transferencia global incluye el efecto del retorno.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 23,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-desventajas",
+      "topic": "2",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué desventajas de la realimentación enumera el apunte?",
+      "opts": [
+        "Mayor sensibilidad a cambios de los componentes.",
+        "Pérdida de ganancia.",
+        "Menor exactitud respecto de la respuesta requerida.",
+        "Posibilidad de inestabilidad.",
+        "Mayor costo y complejidad."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "fb": "La realimentación tiene como costos la complejidad, la posible inestabilidad y la pérdida de ganancia. La menor sensibilidad y la mayor exactitud se presentan como ventajas.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 25,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-cuantificacion",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Si el intervalo de cuantificación es de 0,2 V y se redondea al nivel más cercano, ¿cuál es el máximo error de cuantificación?",
+      "opts": [
+        "0,05 V",
+        "0,1 V",
+        "0,2 V",
+        "0,4 V"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El máximo error de cuantificación es la mitad del intervalo: 0,2/2 = 0,1 V. Aumentar la cantidad de niveles reduce ese error, pero exige más bits.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 27,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-muestreo-voz",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Aplicando fs ≥ 2·fmax como en el apunte, ¿qué frecuencia mínima de muestreo corresponde a una señal de voz de hasta 4 kHz?",
+      "opts": [
+        "8 kHz",
+        "4 kHz",
+        "2 kHz",
+        "16 kHz"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La regla presentada es fs ≥ 2·fmax. Para fmax = 4 kHz, el límite indicado es 8 kHz, que coincide con el ejemplo de telefonía del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 26,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-bits",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuántos niveles de cuantificación pueden codificarse con una palabra de 8 bits?",
+      "opts": [
+        "16 niveles",
+        "256 niveles",
+        "128 niveles",
+        "64 niveles"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Con N bits pueden representarse hasta 2 elevado a N niveles. Para 8 bits, 2⁸ = 256.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 28,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-pam",
+      "topic": "2",
+      "type": "tf",
+      "catedra": false,
+      "text": "El muestreo por sí solo limita la amplitud de las muestras a un conjunto finito de niveles.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El muestreo hace discreto el tiempo, pero las amplitudes todavía pueden adoptar valores continuos. La limitación a niveles finitos ocurre en la cuantificación, explicada en la página 27.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 26,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-derivada",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Con condiciones iniciales nulas, ¿cómo se transforma una derivada temporal mediante Laplace?",
+      "opts": [
+        "Multiplicando F(s) por e⁻ᵀˢ.",
+        "Multiplicando F(s) por s.",
+        "Dividiendo F(s) por s.",
+        "Derivando F(s) respecto de s."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La derivación temporal se traduce en multiplicación por s y términos de condiciones iniciales. Si esas condiciones son nulas, queda s·F(s). La división por s corresponde a integración.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 28,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-entradas-laplace",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada señal, considerada desde t = 0, con su transformada de Laplace.",
+      "stems": [
+        "Escalón de amplitud a",
+        "Rampa f(t) = a·t",
+        "Senoidal f(t) = A·sen(ωt)"
+      ],
+      "choices": [
+        "a/s²",
+        "a/s",
+        "A·ω/(s² + ω²)"
+      ],
+      "correct": [
+        1,
+        0,
+        2
+      ],
+      "fb": "El escalón aporta un factor 1/s, la rampa uno 1/s² y la senoidal tiene denominador s² + ω². Las expresiones aparecen entre las páginas 29 y 30.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 30,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-heaviside",
+      "topic": "2",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué condiciones exige la fórmula de Heaviside presentada para una función P(s)/Q(s)?",
+      "opts": [
+        "El grado de Q(s) debe superar al de P(s).",
+        "P(s) y Q(s) deben ser polinomios.",
+        "Q(s) debe carecer de raíces múltiples.",
+        "El grado de P(s) debe superar al de Q(s).",
+        "Q(s) debe tener todas sus raíces repetidas."
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "fb": "La versión presentada requiere un cociente de polinomios con grado del denominador mayor que el del numerador y sin raíces múltiples en Q(s).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 30,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-invariancia",
+      "topic": "2",
+      "type": "tf",
+      "catedra": false,
+      "text": "Que un sistema sea invariante en el tiempo significa que sus señales de entrada y salida deben ser constantes.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La invariancia se refiere a que las reglas y parámetros del sistema no cambian con el tiempo. Las señales pueden variar sin que el sistema deje de ser invariante.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 32,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-def-transferencia",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Para un sistema lineal e invariante, con condiciones iniciales nulas, ¿cómo se define la función de transferencia?",
+      "opts": [
+        "Como la diferencia de las transformadas de entrada y salida.",
+        "Como el cociente de las transformadas de salida y entrada.",
+        "Como el cociente de las transformadas de entrada y salida.",
+        "Como el producto de las transformadas de salida y entrada."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La función de transferencia es G(s) = Y(s)/X(s), con condiciones iniciales nulas. Expresa la relación entrada-salida en el dominio de Laplace.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 33,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-polos-estables",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Un sistema tiene polos de lazo cerrado en −2 y −5. ¿Qué indica su ubicación?",
+      "opts": [
+        "Es estable: ambos polos tienen parte real negativa.",
+        "Es inestable: los polos están separados entre sí.",
+        "Es marginal: ninguno de los polos tiene parte imaginaria.",
+        "Es oscilatorio: existen dos polos reales diferentes."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Ambos polos están en el semiplano izquierdo. Según el criterio de polos, esto corresponde a un sistema estable; tener dos polos reales no implica oscilación.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 36,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-polos-complejos",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué comportamiento corresponde a polos de lazo cerrado en 1 ± j·3?",
+      "opts": [
+        "Oscilación con amplitud creciente.",
+        "Respuesta sin componente oscilatoria.",
+        "Oscilación con amplitud constante.",
+        "Oscilación con amplitud decreciente."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La parte imaginaria produce oscilación y la parte real positiva produce una envolvente exponencial creciente. El sistema es inestable.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 36,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-estabilidad-relativa",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué se estudia al hablar de estabilidad relativa?",
+      "opts": [
+        "El tipo de codificación de las señales.",
+        "La existencia de sensores en el sistema.",
+        "El grado de estabilidad de un sistema.",
+        "La cantidad de entradas de referencia."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La estabilidad absoluta distingue entre estable e inestable. La relativa busca especificar el grado de estabilidad.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 34,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-routh-signos",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "La primera columna de una tabla de Routh, sin casos especiales, tiene signos +, +, −, +. ¿Cuántas raíces tienen parte real positiva?",
+      "opts": [
+        "Ninguna raíz.",
+        "Tres raíces.",
+        "Dos raíces.",
+        "Una raíz."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Hay dos cambios de signo: de + a − y de − a +. El criterio de Routh iguala ese número con la cantidad de raíces en el semiplano derecho.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 37,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-routh-coeficientes",
+      "topic": "2",
+      "type": "tf",
+      "catedra": false,
+      "text": "Que todos los coeficientes de la ecuación característica sean positivos basta para asegurar la estabilidad.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El apunte presenta la positividad de los coeficientes como condición necesaria. También se debe comprobar la primera columna del arreglo de Routh.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 37,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-transformada-z",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué papel cumple la transformada Z en el estudio de sistemas de control?",
+      "opts": [
+        "Modelar sistemas que operan en tiempo discreto.",
+        "Medir directamente una variable física del proceso.",
+        "Conmutar la potencia eléctrica del actuador final.",
+        "Convertir físicamente una tensión en un código binario."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La transformada Z es una herramienta matemática para el análisis en tiempo discreto, análoga al papel de Laplace en tiempo continuo. La conversión física la realiza el hardware A/D.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 38,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-estrictamente-causal",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿De qué entradas depende la salida de un sistema estrictamente causal?",
+      "opts": [
+        "De entradas correspondientes a instantes pasados.",
+        "De entradas correspondientes a instantes futuros.",
+        "De la entrada actual y de las entradas futuras.",
+        "De la entrada actual sin considerar las pasadas."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El sistema estrictamente causal utiliza entradas pasadas; no depende de la entrada del instante actual ni anticipa valores futuros.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 40,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-diferencias",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué describe una ecuación de diferencias en un sistema de control?",
+      "opts": [
+        "La separación entre polos y ceros en el plano continuo.",
+        "La variación de ganancia entre dos frecuencias de Bode.",
+        "La relación entre entrada y salida en tiempo discreto.",
+        "La diferencia física entre un sensor y un actuador."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La ecuación de diferencias relaciona las secuencias de entrada y salida. Cumple un papel comparable al de la ecuación diferencial en tiempo continuo.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 40,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-realimentacion-discreta",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada ecuación discreta con el tipo de bloque (u: entrada; r: salida).",
+      "stems": [
+        "r(k) = u(k) + A·r(k−1)",
+        "r(k) = u(k) + A·u(k−1)"
+      ],
+      "choices": [
+        "Prealimentación: utiliza una entrada anterior.",
+        "Realimentación: utiliza una salida anterior."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "La realimentación devuelve una salida retardada al punto suma (pág. 40). La prealimentación combina la entrada actual con una entrada retardada (pág. 41).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 41,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-retardo-z",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "En el modelo de retardos con condiciones iniciales nulas, ¿qué representa multiplicar X(z) por z⁻¹?",
+      "opts": [
+        "Un retardo de un período de muestreo.",
+        "Una duplicación de la frecuencia de muestreo.",
+        "Un adelanto de un período de muestreo.",
+        "Una integración de la señal continua original."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Dividir por z equivale a introducir un retardo T. La variable z actúa como operador de corrimiento temporal en el modelo discreto.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 42,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-inversa-z",
+      "topic": "2",
+      "type": "tf",
+      "catedra": false,
+      "text": "La transformada Z inversa recupera de forma única toda la señal continua entre muestras.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La antitransformada recupera la secuencia en los instantes kT. No determina de forma única los valores entre muestras: distintas señales continuas pueden producir la misma secuencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 44,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-metodos-inversa",
+      "topic": "2",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué métodos menciona el apunte para calcular la transformada Z inversa?",
+      "opts": [
+        "Método computacional.",
+        "División directa.",
+        "Criterio de cambios de signo de Routh.",
+        "Expansión en fracciones parciales.",
+        "Trazado de las asíntotas del lugar de las raíces."
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "fb": "Se mencionan fracciones parciales, método computacional, división directa y resolventes especiales. Routh y el lugar de las raíces se utilizan en el análisis de estabilidad.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 44,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-impulso-z",
+      "topic": "2",
+      "type": "single",
+      "catedra": false,
+      "text": "Si T(z) = Y(z)/X(z) y se aplica un impulso unitario con X(z) = 1, ¿qué resulta?",
+      "opts": [
+        "Y(z) = T(z) − 1",
+        "Y(z) = T(z)",
+        "Y(z) = T(z) + 1",
+        "Y(z) = 1/T(z)"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La salida es Y(z) = T(z)·X(z). Como la transformada de la entrada impulso es 1, la transformada de la salida coincide con T(z).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 45,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-polos-ceros",
+      "topic": "2",
+      "type": "match",
+      "catedra": false,
+      "text": "En una función de transferencia sin factores comunes, relacioná cada concepto con su definición.",
+      "stems": [
+        "Cero",
+        "Polo"
+      ],
+      "choices": [
+        "Valor de s que anula el numerador.",
+        "Valor de s que anula el denominador."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "fb": "Los ceros son las raíces del numerador y los polos las del denominador. En el plano s se representan con O y X, respectivamente.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 35,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u2-perturbacion-abierto",
+      "topic": "2",
+      "type": "tf",
+      "catedra": false,
+      "text": "Un sistema de lazo abierto puede corregir una perturbación comparando la salida medida con la referencia.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "En lazo abierto no existe ese retorno de información. La perturbación se propaga con el funcionamiento del sistema sin una corrección basada en la comparación de salida y referencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 24,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-respuestas",
+      "topic": "3",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada etapa de la respuesta de un sistema estable con su descripción.",
+      "stems": [
+        "Respuesta transitoria",
+        "Respuesta en estado estable"
+      ],
+      "choices": [
+        "Parte que permanece una vez extinguida la transición.",
+        "Parte inicial que desaparece con el paso del tiempo."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "La etapa transitoria describe la evolución inicial (pág. 46). La permanente es la que queda después y está asociada con la precisión del sistema (pág. 47).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-sobreimpulso",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué representa el máximo sobreimpulso de la respuesta?",
+      "opts": [
+        "El intervalo hasta alcanzar el 90 % del valor final.",
+        "La diferencia permanente entre referencia y salida.",
+        "El máximo exceso de la curva respecto de su valor final.",
+        "El intervalo necesario para finalizar el transitorio."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El sobreimpulso mide cuánto supera el máximo de la respuesta a su valor final. Se distingue de los tiempos de subida y establecimiento y del error permanente.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 46,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-subida",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "Según la definición utilizada en el apunte, ¿cómo se mide el tiempo de subida?",
+      "opts": [
+        "Desde el 10 % hasta el 90 % del valor final.",
+        "Desde el máximo sobreimpulso hasta el valor inicial.",
+        "Desde el 0 % hasta el 10 % del valor final.",
+        "Desde el fin del transitorio hasta el régimen permanente."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El apunte adopta el intervalo durante el cual la señal pasa del 10 % al 90 % de su valor final.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-establecimiento",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué parámetro indica el intervalo necesario para pasar del estado transitorio al permanente?",
+      "opts": [
+        "El tiempo de establecimiento.",
+        "El tiempo de subida.",
+        "El máximo sobreimpulso.",
+        "El error en estado estable."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El tiempo de establecimiento se asocia con la finalización del transitorio. El de subida mide un tramo del ascenso y el sobreimpulso mide una amplitud.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 46,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-factores-error",
+      "topic": "3",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿De qué depende el error en estado estable en el análisis presentado?",
+      "opts": [
+        "De la función de transferencia del sistema.",
+        "De la señal de entrada aplicada.",
+        "Del tiempo de subida en lugar de la señal de entrada.",
+        "Del sobreimpulso en lugar de la función de transferencia."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "fb": "El error depende tanto de la dinámica del sistema, representada por su función de transferencia, como de la entrada aplicada. La misma planta puede tener errores diferentes frente a escalón y rampa.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-valor-final",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "Cuando se cumplen las condiciones del teorema del valor final, ¿qué límite permite calcular el error permanente a partir de E(s)?",
+      "opts": [
+        "El límite de E(s)/s cuando s tiende a infinito.",
+        "El límite de E(s)/s cuando s tiende a 0.",
+        "El límite de s·E(s) cuando s tiende a infinito.",
+        "El límite de s·E(s) cuando s tiende a 0."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El teorema del valor final permite obtener e(∞) como lim s·E(s) para s→0, siempre que sea aplicable al sistema analizado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 48,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-tipo-sistema",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué determina el tipo de sistema utilizado para estudiar el error permanente?",
+      "opts": [
+        "La cantidad de señales de referencia del controlador.",
+        "La cantidad de factores s en el denominador de T*(s).",
+        "La cantidad de ramas del diagrama de realimentación.",
+        "La cantidad total de términos del numerador de T*(s)."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El tipo corresponde a la multiplicidad del factor s en el denominador de la transferencia de lazo abierto del sistema reducido, una vez simplificada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 49,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-tipo-ejercicio",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "Una transferencia reducida es T*(s) = 5/[s²·(s + 3)], sin cancelaciones. ¿De qué tipo es el sistema?",
+      "opts": [
+        "Tipo uno.",
+        "Tipo cero.",
+        "Tipo tres.",
+        "Tipo dos."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "Hay dos factores s en el denominador. El factor (s + 3) aumenta el orden del denominador, pero no el tipo: tipo y orden no son lo mismo.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 49,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-tipo-uno-escalon",
+      "topic": "3",
+      "type": "tf",
+      "catedra": false,
+      "text": "En el análisis del apunte, un sistema tipo uno estable con realimentación unitaria tiene error permanente nulo ante una entrada escalón.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El factor s del denominador de T*(s) hace que su ganancia tienda a infinito cuando s→0. Aplicando el valor final, el error ante el escalón resulta cero.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 50,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-perturbaciones-error",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "En un sistema lineal, ¿cómo se calcula el error total debido a referencia y perturbación?",
+      "opts": [
+        "Conservando el error de la entrada de mayor valor.",
+        "Multiplicando los errores de ambas entradas activas.",
+        "Promediando los errores sin considerar sus signos.",
+        "Sumando sus contribuciones calculadas por separado."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "Se calcula primero el error con la perturbación nula, luego con la referencia nula y finalmente se suman algebraicamente las contribuciones.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 51,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-controlador",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿A qué se denomina acción de control?",
+      "opts": [
+        "A la forma en que el controlador produce la señal de control.",
+        "A la perturbación externa que modifica la referencia.",
+        "Al valor físico medido por el sensor a la salida de la planta.",
+        "Al instante en que desaparece la respuesta transitoria."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El controlador compara el valor real con el deseado y produce una señal para reducir la desviación. La forma de producir esa señal se denomina acción de control.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 52,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-on-off",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué caracteriza a un controlador de encendido y apagado?",
+      "opts": [
+        "Su salida deriva el error instantáneo.",
+        "Su salida es proporcional al error.",
+        "Su salida puede adoptar dos niveles.",
+        "Su salida integra el error acumulado."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El controlador on/off conmuta entre máximo y mínimo. El ejemplo es el compresor de una heladera, que se enciende o apaga según la temperatura.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 52,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-proporcional",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "Con una ganancia proporcional Kp fija, si el error instantáneo se duplica, ¿qué ocurre con el aporte proporcional?",
+      "opts": [
+        "Se duplica su valor.",
+        "Se acumula en el tiempo.",
+        "Se reduce a la mitad.",
+        "Conserva el mismo valor."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El aporte proporcional depende del error actual: uP = Kp·e. Manteniendo Kp fija, duplicar e duplica ese aporte. La acumulación temporal corresponde a la acción integral.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 53,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-offset-p",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "Para el ejemplo del apunte con ess = 1/(1 + Kp), ¿cuál es el error permanente ante un escalón unitario si Kp = 4?",
+      "opts": [
+        "0,25",
+        "0,2",
+        "4",
+        "0,8"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Se sustituye Kp = 4: ess = 1/(1 + 4) = 1/5 = 0,2. Esta expresión corresponde al sistema particular analizado, no a cualquier planta con control proporcional.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 54,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-integral",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué información utiliza la acción integral?",
+      "opts": [
+        "La variación instantánea del error por unidad de tiempo.",
+        "La acumulación del error a lo largo del tiempo.",
+        "El valor actual del error multiplicado por una constante.",
+        "La posición de los ceros del sensor de realimentación."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "La señal integral es proporcional a la integral temporal del error. Por eso puede sostener una acción aunque el error instantáneo llegue a cero.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 54,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-integral-rapidez",
+      "topic": "3",
+      "type": "tf",
+      "catedra": false,
+      "text": "La acción integral puede eliminar error permanente, pero también puede volver más lento al sistema.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El apunte presenta ambas características: permite corregir el error estacionario y puede reducir la rapidez de respuesta. Su efecto debe evaluarse dentro del sistema controlado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 54,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-pi",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué combinación de acciones define a un controlador PI?",
+      "opts": [
+        "Respuesta al error actual y a su velocidad de cambio.",
+        "Respuesta a la acumulación y a la derivada del error.",
+        "Respuesta al error actual y a su acumulación temporal.",
+        "Conmutación entre dos niveles y anticipación de entradas."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El PI combina la acción proporcional, que responde al error actual, con la integral, que acumula error y permite eliminar el offset en el caso analizado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 55,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-pid-aportes",
+      "topic": "3",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada aporte del PID con la información del error que utiliza.",
+      "stems": [
+        "Proporcional (P)",
+        "Integral (I)",
+        "Derivativo (D)"
+      ],
+      "choices": [
+        "El valor actual del error.",
+        "La rapidez con que cambia el error.",
+        "La acumulación de errores pasados."
+      ],
+      "correct": [
+        0,
+        2,
+        1
+      ],
+      "fb": "Los tres aportes se suman en una misma señal de control. P aporta respuesta inmediata, I corrige el error acumulado y D aporta un efecto anticipador a partir de la variación del error.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 57,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-pid-garantia",
+      "topic": "3",
+      "type": "tf",
+      "catedra": false,
+      "text": "Incorporar un controlador PID garantiza por sí mismo estabilidad y control óptimo.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El apunte aclara expresamente que el PID no garantiza estabilidad ni control óptimo. Su comportamiento depende del ajuste y del proceso sobre el que actúa.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 56,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-ruido-derivativo",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué característica de la acción derivativa explica que a menudo se utilicen controladores PI?",
+      "opts": [
+        "Su limitación a dos niveles de salida.",
+        "Su sensibilidad al ruido de la señal.",
+        "Su acumulación de errores constantes.",
+        "Su independencia del error del sistema."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El apunte señala que la acción derivativa es muy sensible al ruido. Por eso algunas aplicaciones utilizan PI y prescinden del aporte derivativo.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 56,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-ajuste-pid",
+      "topic": "3",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué acciones se combinan en el PID descrito en el apunte?",
+      "opts": [
+        "La conversión de señales analógicas a digitales.",
+        "La acción de encendido y apagado.",
+        "La acción integral del error acumulado.",
+        "La acción derivativa del cambio del error.",
+        "La acción proporcional al error actual."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "fb": "El PID combina las acciones proporcional, integral y derivativa, con ganancias Kp, Ki y Kd. El control on/off es otra estrategia; la conversión A/D permite procesar señales y no es un aporte del PID.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 57,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u3-ajuste-polos",
+      "topic": "3",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Por qué el ajuste de los parámetros del controlador influye en la estabilidad?",
+      "opts": [
+        "Porque elimina el trayecto de realimentación de la planta.",
+        "Porque modifica los polos y ceros del sistema controlado.",
+        "Porque fija la salida sin depender de la dinámica del proceso.",
+        "Porque convierte las perturbaciones en referencias deseadas."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El controlador se introduce en serie con la planta. Ajustar sus parámetros modifica la función de transferencia y la ubicación de polos y ceros, afectando el comportamiento y la estabilidad.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 58,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-lugar-raices",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué representa el lugar de las raíces?",
+      "opts": [
+        "La trayectoria de los polos al variar un parámetro del sistema.",
+        "La evolución temporal de la referencia durante el muestreo.",
+        "La variación de la salida al aumentar los niveles de cuantificación.",
+        "La trayectoria física de un actuador al cambiar su posición."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El lugar de las raíces representa en el plano s cómo cambian los polos, normalmente al variar una ganancia K. Permite estudiar estabilidad y comportamiento transitorio.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 59,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-ecuacion-caracteristica",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Para un sistema con realimentación negativa, ¿qué ecuación determina los polos de lazo cerrado?",
+      "opts": [
+        "1 − G(s)H(s) = 0",
+        "G(s)/H(s) = 0",
+        "1 + G(s)H(s) = 0",
+        "G(s) + H(s) = 0"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El denominador de la transferencia de lazo cerrado es 1 + G(s)H(s). Sus raíces satisfacen G(s)H(s) = −1.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 61,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-condiciones",
+      "topic": "4",
+      "type": "multi",
+      "catedra": false,
+      "text": "Si G(s)H(s) incluye la ganancia, ¿qué condiciones satisface un punto del lugar de las raíces para realimentación negativa?",
+      "opts": [
+        "El módulo de G(s)H(s) es 0.",
+        "El módulo de G(s)H(s) es 1.",
+        "El argumento de G(s)H(s) equivale a 0°.",
+        "El argumento de G(s)H(s) equivale a −180°."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "fb": "La ecuación G(s)H(s) = −1 exige módulo unitario y argumento de 180° o −180°, equivalentes módulo 360°.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 61,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-inicio-ramas",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Dónde comienzan las ramas del lugar de las raíces cuando K = 0?",
+      "opts": [
+        "En los ceros de lazo abierto.",
+        "En los cruces con el eje imaginario.",
+        "En los polos de lazo abierto.",
+        "En el centroide de las asíntotas."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Para K = 0, las ramas parten de los polos de lazo abierto. Al aumentar K, se dirigen hacia los ceros de lazo abierto o hacia el infinito.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 63,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-fin-ramas",
+      "topic": "4",
+      "type": "tf",
+      "catedra": false,
+      "text": "Al aumentar K, una rama del lugar de las raíces puede terminar en un cero de lazo abierto o en el infinito.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Las ramas parten de polos de lazo abierto y llegan a ceros finitos o al infinito. No todas deben terminar en un cero finito.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 63,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-numero-ramas",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Un sistema tiene cuatro polos y un cero de lazo abierto, sin cancelaciones. ¿Cuántas ramas tiene su lugar de las raíces?",
+      "opts": [
+        "Cuatro ramas.",
+        "Una rama.",
+        "Cinco ramas.",
+        "Tres ramas."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Cuando hay más polos que ceros, la cantidad de ramas coincide con la cantidad de polos de lazo abierto: cuatro. La diferencia entre polos y ceros se relaciona con las ramas hacia infinito.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 62,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-segmento-real",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Hay polos de lazo abierto en 0, −2 y −4, sin ceros. Para K positiva, ¿qué segmento pertenece al lugar de las raíces?",
+      "opts": [
+        "El segmento entre −4 y −2.",
+        "Todo el segmento entre −4 y 0.",
+        "El segmento entre −2 y 0.",
+        "El semieje real positivo."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Un punto entre −2 y 0 tiene un polo a su derecha: cantidad impar. Entre −4 y −2 hay dos, y a la derecha de 0 no hay ninguno. También pertenece el segmento a la izquierda de −4.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 63,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-angulos-asintotas",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Si hay tres polos y un cero finitos de lazo abierto, ¿qué ángulos tienen las asíntotas para K positiva?",
+      "opts": [
+        "90° y 270°.",
+        "0° y 180°.",
+        "60°, 180° y 300°.",
+        "45°, 135°, 225° y 315°."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Con n−m = 2, la fórmula (2k+1)·180°/(n−m) da 90° y 270°; este último equivale a −90°.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 63,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-centroide",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Hay polos de lazo abierto en 0, −2 y −4, sin ceros. ¿Dónde se ubica el centroide de las asíntotas?",
+      "opts": [
+        "En s = −3.",
+        "En s = 2.",
+        "En s = −6.",
+        "En s = −2."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El centroide es (suma de polos − suma de ceros)/(n−m). Aquí vale (0−2−4)/3 = −2.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 64,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-ruptura",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué ecuación se utiliza para obtener candidatos a puntos de ruptura del lugar de las raíces?",
+      "opts": [
+        "K(s) = 0",
+        "G(s)H(s) = 0",
+        "dK/ds = 0",
+        "dK/ds = 1"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Se despeja K de la ecuación característica y se resuelve dK/ds = 0. Los candidatos deben corresponder al lugar de las raíces y al rango de ganancia analizado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 64,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-cruce-imaginario",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué sustitución permite buscar cruces del lugar de las raíces con el eje imaginario?",
+      "opts": [
+        "s = ω, anulando la parte imaginaria de entrada.",
+        "K = 0, buscando los ceros del numerador.",
+        "s = jω, separando parte real e imaginaria.",
+        "s = 0, sin considerar otros puntos del eje."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Al sustituir s = jω en la ecuación característica e igualar a cero sus partes real e imaginaria se obtienen ecuaciones para la frecuencia ω y la ganancia K del cruce.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 64,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-frecuencia-senoidal",
+      "topic": "4",
+      "type": "tf",
+      "catedra": false,
+      "text": "En un sistema lineal estable, la respuesta permanente a una entrada senoidal conserva su frecuencia, aunque cambien amplitud y fase.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La salida permanente tiene la forma Y·sen(ωt + φ): mantiene la misma ω de la entrada, con una amplitud y una fase determinadas por la respuesta en frecuencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 65,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-magnitud",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "Si la amplitud de entrada es 2 y la de salida permanente es 6, ¿cuál es la magnitud de la respuesta en frecuencia?",
+      "opts": [
+        "1/3",
+        "12",
+        "4",
+        "3"
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "La magnitud o razón de amplitud es salida/entrada: 6/2 = 3. Como supera 1, el sistema amplifica a esa frecuencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 65,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-sustitucion-frecuencia",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cómo se obtiene G(jω) a partir de la función de transferencia G(s)?",
+      "opts": [
+        "Sustituyendo s por ω².",
+        "Sustituyendo s por 1/ω.",
+        "Sustituyendo s por −ω.",
+        "Sustituyendo s por jω."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "Se evalúa G(s) sobre el eje imaginario mediante s = jω. Luego pueden separarse las partes real e imaginaria para obtener módulo y fase.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 66,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-bode",
+      "topic": "4",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada gráfica de Bode con la variable que representa en función de la frecuencia.",
+      "stems": [
+        "Diagrama de magnitud",
+        "Diagrama de fase"
+      ],
+      "choices": [
+        "Desplazamiento angular en grados o radianes.",
+        "Ganancia expresada en decibelios."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "Bode representa magnitud y fase por separado. En ambas gráficas el eje de frecuencia utiliza escala logarítmica.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 68,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-bode-suma",
+      "topic": "4",
+      "type": "tf",
+      "catedra": false,
+      "text": "En Bode, el producto de magnitudes de varios factores se convierte en una suma al expresarlo en decibelios.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Los logaritmos transforman productos en sumas. Por eso se pueden sumar las contribuciones individuales de los factores para construir el diagrama de magnitud.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 69,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-polo-origen",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué aporte de fase corresponde al factor G(s) = 1/s?",
+      "opts": [
+        "0°",
+        "+90°",
+        "−90°",
+        "+180°"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Un polo en el origen aporta −90° de fase. Su magnitud en decibelios es −20·log₁₀(ω).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 69,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-cero-origen",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Cuál es la magnitud en decibelios del factor G(s) = s?",
+      "opts": [
+        "0 dB para toda ω",
+        "20·log₁₀(ω)",
+        "20·log₁₀(1/ω²)",
+        "−20·log₁₀(ω)"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Un cero en el origen tiene magnitud ω, por lo que en decibelios resulta 20·log₁₀(ω), y aporta una fase de +90°.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 69,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-ganancia-db",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué magnitud en decibelios corresponde a una ganancia constante positiva K = 10?",
+      "opts": [
+        "10 dB",
+        "40 dB",
+        "20 dB",
+        "0 dB"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La expresión es 20·log₁₀(K). Para K = 10, log₁₀(10) = 1, de modo que la magnitud es 20 dB y la fase es 0°.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 69,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-nyquist",
+      "topic": "4",
+      "type": "single",
+      "catedra": false,
+      "text": "¿Qué caracteriza al diagrama de Nyquist frente a los dos gráficos de Bode?",
+      "opts": [
+        "Representa las raíces al variar la ganancia proporcional.",
+        "Separa cada muestra de la señal en un código binario.",
+        "Muestra la salida temporal de una entrada escalón.",
+        "Reúne la respuesta en frecuencia en una traza polar."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "Nyquist representa módulo y fase mediante una sola traza polar de la respuesta en frecuencia. El lugar de las raíces, en cambio, sigue posiciones de polos al variar un parámetro.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 70,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-puntos-nyquist",
+      "topic": "4",
+      "type": "multi",
+      "catedra": false,
+      "text": "¿Qué puntos clave propone identificar el apunte al trazar un diagrama de Nyquist?",
+      "opts": [
+        "Los valores temporales del 10 % y 90 % de subida.",
+        "El extremo cuando ω tiende a infinito.",
+        "Los cruces de la traza con los ejes real e imaginario.",
+        "El inicio para ω = 0.",
+        "Los niveles del cuantificador del conversor A/D."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "fb": "Se analizan los extremos de frecuencia y los cruces con los ejes. Los niveles de cuantificación y el tiempo de subida pertenecen a otros análisis.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 70,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u4-margenes",
+      "topic": "4",
+      "type": "match",
+      "catedra": false,
+      "text": "Relacioná cada margen de estabilidad con su interpretación.",
+      "stems": [
+        "Margen de ganancia",
+        "Margen de fase"
+      ],
+      "choices": [
+        "Ángulo restante hasta la condición crítica con módulo unitario.",
+        "Factor de aumento de ganancia hasta la condición crítica."
+      ],
+      "correct": [
+        1,
+        0
+      ],
+      "fb": "El margen de ganancia se relaciona con la magnitud a fase de −180° y puede expresarse en dB. El de fase mide la separación angular respecto de −180° donde el módulo vale 1.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 72,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    }
+  ]
+}

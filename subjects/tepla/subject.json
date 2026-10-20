@@ -1,0 +1,12 @@
+{
+  "name": "Tecnologías para la Automatización",
+  "description": "Preguntas de repaso de TEPLA por unidad, con explicaciones y referencias al apunte.",
+  "accent": "#087F8C",
+  "accentDark": "#42C5CF",
+  "exams": [
+    {
+      "slug": "1er-parcial",
+      "name": "1er parcial"
+    }
+  ]
+}
