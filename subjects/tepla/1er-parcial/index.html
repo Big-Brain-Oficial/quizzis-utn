@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tecnologías para la Automatización: 1er parcial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="../../../img/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("quiz-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../../engine/quiz.css">
+<link rel="preload" href="questions.json" as="fetch" crossorigin>
+<link rel="modulepreload" href="../../../engine/quiz.js">
+</head>
+<body>
+<div id="app">
+  <div class="wrap" aria-busy="true" aria-label="Cargando preguntas">
+    <div class="sk sk-title"></div>
+    <div class="sk sk-line"></div>
+    <div class="card sk-card">
+      <div class="sk sk-line short"></div>
+      <div class="sk sk-line"></div>
+      <div class="sk sk-opt"></div>
+      <div class="sk sk-opt"></div>
+      <div class="sk sk-opt"></div>
+    </div>
+  </div>
+</div>
+<script type="module">
+import { initQuiz } from "../../../engine/quiz.js";
+initQuiz({ slug: "tepla", exam: "1er-parcial" });
+</script>
+</body>
+</html>
