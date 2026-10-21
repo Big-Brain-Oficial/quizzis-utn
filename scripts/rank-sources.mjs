@@ -49,7 +49,7 @@ pages.forEach((p) => { p.tf = new Map(); p.toks.forEach((t) => p.tf.set(t, (p.tf
 function correctText(q) {
   if (q.type === "match") return q.stems.map((s, i) => s + " " + q.choices[q.correct[i]]).join(" ");
   if (q.type === "info") return q.answer;
-  return (q.correct || []).map((c) => q.opts[c]).join(" ");
+  return (q.correct || []).map((c) => { const o = q.opts[c]; return typeof o === "string" ? o : (o.alt || o.text || ""); }).join(" ");
 }
 function bm25(p, weights) {
   const k1 = 1.2, b = 0.5;

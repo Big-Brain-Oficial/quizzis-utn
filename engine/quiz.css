@@ -135,6 +135,7 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:8px;
 .opt.is-missed{border-color:var(--ok);border-style:dashed}
 /* .opt wraps: basis 0 lets the text take the free width; if even its longest word leaves no room, the tag wraps below */
 .opt > span:not(.tag){flex:1 1 0}
+.optimg{display:block;max-width:100%;height:auto}
 .opt .tag{margin-left:auto;font-size:.8rem;font-weight:700;white-space:nowrap;padding-left:8px}
 .is-ok .tag{color:var(--ok)} .is-bad .tag{color:var(--bad)} .is-missed .tag{color:var(--ok)}
 .pair{border:1px solid var(--line);border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:8px}

@@ -1,7 +1,7 @@
 {
   "subject": "Tecnologías para la Automatización",
   "exam": "1er parcial",
-  "description": "Repaso de las Unidades 1 a 4 y, en una categoría aparte, preguntas de parcial de la Unidad 1.",
+  "description": "Repaso de las Unidades 1 a 4 y, en categorías aparte, preguntas de parcial de las Unidades 1 y 2.",
   "accent": "#087F8C",
   "accentDark": "#42C5CF",
   "emptyFeedback": null,
@@ -16,7 +16,8 @@
   "about": [
     "<p>Preguntas elaboradas a partir de <a href=\"sources/apunte-solana-p1-tpla.pdf\" target=\"_blank\" rel=\"noopener\">Apunte Solana P1 - TPLA</a>, organizado en las Unidades 1 a 4. Incluyen ejercicios breves que aplican las relaciones del material.</p>",
     "<p>Las unidades 1 a 4 son material de práctica: las preguntas y las opciones fueron redactadas para el repaso y no son una transcripción de un parcial. Cada respuesta incluye una explicación y la página del apunte que la respalda.</p>",
-    "<p><b>Unidad 1 - Preguntas parcial</b> trae enunciados de parciales que se responden con la Unidad 1, con las opciones de la cátedra. Salen del <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de teoría del 25 de octubre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de primer parcial de 2025</a>. Al corregir se ve el recorte del apunte donde está la respuesta y la captura de la pregunta en el parcial. No entran las de sensores, transformadas aplicadas, Routh o PID, ni el segundo parcial de 2025, que es de otra parte de la materia.</p>"
+    "<p><b>Unidad 1 - Preguntas parcial</b> trae enunciados de parciales que se responden con la Unidad 1, con las opciones de la cátedra. Salen del <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de teoría del 25 de octubre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de primer parcial de 2025</a>. Al corregir se ve el recorte del apunte donde está la respuesta y la captura de la pregunta en el parcial. No entran las de sensores, transformadas aplicadas, Routh o PID, ni el segundo parcial de 2025, que es de otra parte de la materia.</p>",
+    "<p><b>Unidad 2 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 2, con las opciones de la cátedra. Salen del mismo <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de estabilidad aplicada, error en estado estable, PID ni el segundo parcial, que siguen en otra unidad.</p>"
   ],
   "topics": {
     "1": {
@@ -38,6 +39,11 @@
     "5": {
       "name": "Unidad 1 - Preguntas parcial",
       "color": "#C2410C",
+      "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
+    },
+    "6": {
+      "name": "Unidad 2 - Preguntas parcial",
+      "color": "#0F766E",
       "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
     }
   },
@@ -3177,6 +3183,48 @@
       }
     },
     {
+      "id": "tepla-p1-u1p-flujo-equivalente",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dado el siguiente Diagrama en Bloque , indique cual es su Diagrama de Flujo de Señales equivalente",
+      "figure": "img/u1-parcial-flujo-bloque.png",
+      "opts": [
+        {
+          "img": "img/u1-parcial-flujo-a.png",
+          "alt": "R(s) —1→ C(s) —G(s)→ C(s) —1→ B(s), con −H(s) entre los dos C(s)"
+        },
+        {
+          "img": "img/u1-parcial-flujo-b.png",
+          "alt": "R(s) —1→ B(s) —G(s)→ C(s) —1→ C(s), con −H(s) desde C(s) hacia B(s)"
+        },
+        {
+          "img": "img/u1-parcial-flujo-c.png",
+          "alt": "R(s) —1→ C(s) —G(s)→ B(s) —1→ C(s), con −H(s) desde B(s) hacia C(s)"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Cada señal del diagrama pasa a ser un nodo y cada bloque, una rama con transmitancia y signo (apunte, págs. 13-15). B(s) queda entre R(s) y G(s); el menos del comparador es la rama −H(s), y desde C(s) sigue una rama de ganancia 1. Las otras dos invierten el orden de B(s) y C(s).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 14,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 91.9, 100, 95, 13], [0, 0, 100, 2.7], [0, 89, 100, 95.6], [0, 1.3, 100, 7.9, 15]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p14-9a6ed9.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 12,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 72.1]],
+        "img": "sources/pages/1er parcial-p12-15841d.webp"
+      }
+    },
+    {
       "id": "tepla-p1-u1p-2025-sistema",
       "topic": "5",
       "type": "info",
@@ -3246,6 +3294,559 @@
         "label": "Modelo de 1er parcial 2025",
         "crop": [[0, 46.2, 100, 50.6]],
         "img": "sources/pages/1er parcial 2025-p1-d564e0.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-inductivos",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Cuales afirmaciones son correctas con respecto a los sensores de proximidad inductivos (puede ser mas de una)",
+      "opts": [
+        "Su funcionamiento se basa en la generación de un campo electromagnético de baja frecuencia que es detectado por el otro extremo del sensor",
+        "Su funcionamiento se basa en la generación de un campo electromagnético de alta frecuencia que es detectado por el otro extremo del sensor",
+        "Se emplean cuando los objetos a detectar son metálicos o buenos conductores de la electricidad el magnetismo o ambos",
+        "Se emplean cuando los objetos a detectar son no metálicos o malos conductores de la electricidad el magnetismo o ambos",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "fb": "El sensor inductivo genera un campo electromagnético de alta frecuencia y se usa cuando el objeto es metálico o buen conductor de la electricidad o del magnetismo (apunte, pág. 18). La baja frecuencia y los materiales no metálicos no son ese caso.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 18,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 71.5, 100, 90.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p18-9a7329.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 4,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 36.9]],
+        "img": "sources/pages/1er parcial-p4-3cf2b0.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-modelos-fisicos",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los modelos matemáticos son ecuaciones que representan las relaciones entre la entrada y la salida de un sistema, indique cuales afirmaciones son correctas (puede ser mas de una)",
+      "opts": [
+        "Las ecuaciones se establecen de acuerdo con las leyes matemáticas que describen el sistema y el funcionamiento de los bloques funcionales que lo conforman",
+        "Las ecuaciones se establecen de acuerdo con las leyes físicas que gobiernan el funcionamiento de los bloques funcionales que conforman el sistema",
+        "Las ecuaciones se establecen de acuerdo con las leyes lógicas que gobiernan el funcionamiento de los bloques funcionales que conforman el sistema",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Esas ecuaciones se establecen con las leyes físicas que gobiernan los bloques funcionales del sistema (apunte, pág. 21). No alcanza con decir leyes matemáticas o leyes lógicas.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 21,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 37.1, 100, 45]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p21-7e79f3.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 5,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 35.3]],
+        "img": "sources/pages/1er parcial-p5-2a9807.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-heaviside",
+      "topic": "6",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Con la formula de Heaviside que podemos resolver",
+      "opts": [
+        "No es una definición valida",
+        "La Transformada de Laplace",
+        "La antitransformada de Laplace"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La fórmula de Heaviside es una forma directa de calcular la antitransformada de Laplace de un cociente de polinomios (apunte, pág. 30). No calcula la transformada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 30,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 55.7, 100, 61.2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p30-e957dd.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 5,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 74.4, 100, 90.9]],
+        "img": "sources/pages/1er parcial-p5-09778b.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-peaviside",
+      "topic": "6",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Con la formula de Peaviside que podemos resolver",
+      "opts": [
+        "La Transformada de Laplace",
+        "La antitransformada de Laplace",
+        "No es una definición valida"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El apunte llama Heaviside a la fórmula de la antitransformada de Laplace (apunte, pág. 30). «Peaviside» no es ese nombre, y en el parcial la opción correcta es que no es una definición válida.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 30,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 55.7, 100, 61.2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p30-e957dd.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 6,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 56.1, 100, 72.6]],
+        "img": "sources/pages/1er parcial-p6-f19f1d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-laplace",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dada la Transformada de Laplace, indique cuales relaciones son correctas",
+      "opts": [
+        "f(t) = at → F(s) = a/s²",
+        "∂(t) = a² → F(s) = 2a",
+        "f(t) = A cos(ωt) → F(s) = Aω/(s²+ω²)",
+        "f(t) = A sen(ωt) → F(s) = Aω/(s²+ω²)",
+        "f(t) = a → F(s) = a"
+      ],
+      "correct": [
+        0,
+        3,
+        4
+      ],
+      "fb": "La rampa at se transforma en a/s² y A sen(ωt) en Aω/(s²+ω²) (apunte, pág. 30). El coseno no usa esa fórmula. La constante el apunte la escribe como a/s (apunte, pág. 29); en el parcial entra F(s) = a.",
+      "note": "El apunte escribe L{a} = a/s. En la revisión de 2021 la opción F(s) = a entra en la clave.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 30,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 73.5, 100, 84.5, 29], [0, 0, 100, 8.5], [0, 26.6, 100, 40.6]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p30-9ffa48.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 7,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 56.4]],
+        "img": "sources/pages/1er parcial-p7-67dc1e.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-ventajas",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Indicar que ventajas presenta el trayecto de realimentación (puede ser más de una)",
+      "opts": [
+        "Menor sensibilidad a cambios no deseados en los componentes del sistema",
+        "Ninguna respuesta es correcta",
+        "Respuesta mas exacta respecto de los valores reales requeridos como respuesta del sistema",
+        "Mayor velocidad de respuesta",
+        "Menor sensibilidad ante la presencia de perturbaciones externas"
+      ],
+      "correct": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "fb": "El trayecto de realimentación baja la sensibilidad a las perturbaciones y a los cambios de los componentes, acerca la respuesta a lo pedido y la hace más rápida (apunte, pág. 25).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 25,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 52, 100, 65.6]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p25-9d06a5.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 8,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 39.5]],
+        "img": "sources/pages/1er parcial-p8-ee63dd.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-componentes",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Como es la cantidad de componentes para los distintos tipos de sistemas",
+      "opts": [
+        "Para un sistema de lazo cerrado es escaza",
+        "Para un sistema de lazo abierto es importante",
+        "Para un sistema de lazo abierto es escaza",
+        "Para un sistema de lazo cerrado es importante"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "fb": "En la tabla del apunte el lazo cerrado tiene una cantidad de componentes importante, y el lazo abierto, escasa (apunte, pág. 23).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 23,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 48.6, 100, 51.9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p23-1c98cc.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 8,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 49.7, 100, 68.1]],
+        "img": "sources/pages/1er parcial-p8-dde9a2.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-performance",
+      "topic": "6",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los sistemas de lazo cerrado presentan mejor \"performance\" frente a la presencia de perturbaciones que los sistemas de lazo abierto.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El lazo cerrado tiene mejor performance ante las perturbaciones que el lazo abierto (apunte, pág. 24).",
+      "note": "En la revisión el intento marcó Falso y quedó en 0. La clave sale del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 24,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 32.5, 100, 37.7]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p24-e8add5.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 10,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 63.7, 100, 80.9]],
+        "img": "sources/pages/1er parcial-p10-beb56d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-termistores",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Con respecto a los termistores indique cuales afirmaciones son correctas",
+      "opts": [
+        "No son dispositivos usando en el control de sistemas",
+        "Pueden ser de metal (aleaciones de níquel, platino, cobre, etc) o pueden estar constituidos por semiconductores",
+        "Son dispositivos utiliza la propiedad de cambio de la resistencia eléctrica de los metales o semiconductores en función de la temperatura.",
+        "Siempre son de metal (aleaciones de níquel, platino, cobre, etc)"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "fb": "El detector de temperatura usa el cambio de resistencia de metales o semiconductores con la temperatura. Entre los semiconductores están los termistores (apunte, pág. 17). No es que no se usen en el control, ni que sean siempre de metal.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 17,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 6, 100, 27.6]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p17-244172.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 13,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 30.5]],
+        "img": "sources/pages/1er parcial-p13-21c2ac.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-sensor-falso",
+      "topic": "6",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los sensores son dispositivos cuya función es transformar una señal eléctrica en una información traducida a ecuaciones matemáticas diferenciales representativas del sistema de control.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El sensor transforma un estado físico del entorno en una señal eléctrica para el control (apunte, pág. 16). No convierte una señal eléctrica en ecuaciones diferenciales.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 10.7, 100, 21.6]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p16-552636.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 14,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 23.9]],
+        "img": "sources/pages/1er parcial-p14-86fd9f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-capacitivos",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Cuales afirmaciones son correctas con respecto a los sensores de proximidad capacitivos (puede ser mas de una)",
+      "opts": [
+        "Se emplean cuando los objetos a detectar son metálicos o buenos conductores de la electricidad el magnetismo o ambos",
+        "El sensor conmuta de estado cuando el material, que puede ser metal, madera, vidrio, plásticos, cerámica, material orgánico, etcétera., toca el sensor",
+        "Ninguna respuesta es correcta",
+        "Estos sensores detectan materiales conductores de la electricidad y no conductores, sólidos, líquidos, polvos,",
+        "El sensor conmuta de estado cuando el material, que puede ser metal, madera, vidrio, plásticos, cerámica, material orgánico, etcétera., está a cierta distancia del sensor"
+      ],
+      "correct": [
+        3,
+        4
+      ],
+      "fb": "El capacitivo detecta conductores y no conductores, como madera, vidrio, plástico o polvos, y conmuta cuando un objeto se interpone (apunte, pág. 19). Reservarlos a los metales es el sensor inductivo, y no hace falta que el objeto lo toque.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 19,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 0, 100, 15.2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p19-1198ae.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 16,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 35.6]],
+        "img": "sources/pages/1er parcial-p16-8bfc41.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-lazo-abierto",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para un Sistema de lazo abierto indique cueles afirmaciones son correctas (puede ser más de una)",
+      "opts": [
+        "La salida no se mide ni retroalimenta.",
+        "Son sistemas de control donde la salida no tiene efecto sobre la acción de control.",
+        "Para cada entrada de referencia corresponde una condición de operación fija",
+        "No se compara la salida con ninguna señal de referencia.",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fb": "En lazo abierto la salida no actúa sobre el control: no se mide, no se compara con la referencia, y a cada referencia le corresponde una condición de operación fija (apunte, pág. 22).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 22,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 1.5, 100, 17.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p22-4fe95d.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 17,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 34.6]],
+        "img": "sources/pages/1er parcial-p17-3f2cb5.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-perturbacion",
+      "topic": "6",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Ante una perturbación externa indique como se comportan los distintos tipos de sistemas",
+      "opts": [
+        "Para un sistema de lazo abierto es prácticamente insensible",
+        "Para un sistema de lazo cerrado es relativamente afectado",
+        "Para un sistema de lazo cerrado es prácticamente insensible",
+        "Para un sistema de lazo abierto es relativamente afectado"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "fb": "Ante una perturbación externa el lazo cerrado queda prácticamente insensible y el lazo abierto, relativamente afectado (apunte, pág. 23).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 23,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 32.1, 100, 36.2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p23-729595.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 19,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 61.6, 100, 80]],
+        "img": "sources/pages/1er parcial-p19-2fe977.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-performance-abierto",
+      "topic": "6",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los sistemas de lazo abierto presentan mejor \"performance\" frente a la presencia de perturbaciones que los sistemas de lazo abierto.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El enunciado compara el lazo abierto consigo mismo. El apunte dice que quien tiene mejor performance ante las perturbaciones es el lazo cerrado (apunte, pág. 24).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 24,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 32.5, 100, 37.7]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p24-e8add5.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 20,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 24.5]],
+        "img": "sources/pages/1er parcial-p20-b037c7.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-sensor-def",
+      "topic": "6",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los sensores son dispositivos cuya función es transformar un parámetro o estado físico del entorno que nos rodea en una información traducida a señales eléctricas que proporcionaremos al sistema de control.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Esa es la definición del apunte: el sensor pasa un estado físico del entorno a una señal eléctrica para el control (apunte, pág. 16).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 10.7, 100, 21.6]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p16-552636.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 20,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 65.6, 100, 84.5]],
+        "img": "sources/pages/1er parcial-p20-b42599.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-2025-sensores",
+      "topic": "6",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Mencione tres ejemplos de sensores y su aplicación en la industria.",
+      "answer": "Un sensor toma un estado físico del entorno y lo entrega al control como señal eléctrica (apunte, pág. 16). El apunte nombra, entre otros, temperatura, humedad, estado de una puerta, velocidad del aire y nivel de CO2.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 10.7, 100, 28.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p16-9a3b2a.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 41, 100, 45.5]],
+        "img": "sources/pages/1er parcial 2025-p1-3de0b2.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u2p-2025-routh",
+      "topic": "6",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Explique el criterio de estabilidad de Routh de manera general.",
+      "answer": "Routh indica si un polinomio tiene raíces inestables y cuántos polos del lazo cerrado caen en el semiplano derecho, sin tener que factorizarlo (apunte, pág. 36).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 36,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 2",
+        "crop": [[0, 77.7, 100, 91.4]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p36-004a7d.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 61.5, 100, 66]],
+        "img": "sources/pages/1er parcial 2025-p1-440cf2.webp"
       }
     }
   ]

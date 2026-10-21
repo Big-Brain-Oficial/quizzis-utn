@@ -524,6 +524,17 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     cardAt(p).outerHTML = cardHTML(DATA.questions[view[p]], p);
   }
 
+  // A cátedra option can be the string, or a drawing: { img, alt, text }.
+  function optHTML(opt) {
+    if (opt && typeof opt === "object") {
+      const bits = [];
+      if (opt.img) bits.push(`<img class="optimg" src="${esc(asset(opt.img))}" alt="${esc(opt.alt || "Opción")}">`);
+      if (opt.text) bits.push(esc(opt.text));
+      return bits.join("");
+    }
+    return esc(opt);
+  }
+
   function cardHTML(q, p) {
     const saved = state.answers[q.id];
     const locked = !!saved;
@@ -564,7 +575,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
             else if (!checked && isCorrect && (q.type === "multi" || saved.score < 1)) { cls += " is-missed"; tag = "Faltó marcar"; }
           }
           return `<label class="${cls}"><input type="${inputType}" name="q-${esc(q.id)}" value="${o}" ${checked ? "checked" : ""} ${locked ? "disabled" : ""}>
-            <span>${esc(q.opts[o])}</span>${tag ? `<span class="tag">${tag}</span>` : ""}</label>`;
+            <span>${optHTML(q.opts[o])}</span>${tag ? `<span class="tag">${tag}</span>` : ""}</label>`;
         }).join("");
       }
       if (!isScored(q)) actions = `<span class="unscored">Sin respuesta confirmada: no se corrige automáticamente.</span>`;
@@ -637,9 +648,9 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     if (q.type === "match") {
       key = `<ul>${rowsFor(q).map((i) => `<li>${esc(q.stems[i])} → ${esc(q.choices[q.correct[i]])}</li>`).join("")}</ul>`;
     } else if (q.correct.length > 1) {
-      key = `<ul>${q.correct.map((c) => `<li>${esc(q.opts[c])}</li>`).join("")}</ul>`;
+      key = `<ul>${q.correct.map((c) => `<li>${optHTML(q.opts[c])}</li>`).join("")}</ul>`;
     } else {
-      key = `<p>${esc(q.opts[q.correct[0]])}</p>`;
+      key = `<p>${optHTML(q.opts[q.correct[0]])}</p>`;
     }
     let fb = "";
     if (q.fb) fb = `<h3>${esc(L.feedback)}</h3><div class="fb">${esc(q.fb)}</div>`;

@@ -119,6 +119,14 @@ function checkExam(slug, exam, meta) {
       // a single with several right options: any of them scores, so the review has to say why (Moodle allows it)
       else if (q.type === "single" && q.correct.length > 1 && !q.note) e("single con varias correctas necesita 'note' que lo explique");
       if (q.type === "tf" && q.opts?.length !== 2) e("tf necesita exactamente 2 opciones");
+      q.opts?.forEach((o, j) => {
+        if (typeof o === "string") { if (!o.trim()) e(`opción ${j} vacía`); return; }
+        if (!o || typeof o !== "object" || Array.isArray(o)) { e(`opción ${j} inválida`); return; }
+        if (typeof o.img !== "string" || !o.img) e(`opción ${j} necesita img`);
+        else if (!fs.existsSync(path.join(dir, o.img))) e(`no existe la imagen de la opción ${j}: ${o.img}`);
+        if (o.alt !== undefined && (typeof o.alt !== "string" || !o.alt.trim())) e(`opción ${j}: alt vacío`);
+        if (o.text !== undefined && typeof o.text !== "string") e(`opción ${j}: text inválido`);
+      });
     }
 
     if (q.img !== undefined && !fs.existsSync(path.join(dir, q.img))) e(`no existe la imagen ${q.img}`);
@@ -147,7 +155,7 @@ function checkLengths(label, questions) {
   let longest = 0, chance = 0;
   const long = [];
   for (const q of qs) {
-    const len = q.opts.map((o) => String(o).length), c = len[q.correct[0]];
+    const len = q.opts.map((o) => typeof o === "string" ? o.length : String(o.alt || o.text || "").length), c = len[q.correct[0]];
     const others = len.filter((_, i) => i !== q.correct[0]);
     if (others.every((l) => l < c)) longest++;
     chance += 1 / q.opts.length;

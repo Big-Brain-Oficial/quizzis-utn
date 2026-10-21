@@ -204,7 +204,7 @@ aclaración sobre el tema, visible en los filtros y en cada pregunta.
 | `type` | todos | `single`, `multi`, `tf`, `match` o `info`. |
 | `catedra` | todos | `true` si la pregunta viene tal cual del material de la cátedra o de un parcial (no se modifica); `false` si la armamos a partir del material. Ver [`criterios.md`](criterios.md). |
 | `text` | todos | Enunciado. Los saltos de línea (`\n`) se respetan. |
-| `opts` | single, multi, tf | Opciones. En `tf` son `["Verdadero", "Falso"]`. |
+| `opts` | single, multi, tf | Opciones. En `tf` son `["Verdadero", "Falso"]`. Si la opción de la cátedra es un dibujo, es `{ "img": "img/opcion.png", "alt": "qué muestra el dibujo" }`: se muestra la imagen y `alt` es el texto alternativo. |
 | `correct` | single, multi, tf, match | Índices correctos. En `match`, uno por stem: índice en `choices`. `[]` = sin respuesta confirmada (no se corrige). Una `single` puede tener más de uno cuando la cátedra acepta varias opciones (cualquiera suma el puntaje); en ese caso necesita `note`. |
 | `stems`, `choices` | match | Ítems a emparejar y opciones del desplegable. |
 | `answer` | info | Texto que se revela con "Ver respuesta". Las `info` no suman puntaje. |
