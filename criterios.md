@@ -16,6 +16,10 @@ Hay dos clases de preguntas, y cada pregunta indica a cuál pertenece con el cam
   anteriores»). Todo el 1er parcial de ASI y los dos parciales de Redes (el 2do sale del PDF de
   parciales, las revisiones del cuestionario de estudio) son de esta clase. El 1er
   parcial de GIS también está marcado como de la cátedra hasta revisar de dónde salen sus preguntas.
+  En TEPLA, las categorías «Unidad 1 - Preguntas parcial» a «Unidad 4 - Preguntas parcial» también:
+  el enunciado y las opciones quedan como en el parcial, incluidos los errores de escritura y las
+  opciones que son un dibujo. Las cuatro unidades de práctica se armaron a partir del apunte y llevan
+  `"catedra": false`.
 - **Preguntas armadas a partir del material** (`"catedra": false`): las que escribimos nosotros con
   base en el apunte, por ejemplo al convertir a opción múltiple una pregunta abierta de un cuestionario
   (como las del 2do parcial de ASI). Se pueden modificar, y se les aplican todos los criterios.
@@ -37,6 +41,9 @@ criterios y con `"catedra": false`.
   corregir. Si el material no alcanza para decidir, `correct: []` y la pregunta no se corrige.
 - Cuando el PDF está en el repo, la pregunta lleva `source` con la página donde está la respuesta (ver
   [Referencias a la teoría](README.md#referencias-a-la-teoría)).
+- Si la pregunta sale de un parcial, lleva `origin` con el PDF, la página y el recorte de esa pregunta
+  (ver [De qué parcial sale la pregunta](README.md#de-qué-parcial-sale-la-pregunta)).
+- Si el parcial la pide para desarrollar y no trae opciones, queda como `info`. No se inventan opciones.
 - En `about` se nombra de dónde sale el banco. Si el material está en Google Drive, se enlaza el archivo:
   quien tiene acceso lo abre, y quien no, ve la pantalla de Google para pedirlo. `about` no explica cómo
   usar el cuestionario (responder, colores, avisos, tarjetas informativas): eso ya está en «Cómo funciona
