@@ -1,11 +1,12 @@
-# Dev helper: renders the theory PDF page behind each high-confidence "source" as an image, so the review can
-# show it without opening the PDF. Writes sources/pages/<pdf>-p<N>.webp and sets "source.img" on the question;
-# questions whose source is not high confidence lose "source.img". Safe to run again after changing sources.
-# With "source.crop" (a list of [x0, y0, x1, y1] boxes, in % of the page image) it keeps only those parts of
+# Dev helper: renders the PDF page behind each high-confidence "source" (the theory) and each "origin"
+# (the exam the question was taken from) as an image, so the review can show it without opening the PDF.
+# Writes sources/pages/<pdf>-p<N>.webp and sets "img" on that field; a source that is not high confidence
+# loses "source.img". Safe to run again after changing pages or crops.
+# With "crop" (a list of [x0, y0, x1, y1] boxes, in % of the page image) it keeps only those parts of
 # the page, stacked top to bottom, in sources/pages/<pdf>-p<N>-<hash>.webp. A box with a fifth value
-# ([x0, y0, x1, y1, page]) is cut from that page instead, for answers that continue on the next page.
+# ([x0, y0, x1, y1, page]) is cut from that page instead, for text that continues on the next page.
 # Requires PyMuPDF and Pillow (pip install pymupdf pillow). Usage:
-#   python scripts/render-source-pages.py <materia>/<parcial>   (ej.: redes/1er-parcial)
+#   python scripts/render-source-pages.py <materia>/<parcial> [--only source|origin]
 import hashlib
 import io
 import json
@@ -20,8 +21,9 @@ QUALITY = 80
 GAP = 17  # px between two crop boxes of the same page, with a thin line in the middle
 
 root = Path(__file__).resolve().parent.parent
-if len(sys.argv) != 2:
-    sys.exit("uso: python scripts/render-source-pages.py <materia>/<parcial>")
+if len(sys.argv) not in (2, 4) or (len(sys.argv) == 4 and (sys.argv[2] != "--only" or sys.argv[3] not in ("source", "origin"))):
+    sys.exit("uso: python scripts/render-source-pages.py <materia>/<parcial> [--only source|origin]")
+only = sys.argv[3] if len(sys.argv) == 4 else None
 subject = root / "subjects" / sys.argv[1]
 qpath = subject / "questions.json"
 data = json.loads(qpath.read_text(encoding="utf-8"))
@@ -68,39 +70,50 @@ def crop(file, default_page, boxes):
     return stacked
 
 
-docs, pages, used = {}, {}, set()
-for q in data["questions"]:
-    src = q.get("source")
-    if not src:
-        continue
-    if src.get("confidence") != "high":
-        src.pop("img", None)
-        continue
-    name = f"{Path(src['file']).stem}-p{src['page']}"
-    if src.get("crop"):
-        name += "-" + hashlib.sha1(json.dumps(src["crop"]).encode()).hexdigest()[:6]
+def render_ref(ref):
+    name = f"{Path(ref['file']).stem}-p{ref['page']}"
+    if ref.get("crop"):
+        name += "-" + hashlib.sha1(json.dumps(ref["crop"]).encode()).hexdigest()[:6]
     name += ".webp"
-    src["img"] = f"sources/pages/{name}"
+    ref["img"] = f"sources/pages/{name}"
     if name in used:
-        continue
+        return
     used.add(name)
-    if src.get("crop"):
-        img = crop(src["file"], src["page"], src["crop"])
+    if ref.get("crop"):
+        img = crop(ref["file"], ref["page"], ref["crop"])
     else:
-        img = page_image(src["file"], src["page"])
+        img = page_image(ref["file"], ref["page"])
     img.save(out / name, "WEBP", quality=QUALITY, method=6)
 
+
+docs, pages, used, kept = {}, {}, set(), set()
+for q in data["questions"]:
+    src = q.get("source")
+    if src and only != "origin":
+        if src.get("confidence") != "high":
+            src.pop("img", None)
+        elif src.get("file"):
+            render_ref(src)
+    elif src and src.get("img"):
+        kept.add(Path(src["img"]).name)
+    origin = q.get("origin")
+    if origin and origin.get("file") and only != "source":
+        render_ref(origin)
+    elif origin and origin.get("img"):
+        kept.add(Path(origin["img"]).name)
+
 for stale in out.glob("*.webp"):
-    if stale.name not in used:
+    if stale.name not in used and stale.name not in kept:
         stale.unlink()
 
 # each crop box on a single line, instead of one line per number
 crops = {}
 for q in data["questions"]:
-    if q.get("source", {}).get("crop"):
-        key = f"@crop{len(crops)}@"
-        crops[key] = "[" + ", ".join(json.dumps(b) for b in q["source"]["crop"]) + "]"
-        q["source"]["crop"] = key
+    for field in ("source", "origin"):
+        if q.get(field, {}).get("crop"):
+            key = f"@crop{len(crops)}@"
+            crops[key] = "[" + ", ".join(json.dumps(b) for b in q[field]["crop"]) + "]"
+            q[field]["crop"] = key
 text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
 for key, value in crops.items():
     text = text.replace(f'"{key}"', value)

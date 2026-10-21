@@ -215,6 +215,7 @@ aclaración sobre el tema, visible en los filtros y en cada pregunta.
 | `img` | opcional | Ruta relativa a la carpeta del parcial (`img/x.jpg`). Se muestra al corregir, con `imageCaption` como título. |
 | `figure` | opcional | Imagen que forma parte del enunciado (por ejemplo, un esquema con los datos de la pregunta): se muestra antes de responder, debajo del texto. Ruta relativa como `img`. |
 | `source` | opcional | `{ "file": "sources/x.pdf", "page": 12, "confidence": "high" \| "medium" \| "low", "img": "sources/pages/x-p12.webp" }`, más `crop` opcional (ver [Referencias a la teoría](#referencias-a-la-teoría)). Muestra "Ver en la teoría", que abre `x.pdf#page=12`, con una aclaración si la confianza es media (la página trata el tema, pero no da la respuesta completa) o baja. `page` es la página física del PDF (empieza en 1). Si está `img`, la corrección muestra además la imagen de esa página, para ver el respaldo sin abrir el PDF. En un parcial con los PDFs en el repo, una pregunta sin `source` (salvo las `info`) muestra «No figura en los apuntes de teoría». Sin `file` (cuando el PDF no está en el repo) muestra solo la imagen, con `label` como rótulo: `{ "label": "Unidad 3, diap. 52", "page": 52, "confidence": "high", "img": "slides/u3-52.webp" }`. |
+| `origin` | opcional | De qué parcial salió la pregunta. `{ "file": "sources/1er parcial.pdf", "page": 14, "label": "1er parcial de teoría, 25 oct 2021", "crop": [[0, 28, 100, 58]], "img": "sources/pages/1er parcial-p14-abc123.webp" }`. `file` es el PDF en el repo, con el nombre con el que está guardado. `label` es el nombre que se muestra (el archivo puede llamarse distinto). `page` es la página física. `crop` usa el mismo formato que `source.crop` y recorta la pregunta, no la página entera. Al corregir se ve esa captura y el enlace «Ver en el parcial», que abre el PDF en esa página. No lleva `confidence`: la pregunta está en esa página o no está. |
 
 ### Puntaje
 
@@ -237,7 +238,7 @@ Recorre `subjects/*/subject.json` y el `questions.json` de cada parcial, y verif
 - índices de `correct` dentro de rango
 - `match` con tantos `correct` como `stems`
 - campos obligatorios por tipo, y `catedra` (`true` o `false`) en todas las preguntas
-- que existan los archivos de `img`, `figure` y `source` (y que un `source` sin `file` tenga `img` y `label`)
+- que existan los archivos de `img`, `figure`, `source` y `origin` (un `source` sin `file` necesita `img` y `label`; un `origin` necesita `file`, `page` y `label`)
 - que `subjects.json` y los `exams` de cada `subject.json` estén sincronizados con las carpetas
 - que `subject` y `exam` de cada `questions.json` coincidan con `subject.json`
 
@@ -272,8 +273,10 @@ la página como imagen. Las genera `scripts/render-source-pages.py`, que necesit
 python scripts/render-source-pages.py redes/1er-parcial
 ```
 
-Escribe `sources/pages/<pdf>-p<N>.webp`, completa `source.img` en `questions.json` y borra las imágenes que ya
-no se usan. Hay que volver a correrlo después de cambiar la página, la confianza o el recorte de un `source`.
+Escribe `sources/pages/<pdf>-p<N>.webp`, completa `source.img` y `origin.img` en `questions.json` y borra las
+imágenes que ya no se usan. Hay que volver a correrlo después de cambiar la página, la confianza o el recorte
+de un `source`, o la página o el recorte de un `origin`. Con `--only origin` (o `--only source`) regenera solo
+ese campo y deja las imágenes del otro.
 
 Cuando la página tiene mucho más que la respuesta, `source.crop` muestra solo una parte: es una lista de
 recuadros `[x0, y0, x1, y1]` en porcentaje de la imagen de la página (sin los márgenes blancos), que se apilan
@@ -286,3 +289,10 @@ diapositiva que responden la pregunta.
 Si la respuesta sigue en otra página, el recuadro lleva la página como quinto valor: `[x0, y0, x1, y1, página]`.
 Por ejemplo, `"crop": [[0, 80, 100, 100], [0, 0, 100, 12, 5]]` muestra el final de la página de `source.page` y,
 debajo, el principio de la página 5. `source.page` sigue siendo la página que abre «Ver en la teoría».
+
+## De qué parcial sale la pregunta
+
+`origin` cita el parcial, no el apunte. El PDF va en `sources/` con el nombre del archivo (el de Drive, si
+viene de ahí) y `label` dice de qué examen se trata. El recorte muestra la pregunta tal como aparece en esa
+revisión, con su número y sus opciones. «Ver en el parcial» abre ese PDF en `origin.page`. El mismo
+`render-source-pages.py` genera la imagen a partir de `origin.crop`.

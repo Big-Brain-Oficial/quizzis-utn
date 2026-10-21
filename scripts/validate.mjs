@@ -43,6 +43,30 @@ function checkSubject(slug) {
   }
 }
 
+// recortes de la página: [x0, y0, x1, y1] en % de la imagen (los usa render-source-pages.py), con un quinto
+// valor opcional: la página de donde sale el recuadro, si no es la página del campo
+const cropBox = (b) => Array.isArray(b) && (b.length === 4 || (b.length === 5 && Number.isInteger(b[4]) && b[4] >= 1)) &&
+  b.slice(0, 4).every((v) => typeof v === "number" && v >= 0 && v <= 100) && b[0] < b[2] && b[1] < b[3];
+
+// source cita el apunte (confidence obligatoria; sin file, solo imagen y rótulo).
+// origin cita el parcial de donde salió la pregunta: file, page y label, sin confidence.
+function checkPageRef(ref, key, e, dir, isSource) {
+  if (ref === undefined) return;
+  if (ref === null || typeof ref !== "object" || Array.isArray(ref)) { e(`${key} debe ser un objeto`); return; }
+  if (ref.file === undefined) {
+    if (!isSource) { e(`${key} necesita 'file'`); return; }
+    if (typeof ref.img !== "string") e(`${key} sin 'file' necesita 'img'`);
+    if (typeof ref.label !== "string" || !ref.label) e(`${key} sin 'file' necesita 'label'`);
+  } else if (typeof ref.file !== "string") e(`${key}.file debe ser un string`);
+  else if (!fs.existsSync(path.join(dir, ref.file))) e(`no existe ${ref.file}`);
+  if (!isSource && (typeof ref.label !== "string" || !ref.label)) e(`${key} necesita 'label'`);
+  if (!Number.isInteger(ref.page) || ref.page < 1) e(`${key}.page debe ser un entero ≥ 1`);
+  if (isSource && !CONFIDENCE.includes(ref.confidence)) e(`${key}.confidence debe ser ${CONFIDENCE.join("|")}`);
+  if (ref.img !== undefined && !fs.existsSync(path.join(dir, ref.img))) e(`no existe la imagen ${ref.img}`);
+  if (ref.crop !== undefined && !(Array.isArray(ref.crop) && ref.crop.length && ref.crop.every(cropBox)))
+    e(`${key}.crop debe ser una lista de [x0, y0, x1, y1] (o [x0, y0, x1, y1, página]) entre 0 y 100, con x0 < x1 e y0 < y1`);
+}
+
 function checkExam(slug, exam, meta) {
   const dir = path.join(subjectsDir, slug, exam.slug);
   const label = `${slug}/${exam.slug}`;
@@ -99,31 +123,16 @@ function checkExam(slug, exam, meta) {
 
     if (q.img !== undefined && !fs.existsSync(path.join(dir, q.img))) e(`no existe la imagen ${q.img}`);
     if (q.figure !== undefined && !fs.existsSync(path.join(dir, q.figure))) e(`no existe la figura ${q.figure}`);
-    if (q.source !== undefined) {
-      const s = q.source;
-      if (s?.file === undefined) {
-        // sin PDF: solo la imagen de la página, con su rótulo
-        if (typeof s?.img !== "string") e("source sin 'file' necesita 'img'");
-        if (typeof s?.label !== "string" || !s.label) e("source sin 'file' necesita 'label'");
-      } else if (typeof s.file !== "string") e("source.file debe ser un string");
-      else if (!fs.existsSync(path.join(dir, s.file))) e(`no existe ${s.file}`);
-      if (!Number.isInteger(s?.page) || s.page < 1) e("source.page debe ser un entero ≥ 1");
-      if (!CONFIDENCE.includes(s?.confidence)) e(`source.confidence debe ser ${CONFIDENCE.join("|")}`);
-      if (s?.img !== undefined && !fs.existsSync(path.join(dir, s.img))) e(`no existe la imagen ${s.img}`);
-      // recortes de la página: [x0, y0, x1, y1] en % de la imagen (los usa render-source-pages.py), con un quinto
-      // valor opcional: la página de donde sale el recuadro, si no es source.page
-      const box = (b) => Array.isArray(b) && (b.length === 4 || (b.length === 5 && Number.isInteger(b[4]) && b[4] >= 1)) &&
-        b.slice(0, 4).every((v) => typeof v === "number" && v >= 0 && v <= 100) && b[0] < b[2] && b[1] < b[3];
-      if (s?.crop !== undefined && !(Array.isArray(s.crop) && s.crop.length && s.crop.every(box)))
-        e("source.crop debe ser una lista de [x0, y0, x1, y1] (o [x0, y0, x1, y1, página]) entre 0 y 100, con x0 < x1 e y0 < y1");
-    }
+    checkPageRef(q.source, "source", e, dir, true);
+    checkPageRef(q.origin, "origin", e, dir, false);
   });
   const byType = {};
   data.questions.forEach((q) => { byType[q.type] = (byType[q.type] || 0) + 1; });
   const withSource = data.questions.filter((q) => q.source).length;
+  const withOrigin = data.questions.filter((q) => q.origin).length;
   const fromCatedra = data.questions.filter((q) => q.catedra === true).length;
   console.log(`· ${label}: ${data.questions.length} preguntas (${fromCatedra} de la cátedra), ${Object.keys(data.topics).length} temas, ` +
-    `${JSON.stringify(byType)}${withSource ? `, ${withSource} con source` : ""}`);
+    `${JSON.stringify(byType)}${withSource ? `, ${withSource} con source` : ""}${withOrigin ? `, ${withOrigin} con origin` : ""}`);
   checkLengths(label, data.questions);
 }
 
