@@ -2,8 +2,8 @@
   "subject": "Redes de Datos",
   "exam": "2do parcial",
   "description": "Banco de preguntas (ISI, UTN FRRe) sacado del PDF de parciales: las revisiones del cuestionario de estudio.",
-  "accent": "#2F6FD6",
-  "accentDark": "#5B8FE6",
+  "accent": "#8A6D00",
+  "accentDark": "#E8C547",
   "emptyFeedback": "La cátedra no incluyó explicación para esta pregunta.",
   "topicFilter": "pick",
   "labels": {
@@ -13,8 +13,8 @@
   "imageCaption": "Retroalimentación de la cátedra",
   "about": [
     "<p><b>De dónde salen las preguntas:</b> todas están sacadas, tal cual, del <b>PDF de parciales</b>: las revisiones de 24 intentos de la <i>Segunda Instancia de Evaluación (Cuestionario de Estudio)</i> del aula virtual (2023 y 2025). Las preguntas repetidas entre intentos aparecen una sola vez, y la respuesta correcta es la que da el aula virtual en la revisión.</p>",
-    "<p>Al responder se muestra la retroalimentación de la cátedra que traía la revisión (texto y diapositivas). El PDF, cortado en un archivo por intento, está en <a href=\"https://github.com/gonzaorban/quizzis-utn/tree/main/subjects/redes/2do-parcial/revisiones\" target=\"_blank\" rel=\"noopener noreferrer\">revisiones/</a>.</p>",
-    "<p><b>Teoría:</b> al responder, 175 preguntas muestran también el recorte de la diapositiva de los apuntes de la cátedra que respalda la respuesta, con el enlace a esa página del PDF; otras 11 tienen solo el enlace, porque la diapositiva trata el tema pero no da la respuesta. Las 33 restantes no tienen respaldo en estos apuntes (por ejemplo, las de criptografía, que el apunte de la Unidad 8 solo nombra en un repaso). Los apuntes (Unidades 4 a 9) están en <a href=\"https://github.com/gonzaorban/quizzis-utn/tree/main/subjects/redes/2do-parcial/sources\" target=\"_blank\" rel=\"noopener noreferrer\">sources/</a>.</p>",
+    "<p>Al responder se muestra la retroalimentación de la cátedra que traía la revisión (texto y diapositivas). El PDF, cortado en un archivo por intento, está en <a href=\"https://github.com/Big-Brain-Oficial/quizzis-utn/tree/main/subjects/redes/2do-parcial/revisiones\" target=\"_blank\" rel=\"noopener noreferrer\">revisiones/</a>.</p>",
+    "<p><b>Teoría:</b> al responder, 175 preguntas muestran también el recorte de la diapositiva de los apuntes de la cátedra que respalda la respuesta, con el enlace a esa página del PDF; otras 11 tienen solo el enlace, porque la diapositiva trata el tema pero no da la respuesta. Las 33 restantes no tienen respaldo en estos apuntes (por ejemplo, las de criptografía, que el apunte de la Unidad 8 solo nombra en un repaso). Los apuntes (Unidades 4 a 9) están en <a href=\"https://github.com/Big-Brain-Oficial/quizzis-utn/tree/main/subjects/redes/2do-parcial/sources\" target=\"_blank\" rel=\"noopener noreferrer\">sources/</a>.</p>",
     "<p><b>Unidades:</b> la revisión del aula virtual no dice de qué unidad es cada pregunta; la asignamos según el apunte de teoría donde está la respuesta, y las que no figuran en los apuntes, según el tema que tratan. Ninguna pregunta del cuestionario es de la Unidad 9 (administración de redes).</p>"
   ],
   "topics": {
