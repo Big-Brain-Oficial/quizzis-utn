@@ -1,7 +1,7 @@
 {
   "subject": "Tecnologías para la Automatización",
   "exam": "1er parcial",
-  "description": "Repaso de las Unidades 1 a 4 y, en categorías aparte, preguntas de parcial de las Unidades 1 y 2.",
+  "description": "Repaso de las Unidades 1 a 4 y, en categorías aparte, preguntas de parcial de las Unidades 1, 2, 3 y 4.",
   "accent": "#087F8C",
   "accentDark": "#42C5CF",
   "emptyFeedback": null,
@@ -17,7 +17,9 @@
     "<p>Preguntas elaboradas a partir de <a href=\"sources/apunte-solana-p1-tpla.pdf\" target=\"_blank\" rel=\"noopener\">Apunte Solana P1 - TPLA</a>, organizado en las Unidades 1 a 4. Incluyen ejercicios breves que aplican las relaciones del material.</p>",
     "<p>Las unidades 1 a 4 son material de práctica: las preguntas y las opciones fueron redactadas para el repaso y no son una transcripción de un parcial. Cada respuesta incluye una explicación y la página del apunte que la respalda.</p>",
     "<p><b>Unidad 1 - Preguntas parcial</b> trae enunciados de parciales que se responden con la Unidad 1, con las opciones de la cátedra. Salen del <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de teoría del 25 de octubre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de primer parcial de 2025</a>. Al corregir se ve el recorte del apunte donde está la respuesta y la captura de la pregunta en el parcial. No entran las de sensores, transformadas aplicadas, Routh o PID, ni el segundo parcial de 2025, que es de otra parte de la materia.</p>",
-    "<p><b>Unidad 2 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 2, con las opciones de la cátedra. Salen del mismo <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de estabilidad aplicada, error en estado estable, PID ni el segundo parcial, que siguen en otra unidad.</p>"
+    "<p><b>Unidad 2 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 2, con las opciones de la cátedra. Salen del mismo <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de estabilidad aplicada, error en estado estable, PID ni el segundo parcial, que siguen en otra unidad.</p>",
+    "<p><b>Unidad 3 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 3, con las opciones de la cátedra. Salen del <a href=\"sources/2do%20parcial%202021%20(mega%20PDF).pdf\" target=\"_blank\" rel=\"noopener\">segundo parcial de teoría del 29 de noviembre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de lugar de las raíces, Bode ni Nyquist, que siguen en la Unidad 4.</p>",
+    "<p><b>Unidad 4 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 4, con las opciones de la cátedra. Salen del <a href=\"sources/2do%20parcial%202021%20(mega%20PDF).pdf\" target=\"_blank\" rel=\"noopener\">segundo parcial de teoría del 29 de noviembre de 2021</a>. No entran las de polos en el semiplano, muestreo ni transformada Z, que en este apunte están en la Unidad 2. El modelo de 2025 no trae preguntas de esta unidad.</p>"
   ],
   "topics": {
     "1": {
@@ -44,6 +46,16 @@
     "6": {
       "name": "Unidad 2 - Preguntas parcial",
       "color": "#0F766E",
+      "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
+    },
+    "7": {
+      "name": "Unidad 3 - Preguntas parcial",
+      "color": "#9F1239",
+      "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
+    },
+    "8": {
+      "name": "Unidad 4 - Preguntas parcial",
+      "color": "#0369A1",
       "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
     }
   },
@@ -3847,6 +3859,745 @@
         "label": "Modelo de 1er parcial 2025",
         "crop": [[0, 61.5, 100, 66]],
         "img": "sources/pages/1er parcial 2025-p1-440cf2.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-transitoria",
+      "topic": "7",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Con respecto a la respuesta transitoria de un sistema indique cuáles afirmaciones son correctas.",
+      "opts": [
+        "La respuesta transitoria de un sistema que converge al valor de salida.",
+        "La respuesta transitoria es una parte de la respuesta total del sistema que tiende a desaparecer a medida que pasa el tiempo.",
+        "La rapidez de respuesta es independiente del tiempo de duración del estado transitorio.",
+        "Normalmente al comienzo hay un tiempo de subida que lleva lentamente al valor estable.",
+        "La rapidez de respuesta está relacionada con el tiempo de duración del estado transitorio."
+      ],
+      "correct": [
+        0,
+        1,
+        4
+      ],
+      "fb": "La respuesta transitoria es el tramo inicial, se va apagando y en ese tramo la salida se acerca al valor final. La rapidez depende de cuánto dura ese tramo (apunte, pág. 46). No es independiente de esa duración, ni es un subida lenta hasta el valor estable.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 46,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 62, 100, 80.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p46-8f151e.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 39,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 54.6, 100, 79.1]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p39-0d400d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-sobreimpulso",
+      "topic": "7",
+      "type": "tf",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "El máximo sobreimpulso (porcentual) MP se define como el valor de pico máximo de la curva de respuesta medido desde su valor inicial",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El máximo sobreimpulso se mide desde el valor final de la respuesta, no desde el valor inicial (apunte, pág. 46).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 46,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 80.8, 100, 86.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p46-61ef50.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 43,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 31.1, 100, 46]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p43-f9bd3d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-valor-final",
+      "topic": "7",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Para el caso de estado estable, ¿para qué se utiliza el Teorema del Valor Final?",
+      "opts": [
+        "Para poder conocer la respuesta permanente de la función en el dominio del Laplace a partir del análisis de la anitransformada en el dominio del tiempo.",
+        "Para poder conocer la respuesta transitoria de la función en el dominio del tiempo a partir del análisis de la Transformada de Laplace de la misma.",
+        "Ninguna respuesta es correcta.",
+        "Para poder conocer la respuesta permanente de la función en el dominio del tiempo a partir del análisis de la Transformada de Laplace de la misma.",
+        "Para poder conocer la respuesta permanente de la función en el dominio del tiempo a partir del análisis de la antitransformada de Laplace de la misma."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El teorema toma la transformada, la multiplica por s y hace s→0. Eso da el valor de la función cuando el tiempo tiende a infinito, o sea la respuesta permanente en el tiempo (apunte, pág. 48). No describe el transitorio ni sale de la antitransformada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 48,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 61.5, 100, 74.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p48-05e86b.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 44,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 30.1]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p44-27cf5b.webp"
+      },
+      "note": "En la revisión el intento marcó la opción de la antitransformada y quedó en −0,25. La clave sale del apunte."
+    },
+    {
+      "id": "tepla-p1-u3p-ess-factores",
+      "topic": "7",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Indicar los enunciados correctos.",
+      "opts": [
+        "El error en estado estable depende de dos factores: la función de transferencia del sistema y la señal de entrada.",
+        "Se define al error en estado estable, para un sistema de lazo abierto, como la diferencia entre el valor deseado y el obtenido realmente a la salida del sistema.",
+        "El error en estado estable depende de dos factores: la función de transferencia del sistema y la señal de salida.",
+        "El error en estado estable depende de dos factores: la señal de entrada y la señal de entrada.",
+        "Se define al error en estado estable, para un sistema de lazo cerrado, como la diferencia entre el valor deseado y el obtenido realmente a la salida del sistema."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "fb": "En lazo abierto el error en estado estable es la diferencia entre el valor deseado y el que realmente sale. Depende de la función de transferencia y de la entrada (apunte, pág. 47). La definición del enunciado no está dada para el lazo cerrado.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 46.1, 100, 59.2], [0, 79.8, 100, 90.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p47-17a324.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 45,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 34.5]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p45-a2f76c.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-ess-integral",
+      "topic": "7",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "La siguiente expresión del error en estado estacionario a que tipo de controlador se corresponde",
+      "figure": "img/u3-parcial-ess-integral.png",
+      "opts": [
+        "De dos posiciones o de encendido y apagado (on/off)",
+        "Ninguna respuesta es correcta",
+        "Proporcionales",
+        "Proporcionales-integrales-derivativos (PID)",
+        "Proporcionales-integrales (PI)",
+        "Integrales"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El proporcional deja ess = 1/(1+Kp) (apunte, pág. 54). El integral, después del teorema del valor final, deja el error en cero (apunte, pág. 55). La expresión del parcial es E(s) antes de ese límite, y la clave es que no corresponde a ninguno de los tipos listados.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 55,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 29.4, 100, 35.8, 54], [0, 50.2, 100, 59.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p55-f24238.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 45,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 40.3, 100, 76.2]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p45-88143f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-ess-proporcional",
+      "topic": "7",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "La siguiente expresión del error en estado estacionario a que tipo de controlador se corresponde",
+      "figure": "img/u3-parcial-ess-kp.png",
+      "opts": [
+        "Proporcionales",
+        "De dos posiciones o de encendido y apagado (on/off)",
+        "Integrales",
+        "Proporcionales-integrales-derivativos (PID)",
+        "Proporcionales-integrales (PI)",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Para un escalón, el controlador proporcional deja un error en estado estacionario ess = 1/(1+Kp) (apunte, pág. 54). El integral es el que lleva ese error a cero.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 54,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 13.2, 100, 35.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p54-57c5a1.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 49,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 42.1]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p49-2b3b7b.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-teorema-mal",
+      "topic": "7",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "La siguiente expresión matemática que nombre recibe",
+      "figure": "img/u3-parcial-limite.png",
+      "opts": [
+        "El teorema del valor inicial",
+        "Teorema del valor intermedio",
+        "El teorema del valor final",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El teorema del valor final multiplica la transformada por s y después hace s→0 (apunte, pág. 48). En la expresión del parcial falta esa s, y la clave es que no recibe ninguno de esos nombres.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 48,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 61.8, 100, 74.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p48-585db5.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 50,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 70.8, 100, 91.7]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p50-35f834.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-tiempos",
+      "topic": "7",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Indique los enunciados correctos.",
+      "opts": [
+        "Tiempo de subida es el intervalo necesario para que el valor de la señal pase del 10% al 90% de su valor final",
+        "Tiempo de subida: es el intervalo necesario para que el valor de la señal pase del 10% al 100% de su valor final",
+        "Respuesta en estado estable es la parte de la respuesta total del sistema que permanece después de que la respuesta transitoria desapareció. Por lo tanto, se relaciona con la precisión del sistema",
+        "Respuesta en estado estable es la parte de la respuesta parcial del sistema que permanece después de que la respuesta transitoria desapareció. Por lo tanto, se relaciona con la precisión del sistema",
+        "Respuesta en estado estable es la parte de la respuesta total del sistema que permanece después de que la respuesta transitoria desapareció. Por lo tanto, se relaciona con la velocidad del sistema",
+        "Tiempo de subida: es el intervalo necesario para que el valor de la señal pase del 0% al 100% de su valor final"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "fb": "El tiempo de subida va del 10% al 90% del valor final (apunte, pág. 47). El estado estable es lo que queda de la respuesta total cuando el transitorio desapareció, y se relaciona con la precisión, no con la velocidad.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 0, 100, 4.9], [0, 35.1, 100, 46.4]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p47-918237.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 52,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 30.8]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p52-ec0c93.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-definicion-error",
+      "topic": "7",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Se define el error de los sistemas de control como:",
+      "opts": [
+        "Fenómeno indeseable producido solo por perturbaciones externas, que se manifiesta por la alteración del valor esperado de la salida del sistema.",
+        "Fenómeno indeseable producido por perturbaciones endógenas y/o exógenas, que se manifiesta por la alteración del valor esperado de la salida del sistema.",
+        "Fenómeno indeseable producido solo por perturbaciones internas, que se manifiesta por la alteración del valor esperado de la salida del sistema.",
+        "Fenómeno indeseable producido por perturbaciones endógenas y/o exógenas, que se manifiesta ruido a la salida del sistema.",
+        "Fenómeno indeseable producido por perturbaciones endógenas y/o exógenas, que se manifiesta por la alteración del valor esperado de la entrada del sistema."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El apunte lo define así: un fenómeno indeseable por perturbaciones endógenas y/o exógenas, que altera el valor esperado de la salida (apunte, pág. 46). No alcanza con una sola de las dos fuentes, ni se manifiesta en la entrada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 46,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 22.3, 100, 31.2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p46-e12f46.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 52,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 35.3, 100, 59.4]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p52-49b72d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-escalon-rampa",
+      "topic": "7",
+      "type": "tf",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Cualquier sistema de control físico sufre inherentemente un error de estado estable en respuesta a ciertos tipos de entradas. Un sistema puede no tener un error de estado estable en una entrada escalón, pero el mismo sistema puede presentar un error de estado estable distinto de cero en una entrada rampa.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Un sistema tipo uno, con un factor s en el denominador, tiene error 0 ante un escalón. La rampa es otro caso y el apunte la calcula aparte (apunte, pág. 50).",
+      "note": "En la revisión el intento marcó Falso y quedó en 0. La clave sale del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 50,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 28.7, 100, 40.4], [0, 57, 100, 63.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p50-d1b2ce.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 54,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 25.6]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p54-c1da5e.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-2025-transitoria",
+      "topic": "7",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "¿Qué parámetros definen una respuesta transitoria?",
+      "answer": "El apunte mide el transitorio con el sobreimpulso (el pico medido desde el valor final), el tiempo de establecimiento y el tiempo de subida, del 10% al 90% del valor final (apunte, págs. 46-47).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 80.8, 100, 91.7, 46], [0, 0, 100, 4.9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p47-fa54dc.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 51.5, 100, 55.5]],
+        "img": "sources/pages/1er parcial 2025-p1-808fb8.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-2025-ess",
+      "topic": "7",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "¿Qué es el error en estado estable?",
+      "answer": "En lazo abierto es la diferencia entre el valor deseado y el que realmente se alcanza en la salida, una vez que desapareció el transitorio (apunte, pág. 47). Depende de la función de transferencia y de la señal de entrada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 47,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 35.1, 100, 59.2], [0, 79.8, 100, 90.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p47-0592b6.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 56.5, 100, 60.5]],
+        "img": "sources/pages/1er parcial 2025-p1-df5415.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-2025-pid",
+      "topic": "7",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Describa el funcionamiento básico de un controlador PID.",
+      "answer": "El PID suma tres acciones del mismo error: la proporcional mira el error actual, la integral acumula los errores pasados y borra el offset, y la derivativa mira qué tan rápido cambia el error (apunte, págs. 56-57). Se ajustan Kp, Ki y Kd.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 57,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 11.2, 100, 41.4, 56], [0, 22.5, 100, 48]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p57-3ed90f.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 66.8, 100, 70.5]],
+        "img": "sources/pages/1er parcial 2025-p1-078886.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u3p-2025-calculo",
+      "topic": "7",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Aplique el teorema del valor final para calcular el error en estado estable de un sistema de lazo cerrado con G(s)=10/(s(s+2)).",
+      "answer": "G(s) tiene un factor s en el denominador: es un sistema tipo uno. Para un escalón, el apunte obtiene error 0, porque al evaluar aparece una división por infinito (apunte, pág. 50). El modelo no nombra la entrada; el caso que el apunte cierra con un número es el escalón.",
+      "note": "El modelo no dice qué entrada se aplica. La cuenta de arriba es la del escalón, que es el caso que el apunte resuelve para un sistema tipo uno.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 50,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 3",
+        "crop": [[0, 28.7, 100, 39]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p50-0615fd.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 72, 100, 79.5]],
+        "img": "sources/pages/1er parcial 2025-p1-ebe8fd.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-frecuencia",
+      "topic": "8",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Indique cuales respuestas son correctas",
+      "opts": [
+        "El termino respuesta en frecuencia se define como la respuesta en estado transitorio de un sistema a una entrada senoidal",
+        "El termino respuesta en frecuencia se define como la respuesta en estado estable de un sistema a una entrada senoidal",
+        "Es la respuesta de un sistema, su entrada, en estado estacionario cuando la respuesta en puramente sinusoidal",
+        "Es la respuesta de un sistema, su salida, en estado estacionario cuando la respuesta en puramente sinusoidal"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "fb": "La respuesta en frecuencia es la salida en estado estable ante una entrada senoidal, cuando el transitorio ya desapareció (apunte, pág. 64). No es el transitorio, ni es la entrada.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 64,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 81.6, 100, 90.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p64-3abcfe.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 39,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 27.4, 100, 48.4]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p39-516f6f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-nyquist-critico",
+      "topic": "8",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Dada una función de transferencia. Que implica que la imagen de G(s)H(s) en el plano GH sea un vector de magnitud 1 y argumento -180º",
+      "figure": "img/u4-parcial-nyquist-gh.png",
+      "opts": [
+        "Que es un sistema estable",
+        "Que es un sistema inestable",
+        "No significa nada"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La inestabilidad aparece si la magnitud en lazo abierto es mayor que 1 con un atraso de 180° (apunte, págs. 71-72). El vector de magnitud 1 está en ese límite, y la clave lo toma como estable.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 72,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 72.7, 100, 85.6, 71], [0, 1.4, 100, 19.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p72-001add.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 42,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 56.6, 100, 82.1]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p42-a32d5a.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-polos-ganancia",
+      "topic": "8",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Indique cuales afirmaciones son correctas",
+      "opts": [
+        "La respuesta transitoria de un sistema de lazo cerrado depende de la posición de sus polos de lazo cerrado.",
+        "La respuesta transitoria de un sistema de lazo cerrado depende de la posición de sus ceros de lazo cerrado.",
+        "La ubicación de polos no depende de la ganancia del sistema, al variar la ganancia la posición sobre el plano S de los polos de lazo cerrado no cambiará.",
+        "La ubicación de los ceros depende de la ganancia del sistema, al variar la ganancia la posición sobre el plano S de los ceros de lazo cerrado cambiarán.",
+        "La ubicación de polos depende de la ganancia del sistema, al variar la ganancia la posición sobre el plano S de los polos de lazo cerrado cambiará."
+      ],
+      "correct": [
+        0,
+        4
+      ],
+      "fb": "El transitorio del lazo cerrado depende de dónde están sus polos, y esos polos se mueven cuando cambia la ganancia K (apunte, pág. 60). No depende de los ceros, y la ganancia sí mueve los polos.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 60,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 33.9, 100, 45.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p60-10ba45.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 43,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 50.3, 100, 74]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p43-ab9340.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-bode",
+      "topic": "8",
+      "type": "multi",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Con respecto al Diagrama de Bode indicar las respuestas verdaderas",
+      "opts": [
+        "Consta de dos gráficas separadas, una que corresponde con la magnitud de dicha función y otra que corresponde con la fase.",
+        "Un diagrama de Bode es una representación gráfica que sirve para caracterizar la respuesta en frecuencia de un sistema.",
+        "Consta de una gráfica una que corresponde con la magnitud de dicha función y la fase.",
+        "Consta de tres gráficas separadas, una que corresponde con la magnitud de dicha función, otra que corresponde con la fase y otra con la frecuenca.",
+        "Ninguna respuesta es verdadera"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "fb": "Bode caracteriza la respuesta en frecuencia con dos gráficas, la magnitud y la fase (apunte, pág. 68). No es una sola gráfica ni son tres.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 68,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 13.4, 100, 29.9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p68-48608b.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 44,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 34.6, 100, 65.7]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p44-48302e.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-ruptura",
+      "topic": "8",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Referido al Metodo del Lugar e las Raices, indicar cuales afirmaciones son verdaderas",
+      "opts": [
+        "Si no hay un lugar de las raíces entre dos polos de lazo derecho adyacentes sobre el eje real, entonces hay por lo menos un punto de ruptura sobre ese segmento entre los dos polos.",
+        "Si hay un lugar de las raíces entre dos polos de lazo abierto adyacentes sobre el eje real, entonces hay por lo menos tres puntos de ruptura sobre ese segmento entre los dos polos.",
+        "Si no hay un lugar de las raíces entre dos polos de lazo abierto adyacentes sobre el eje real, entonces hay por lo menos un punto de ruptura sobre ese segmento entre los dos polos.",
+        "Si hay un lugar de las raíces entre dos polos de lazo abierto adyacentes sobre el eje real, entonces hay por lo menos un punto de ruptura sobre ese segmento entre los dos polos.",
+        "Ninguna respuesta es verdadera"
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "Si entre dos polos de lazo abierto vecinos sobre el eje real hay lugar de las raíces, en ese tramo hay al menos un punto de ruptura (apunte, pág. 64). No hace falta que sean tres, y no aparece si ese tramo no forma parte del lugar.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 64,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 23.4, 100, 29.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p64-974906.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 48,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 37.1]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p48-dcc517.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-bode-escala",
+      "topic": "8",
+      "type": "tf",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "El diagrama de magnitud de Bode dibuja el módulo de la función de transferencia (ganancia) en decibelios en función de la frecuencia (o la frecuencia angular) en escala algebraica",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El diagrama de magnitud de Bode usa escala logarítmica, no algebraica (apunte, pág. 68).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 68,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 57.6, 100, 65.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p68-8c9d68.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 49,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 65.8, 100, 83]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p49-4b3a91.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-senoidal-fase",
+      "topic": "8",
+      "type": "tf",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Cuando a un sistema se aplica una entrada senoidal la salida de ese sistema es senoidal con la misma fase angular, pero puede tener una amplitud que difiere de la de la entrada y mostrar una diferencia de frecuencia",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Ante una senoidal, la salida es senoidal de la misma frecuencia y puede cambiar en amplitud y en fase (apunte, pág. 65). No conserva la fase cambiando la frecuencia.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 65,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 0, 100, 4.9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p65-a46a6a.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 50,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 7.3, 100, 23.9]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p50-86fd9f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-senoidal-frecuencia",
+      "topic": "8",
+      "type": "tf",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Cuando a un sistema se aplica una entrada senoidal la salida de ese sistema es senoidal con la misma frecuencia angular, pero puede tener una amplitud que difiere de la de la entrada y mostrar una diferencia de fase",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Ante una senoidal, la salida sigue con la misma frecuencia y puede diferir en amplitud y en fase (apunte, pág. 65).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 65,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 0, 100, 4.9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p65-a46a6a.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 52,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 63.9, 100, 80.5]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p52-e31ecf.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u4p-lugar",
+      "topic": "8",
+      "type": "single",
+      "catedra": true,
+      "section": "2do parcial 2021",
+      "text": "Que representan las curvas que se dibujan en el grafico \"Lugar de las Raices\"",
+      "opts": [
+        "Representan las distintas posiciones de las raíces del denominador de una función de transferencia al variar los parámetros del sistema.",
+        "Representan las distintas posiciones de las raíces del denominador de una función de realimentación al variar los parámetros del sistema.",
+        "Representan las distintas posiciones de las raíces del numerador de una función de transferencia al variar los parámetros del sistema.",
+        "Representan las distintas posiciones de las raíces del denominador de una función de transferencia sin variar los parámetros del sistema."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El lugar de las raíces muestra cómo se mueven los polos, las raíces del denominador, al variar un parámetro (apunte, pág. 59). No son las del numerador, ni quedan fijas.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 59,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 4",
+        "crop": [[0, 58.6, 100, 67.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p59-d162b6.webp"
+      },
+      "origin": {
+        "file": "sources/2do parcial 2021 (mega PDF).pdf",
+        "page": 53,
+        "label": "2do parcial de teoría, 29 nov 2021",
+        "crop": [[0, 31.3, 100, 59.2]],
+        "img": "sources/pages/2do parcial 2021 (mega PDF)-p53-64460b.webp"
       }
     }
   ]
