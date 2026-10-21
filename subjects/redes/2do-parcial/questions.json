@@ -2,8 +2,8 @@
   "subject": "Redes de Datos",
   "exam": "2do parcial",
   "description": "Banco de preguntas (ISI, UTN FRRe) sacado del PDF de parciales: las revisiones del cuestionario de estudio.",
-  "accent": "#2F6FD6",
-  "accentDark": "#5B8FE6",
+  "accent": "#8A6D00",
+  "accentDark": "#E8C547",
   "emptyFeedback": "La cátedra no incluyó explicación para esta pregunta.",
   "topicFilter": "pick",
   "labels": {

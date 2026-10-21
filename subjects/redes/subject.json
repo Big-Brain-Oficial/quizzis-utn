@@ -1,8 +1,8 @@
 {
   "name": "Redes de Datos",
   "description": "Cuestionarios de estudio con la página de la teoría de donde sale cada respuesta.",
-  "accent": "#2F6FD6",
-  "accentDark": "#5B8FE6",
+  "accent": "#8A6D00",
+  "accentDark": "#E8C547",
   "exams": [
     { "slug": "1er-parcial", "name": "1er parcial" },
     { "slug": "2do-parcial", "name": "2do parcial" }
