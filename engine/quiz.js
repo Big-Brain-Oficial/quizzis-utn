@@ -609,13 +609,24 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     return `${shot}<p class="source"><a href="${esc(asset(file))}#page=${page}" target="_blank" rel="noopener" title="Se abre en una pestaña nueva">Ver en la teoría (${esc(name)}, pág. ${page})${low}</a></p>`;
   }
 
+  // exam the question was taken from (origin.page is the physical PDF page). Same crop/picture as source,
+  // captioned with origin.label so the filename doesn't have to say which exam it is.
+  function renderOrigin(q) {
+    if (!q.origin) return "";
+    const { file, page, img, label } = q.origin;
+    const name = label || file.split("/").pop();
+    const shot = img ? `<figure class="figure source-page"><figcaption>En el parcial: ${esc(name)}, pág. ${page}</figcaption>
+      <a href="${esc(asset(img))}" target="_blank" rel="noopener" title="Ver la imagen en tamaño completo"><img src="${esc(asset(img))}" alt="Página ${page} de ${esc(name)}" loading="lazy"></a></figure>` : "";
+    return `${shot}<p class="source"><a href="${esc(asset(file))}#page=${page}" target="_blank" rel="noopener" title="Se abre en una pestaña nueva">Ver en el parcial (${esc(name)}, pág. ${page})</a></p>`;
+  }
+
   function renderNote(q) {
     return q.note ? `<div class="note"><b>Atención:</b> ${esc(q.note)}</div>` : "";
   }
 
   function renderInfoReview(q) {
     return `<section class="review" aria-live="polite" tabindex="-1">
-      <h3>Respuesta</h3>${renderFigure(q)}<div class="answer">${esc(q.answer)}</div>${renderNote(q)}${renderSource(q)}
+      <h3>Respuesta</h3>${renderFigure(q)}<div class="answer">${esc(q.answer)}</div>${renderNote(q)}${renderSource(q)}${renderOrigin(q)}
     </section>`;
   }
 
@@ -636,7 +647,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     return `<section class="review" aria-live="polite" tabindex="-1">
       <span class="verdict ${cls}">${label}: ${fmt(s)} / 1</span>
       <h3>${q.correct.length > 1 || q.type === "match" ? "Respuestas correctas" : "Respuesta correcta"}</h3>${key}
-      ${fb}${renderNote(q)}${renderFigure(q)}${renderSource(q)}
+      ${fb}${renderNote(q)}${renderFigure(q)}${renderSource(q)}${renderOrigin(q)}
     </section>`;
   }
 

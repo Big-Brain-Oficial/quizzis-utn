@@ -1,7 +1,7 @@
 {
   "subject": "Tecnologías para la Automatización",
   "exam": "1er parcial",
-  "description": "Repaso de las Unidades 1 a 4: sistemas de control, componentes, estabilidad, error y lugar de las raíces.",
+  "description": "Repaso de las Unidades 1 a 4 y, en una categoría aparte, preguntas de parcial de la Unidad 1.",
   "accent": "#087F8C",
   "accentDark": "#42C5CF",
   "emptyFeedback": null,
@@ -10,11 +10,13 @@
     "topics": "Unidades",
     "allTopics": "Todas las unidades",
     "noTopics": "Ninguna",
-    "feedback": "Explicación basada en el apunte"
+    "feedback": "Explicación basada en el apunte",
+    "section": "Parcial"
   },
   "about": [
     "<p>Preguntas elaboradas a partir de <a href=\"sources/apunte-solana-p1-tpla.pdf\" target=\"_blank\" rel=\"noopener\">Apunte Solana P1 - TPLA</a>, organizado en las Unidades 1 a 4. Incluyen ejercicios breves que aplican las relaciones del material.</p>",
-    "<p>Este banco es material de práctica: las preguntas y opciones fueron redactadas para el repaso y no son una transcripción de un parcial o cuestionario oficial de la cátedra. Cada respuesta incluye una explicación y la página del apunte que la respalda.</p>"
+    "<p>Las unidades 1 a 4 son material de práctica: las preguntas y las opciones fueron redactadas para el repaso y no son una transcripción de un parcial. Cada respuesta incluye una explicación y la página del apunte que la respalda.</p>",
+    "<p><b>Unidad 1 - Preguntas parcial</b> trae enunciados de parciales que se responden con la Unidad 1, con las opciones de la cátedra. Salen del <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de teoría del 25 de octubre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de primer parcial de 2025</a>. Al corregir se ve el recorte del apunte donde está la respuesta y la captura de la pregunta en el parcial. No entran las de sensores, transformadas aplicadas, Routh o PID, ni el segundo parcial de 2025, que es de otra parte de la materia.</p>"
   ],
   "topics": {
     "1": {
@@ -32,6 +34,11 @@
     "4": {
       "name": "U4 · Lugar de las raíces y respuesta en frecuencia",
       "color": "#8E44AD"
+    },
+    "5": {
+      "name": "Unidad 1 - Preguntas parcial",
+      "color": "#C2410C",
+      "note": "Enunciados de parciales. Las opciones de la cátedra no se modifican."
     }
   },
   "questions": [
@@ -2488,6 +2495,757 @@
         "page": 72,
         "confidence": "high",
         "label": "Apunte Solana P1 - TPLA · Unidad 4"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-isomorfismo",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "A que se llama isomorfirmo",
+      "opts": [
+        "Ninguna respuesta es correcta",
+        "El concepto de isomorfismo sostiene que si se elabora un modelo que permita explicar y comprender la estructura de un sistema en particular, el mismo podría aplicarse para estudiar un sistema de diferente naturaleza pero que se comporte en forma similar.",
+        "Todos los modelos se puede trabajar siempre sobre el mismo modelo físico o sistema similar.",
+        "El concepto de isomorfismo sostiene que no se puede aplicar un modelo de una naturaleza física a otro de distinta naturaleza física"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Si un modelo describe bien un sistema, se puede usar para estudiar otro de distinta naturaleza que se comporte igual. En control, el caso es un sistema eléctrico y uno mecánico con la misma función de transferencia (apunte, pág. 1). No implica que todo se resuelva siempre sobre el mismo sistema físico.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 1,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 78, 100, 91], [0, 0, 100, 5.5, 2]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p1-089ccf.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 14,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 28.2, 100, 55.7]],
+        "img": "sources/pages/1er parcial-p14-66f8e0.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-modelos",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Los sistemas se estudian mediante la construcción de modelos; indique cuales definiciones se deben tener en cuanta para la construcción de los mismos. Pueden ser mas de una respuesta",
+      "opts": [
+        "Los límites y el alcance del sistema en estudio",
+        "Solo interesan los sistemas principales, no los subsistemas, porque se los considera incluidos",
+        "Las relaciones entre cada subsistema y pero no participan los elementos del entorno",
+        "Las relaciones entre cada subsistema y los elementos del entorno",
+        "Los componentes o subsistemas"
+      ],
+      "correct": [
+        0,
+        3,
+        4
+      ],
+      "fb": "Al construir el modelo se definen los límites y el alcance, los componentes o subsistemas y las relaciones con el entorno (apunte, pág. 2). El apunte también pide las relaciones entre subsistemas, que no figuran como opción. Descartar los subsistemas o el entorno contradice el apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 2,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 7, 100, 22.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p2-b3d333.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 18,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 31.2]],
+        "img": "sources/pages/1er parcial-p18-2456b4.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-modelo-elementos",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para elaborar un modelo de un sistema de control se debe definir algunos de los siguientes elementos, indique cuales. Pueden ser mas de uno",
+      "opts": [
+        "Definición del sistema y objetivo.",
+        "Ninguna respuesta es correcta",
+        "Los componentes mecánicos o eléctricos del sistema",
+        "Determinación del valor esperado de respuesta.",
+        "Componentes del sistema: Control, corrección, proceso y medición."
+      ],
+      "correct": [
+        0,
+        3,
+        4
+      ],
+      "fb": "Para armar el modelo hay que definir el sistema y su objetivo, los componentes (control, corrección, proceso y medición) y el valor esperado de la respuesta (apunte, pág. 2). «Componentes mecánicos o eléctricos» no es esa clasificación.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 2,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 35.5, 100, 57]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p2-4b121f.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 20,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 28.8, 100, 59.7]],
+        "img": "sources/pages/1er parcial-p20-799a03.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-realimentacion-pos",
+      "topic": "5",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Realimentación positiva: Nos indica que el sistema evoluciona a medida que se retroalimenta, amplificando la respuesta original",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "La realimentación positiva amplifica la respuesta original (apunte, pág. 5). Ese efecto puede ser el buscado o puede desestabilizar el sistema.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 0, 100, 9]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p5-4b148e.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 16,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 41.5, 100, 56.4]],
+        "img": "sources/pages/1er parcial-p16-61afa9.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-realimentacion-neg",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Realimentación negativa: Nos indica que el sistema evoluciona a medida que se retroalimenta, compensando el resultado de la respuesta original. Indique cual afirmación es correcta",
+      "opts": [
+        "El sistema presenta de esta forma un comportamiento estable, contribuyendo a los cambios que puedan modificar los valores esperados como resultado de su operatoria.",
+        "Ninguna respuesta es correcta",
+        "El sistema presenta de esta forma un comportamiento estable, oponiéndose a los cambios que puedan modificar los valores esperados como resultado de su operatoria.",
+        "El sistema presenta de esta forma un comportamiento inestable, disminuyendo los cambios que puedan modificar los valores esperados como resultado de su operatoria.",
+        "El sistema presenta de esta forma un comportamiento inestable, oponiéndose a los cambios que puedan modificar los valores esperados como resultado de su operatoria."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "La realimentación negativa compensa la respuesta original: el sistema queda estable y se opone a los cambios que alejarían el resultado de lo esperado (apunte, pág. 5). No contribuye a esos cambios ni se vuelve inestable por esa compensación.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 9.5, 100, 36.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p5-c7b292.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 4,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 42.8, 100, 79.2]],
+        "img": "sources/pages/1er parcial-p4-8471f8.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-comparador",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dado el siguiente esquema\n\nQue función cumple el comparador",
+      "figure": "img/u1-parcial-esquema.png",
+      "opts": [
+        "Compara el valor de la señal de referencia con el valor medido de lo que se obtiene a la entrada",
+        "Compara el valor de la señal de referencia con el valor medido de lo que se obtiene a la salida",
+        "Compara el valor de la señal de entrada con el valor medido de lo que se obtiene a la salida",
+        "Compara el valor de la señal de salida con el valor medido de lo que se obtiene a la entrada",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El comparador toma la señal de referencia (entrada) y el valor medido de la salida (apunte, pág. 4). La diferencia es la señal de error.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 61.5, 100, 66.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p4-0d0221.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 10,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 57.8]],
+        "img": "sources/pages/1er parcial-p10-b0a11f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-medicion",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dado el siguiente esquema\n\nQue función cumple el elemento de medición",
+      "figure": "img/u1-parcial-esquema.png",
+      "opts": [
+        "Proporciona la señal de realimentación al control",
+        "Proporciona la señal de realimentación al elemento de corrección",
+        "Proporciona la señal de realimentación al proceso",
+        "Ninguna respuesta es correcta"
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El elemento de medición devuelve la señal de realimentación al comparador, a partir de la salida (apunte, pág. 4). No se la entrega al control, a la corrección ni al proceso.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 78.8, 100, 85]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p4-a66a7d.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 1,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 27.5, 100, 68.5]],
+        "img": "sources/pages/1er parcial-p1-5df4b5.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-lineal",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "De acuerdo con el tipo de función matemática que describe el comportamiento de un sistema este se puede clasificar como (indicar cuales respuestas son correctas, puede ser más de una)",
+      "opts": [
+        "El comportamiento de los sistemas lineales está sujeto al principio de superposición.",
+        "Sistemas continuos: Son aquellos que tienen una discreta analógica que puede ser repre sentada por una función discreta",
+        "El comportamiento de los sistemas no lineales está sujeto al principio de superposición",
+        "Los sistemas no lineales son predecibles y se puede determinar su salida mediante la multiplicación directa de la señal de entrada por la función transferencia del mismo.",
+        "Sistemas no lineales: Son aquellos en los cuales las ecuaciones que describen su comportamiento no son lineales"
+      ],
+      "correct": [
+        0,
+        4
+      ],
+      "fb": "Los lineales responden al principio de superposición; los no lineales se describen con ecuaciones no lineales y no responden a ese principio (apunte, pág. 5). Predecir la salida multiplicando la entrada por la función de transferencia es propio de los lineales. Continuos y discretos son otra clasificación.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 43.2, 100, 78.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p5-4fe930.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 16,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 60.6, 100, 90.1]],
+        "img": "sources/pages/1er parcial-p16-05c749.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-lazo-abierto",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para un Sistema de lazo abierto indique cueles afirmaciones son correctas (puede ser más de una)",
+      "opts": [
+        "Son sistemas de control donde la salida tiene efecto sobre la acción de control.",
+        "La salida se mide y se retroalimenta.",
+        "Para cada entrada de referencia corresponde una condición de operación variable",
+        "Ninguna respuesta es correcta",
+        "Se compara la salida con la señal de referencia."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "El lazo abierto no tiene información de realimentación y no ajusta la respuesta según la salida (apunte, pág. 6). Medir la salida, compararla con la referencia o dejar que la salida modifique el control es lazo cerrado, así que ninguna de esas afirmaciones corresponde.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 6,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 12, 100, 28.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p6-17e3d3.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 5,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 41.2, 100, 68.6]],
+        "img": "sources/pages/1er parcial-p5-95bfbd.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-crecimiento",
+      "topic": "5",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "La complejidad y tamaño de los sistemas puede ser variable. Pero si un sistema crece rápidamente puede resultar poco controlable",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Si el sistema crece demasiado rápido puede volverse poco controlable; por eso el apunte propone pensarlo en capas (apunte, págs. 6-7).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 6,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 78, 100, 93], [0, 0, 46, 12, 7]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p6-fd7c66.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 3,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 58.2, 100, 73.1]],
+        "img": "sources/pages/1er parcial-p3-f6d198.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-capas",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dado el siguiente esquema del modelo de capas para un sistema de control, indique cuales respuestas son correctas (puede ser mas de una)",
+      "figure": "img/u1-parcial-capas.png",
+      "opts": [
+        "Capa Física: debe garantizar la transmisión de señales, tanto analógicas como digitales, no controla integridad de las mismas",
+        "Capa Física: debe garantizar la transmisión de señales, tanto analógicas como digitales, midiendo la integridad de las mismas",
+        "Capa de control: es el nivel en el cual se comanda todo el sistema de control",
+        "Capa de Aplicación: está conformada por el hardware que controla a la capa de control."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "fb": "La capa física transmite señales analógicas y digitales y mide su integridad; la de control es el nivel en el que se comanda todo el sistema (apunte, pág. 7). La de aplicación es software, no hardware.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 26.5, 100, 55]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p7-31e08e.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 15,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 69.9]],
+        "img": "sources/pages/1er parcial-p15-d8c11f.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-perturbacion",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Cuales de los siguientes enunciados se corresponde con las características de una perturbación",
+      "opts": [
+        "Es una combinación de componentes que actúan conjuntamente y cumplen un determinado objetivo",
+        "Tiende a apartar la variable controlada del valor de referencia, por lo tanto, su efecto es perjudicial al control",
+        "Es una señal que tiende a afectar adversamente el valor de la salida de un sistema",
+        "Es un desarrollo o cambio natural el cual debe tener cambios graduales y progresivos."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "fb": "Una perturbación es una señal que afecta adversamente la salida y aparta la variable controlada de la referencia (apunte, pág. 7). La combinación de componentes que cumple un objetivo es un sistema; el cambio gradual y progresivo es un proceso.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 56.2, 100, 94.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p7-7b0926.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 17,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 40.5, 100, 64.1]],
+        "img": "sources/pages/1er parcial-p17-36b16a.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-perturbacion-externa",
+      "topic": "5",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para un sistema de control las perturbaciones solo pueden venir de fuentes externas",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Las perturbaciones pueden ser internas, que se originan dentro del sistema, o externas, que se generan fuera y se consideran una entrada más (apunte, pág. 7).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 77.5, 100, 94.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p7-0d72fd.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 19,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 20.5]],
+        "img": "sources/pages/1er parcial-p19-ef3357.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-estabilidad-relativa",
+      "topic": "5",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para los sistemas físicos en imposible que tenga buena estabilidad relativa y tenga precisión en estado estacionario",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "En un sistema físico no se puede tener a la vez buena estabilidad relativa y precisión en estado estacionario; hay que elegir una solución de compromiso (apunte, pág. 9).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 9,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 33.5, 100, 44]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p9-dda6c5.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 18,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 37, 100, 54.2]],
+        "img": "sources/pages/1er parcial-p18-5091bf.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-dominio-tiempo",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Para el dominio del tiempo cuales afirmaciones son correctas (pueden ser mas de una)",
+      "opts": [
+        "Todos los sistemas se pueden describir siempre con ecuaciones diferenciales",
+        "Es el lugar donde ocurren todos los fenómenos físicos que evolucionan con el tiempo",
+        "En general es más fácil operar con ecuaciones diferenciales que con polinomios algebraicos",
+        "Las ecuaciones diferenciales siempre son respecto del tiempo",
+        "Todos los sistemas físicos se describen con ecuaciones algebraicas en el tiempo"
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "fb": "El dominio del tiempo es donde ocurren los fenómenos físicos, y ahí la relación entrada-salida se describe siempre con ecuaciones diferenciales respecto del tiempo (apunte, pág. 9). Resolverlas es más engorroso que pasar a polinomios algebraicos con Laplace (apunte, pág. 10).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 9,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 75.5, 100, 92], [0, 12, 100, 34, 10]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p9-eba0c5.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 7,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 62.2, 100, 84.9]],
+        "img": "sources/pages/1er parcial-p7-1107a4.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-referencia",
+      "topic": "5",
+      "type": "tf",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Señal de entrada o de referencia: es una señal externa aplicada al sistema de control para generar una acción especifica de la planta, que es generalmente el comportamiento ideal deseado para esta última.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Es una señal externa que se aplica al sistema para producir una acción de la planta, en general el comportamiento ideal deseado (apunte, pág. 12).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 12,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 35, 100, 43.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p12-967570.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 18,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 58.5, 100, 78]],
+        "img": "sources/pages/1er parcial-p18-a447ff.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-bloques",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Un diagrama de bloques de un sistema es la representación gráfica de la función realizada por cada componente y del flujo que recorren las señales. Indique cuales definiciones son validas (puede ser más de una)",
+      "opts": [
+        "Trayectoria directa: está compuesta por los elementos mediante los cuales la señal fluye desde la salida hacia la entrada del sistema.",
+        "Punto suma o comparador: es un punto en el esquema en el que las señales se suman algebraicamente",
+        "Punto de separación: se representa mediante la intersección de tres o mas líneas, la señal a la entrada de un punto de separación no se reproduce por igual para ambas bifurcaciones, sino que se divide por la cantidad de ramificaciones",
+        "Permite relacionar la entrada y salida de un sistema físico determinado",
+        "Trayectoria de realimentación: es el trayecto que toma señal de la salida controlada y la realimenta en la entrada a través del punto suma."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "note": "En la revisión de 2021 el intento marcó dos de las tres correctas (0,17 de 0,25). La tercera sale del apunte.",
+      "fb": "El punto suma es donde las señales se suman, la trayectoria de realimentación lleva la salida controlada otra vez a ese punto, y el diagrama relaciona la entrada con la salida (apunte, págs. 11-12). La trayectoria directa va de la entrada a la salida, no al revés, y en el punto de separación la señal se reproduce igual en las dos ramas.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 11,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 14, 100, 19.5], [0, 69.5, 100, 90], [0, 11.5, 100, 27, 12]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p11-5b8e2d.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 2,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 46.4]],
+        "img": "sources/pages/1er parcial-p2-3135fb.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-lazo-cerrado-ec",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dada la siguiente ecuación de un sistema de lazo cerrado",
+      "figure": "img/u1-parcial-formula.png",
+      "opts": [
+        "No es aplicable a ningun tipo de sistemas",
+        "Ninguna respuesta es correcta",
+        "Esta función se aplica a sistemas con realimentación positiva",
+        "Esta función se aplica a sistemas con realimentación negativa"
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "So/Si = T/(1+TR) es la función de transferencia del lazo cerrado con realimentación negativa: el comparador resta la señal realimentada (apunte, pág. 23).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 23,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 26]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p23-7b064b.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 9,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 51, 100, 77.6]],
+        "img": "sources/pages/1er parcial-p9-eb2ed5.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-grafico",
+      "topic": "5",
+      "type": "single",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Dado el siguiente grafico , indique a que tipo de sistema se corresponde",
+      "figure": "img/u1-parcial-inestable.png",
+      "opts": [
+        "Un sistema inestable",
+        "Un sistema aleatorio",
+        "Un sistema estable",
+        "Con esa grafica no se puede afirmar nada"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Un sistema es estable si una entrada de referencia finita produce una salida finita; si la salida no queda acotada, es inestable (apunte, pág. 34). En el gráfico la oscilación crece.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 34,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 32.5, 100, 57.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p34-a92a19.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 9,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 7.3, 100, 45.1]],
+        "img": "sources/pages/1er parcial-p9-592f9c.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-flujo",
+      "topic": "5",
+      "type": "multi",
+      "catedra": true,
+      "section": "1er parcial 2021",
+      "text": "Indique las ventajas del Concepto del Diagrama de Flujo de Señales (puede ser mas de una)",
+      "opts": [
+        "Se aplica un método nemotécnico",
+        "Se utiliza algebra de Boole",
+        "Se obtiene la función de transferencia en un solo paso",
+        "Se puede calcular la función transferencia sin reducir el grafico",
+        "No tiene álgebra visual"
+      ],
+      "correct": [
+        0,
+        3,
+        4
+      ],
+      "note": "El apunte también dice que permite hallar la función de transferencia «en un solo paso». En las dos revisiones de 2021 esa opción no entra en la clave.",
+      "fb": "El apunte da como ventajas el método nemotécnico, calcular la función de transferencia sin reducir el gráfico y que no tiene álgebra visual (apunte, pág. 13). El álgebra de Boole no aparece. «En un solo paso» está en el apunte, pero en las revisiones del parcial no entra en la clave.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 13,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 73, 100, 87.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p13-55ec9a.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial.pdf",
+        "page": 19,
+        "label": "1er parcial de teoría, 25 oct 2021",
+        "crop": [[0, 24.8, 100, 55.7]],
+        "img": "sources/pages/1er parcial-p19-4c2d07.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-2025-sistema",
+      "topic": "5",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Defina qué es un sistema de control y dé un ejemplo cotidiano.",
+      "answer": "Un sistema de control combina sensor, comparador, controlador, actuador y proceso: mide una variable, la compara con una referencia y actúa para reducir el error (apunte, pág. 4). Un ejemplo es el control de temperatura de un aire acondicionado o de un horno (apunte, pág. 8).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 13, 100, 55], [0, 46.5, 100, 57, 8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p4-dee342.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 30.8, 100, 35.2]],
+        "img": "sources/pages/1er parcial 2025-p1-f78c66.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-2025-lazo",
+      "topic": "5",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Explique la diferencia entre lazo abierto y lazo cerrado.",
+      "answer": "El lazo abierto no tiene información de realimentación y no ajusta la respuesta según la salida. El lazo cerrado mide la salida, la realimenta a la entrada y con eso ajusta la respuesta (apunte, pág. 6).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 6,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 12, 100, 28.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p6-17e3d3.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 36, 100, 40.2]],
+        "img": "sources/pages/1er parcial 2025-p1-769d4d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-u1p-2025-ft",
+      "topic": "5",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "Explique qué es una función de transferencia.",
+      "answer": "Es la relación matemática entre la entrada y la salida, escrita en el dominio de la frecuencia y no en el del tiempo (apunte, pág. 9). Con condiciones iniciales nulas, es la transformada de Laplace de la salida dividida por la de la entrada (apunte, pág. 10).",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 9,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA · Unidad 1",
+        "crop": [[0, 65, 100, 73.5], [0, 42.5, 100, 52, 10]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p9-b8ecd0.webp"
+      },
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 46.2, 100, 50.6]],
+        "img": "sources/pages/1er parcial 2025-p1-d564e0.webp"
       }
     }
   ]
