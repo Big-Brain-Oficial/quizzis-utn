@@ -176,6 +176,8 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   const pick = DATA.topicFilter === "pick";
   const L = Object.assign({ topics: "Temas", allTopics: "Todos los temas", noTopics: "Ninguno", section: "Sección", feedback: "Explicación de la cátedra" }, DATA.labels);
   const sections = [...new Set(DATA.questions.map((q) => q.section).filter(Boolean))];
+  const hasOpenQuestions = DATA.openQuestions === true;
+  const isOpen = (q) => hasOpenQuestions && q.type === "info";
 
   // ---------- state ----------
   let state = loadState();
@@ -190,7 +192,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
 
   function loadState() {
     // retry: ids being repeated with "Repetir las incorrectas", shown while status is "retry"
-    const base = { answers: {}, topics: topicIds.slice(), section: "all", status: "all", retry: [], shuffleQ: false, shuffleO: true, mode: "one" };
+    const base = { answers: {}, writtenAnswers: {}, practice: "all", topics: topicIds.slice(), section: "all", status: "all", retry: [], shuffleQ: false, shuffleO: true, mode: "one" };
     try {
       const raw = localStorage.getItem(STORE_KEY) || (legacyKey && localStorage.getItem(legacyKey));
       if (!raw) return base;
@@ -201,6 +203,8 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       if (!Array.isArray(s.retry)) s.retry = [];
       if (s.status === "retry" && !s.retry.length) s.status = "all";
       if (s.mode !== "all") s.mode = "one";
+      if (!hasOpenQuestions || !["all", "quiz", "open"].includes(s.practice)) s.practice = "all";
+      if (!s.writtenAnswers || typeof s.writtenAnswers !== "object" || Array.isArray(s.writtenAnswers)) s.writtenAnswers = {};
       return s;
     } catch (e) { return base; }
   }
@@ -249,13 +253,13 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       <li>Elegí una opción (o varias, si dice «Seleccioná una o más opciones») y tocá <b>Enviar respuesta</b>. En las de relacionar, elegí una opción en cada desplegable.</li>
       <li>Al enviar ves la corrección: en verde lo correcto, en rojo lo incorrecto, y la explicación con la página de la teoría de donde sale.${hasTheory ? " Si la respuesta no está en los apuntes de teoría, la corrección lo indica." : ""}${hasPages ? " Tocá una imagen para verla en tamaño completo." : ""}</li>
       ${hasNotes ? `<li>Algunas preguntas muestran al corregir un aviso <b>Atención</b>: por ejemplo, si la respuesta no está confirmada por la cátedra y se dedujo del material. En esos casos conviene verificarla.</li>` : ""}
-      ${hasInfo ? `<li>Las <b>tarjetas informativas</b> (cuadros, relaciones, gráficos) no se responden: tocá <b>Ver respuesta</b> para verla.</li>` : ""}
+      ${hasOpenQuestions ? `<li>En <b>Preguntas Abiertas</b> podés escribir tu desarrollo y tocar <b>Ver respuesta</b> para compararlo con la respuesta orientativa y sus fuentes. Tu texto se guarda mientras escribís en este navegador, incluso al recargar. No se corrige automáticamente ni suma puntaje. <b>Ocultar respuesta</b> permite seguir editándolo.</li>` : hasInfo ? `<li>Las <b>tarjetas informativas</b> (cuadros, relaciones, gráficos) no se responden: tocá <b>Ver respuesta</b> para verla.</li>` : ""}
       <li>Si marcaste varias preguntas sin enviarlas, aparece <b>Enviar todas</b> para corregirlas juntas.</li>
       <li><b>Responder de nuevo</b> borra tu respuesta a esa pregunta para volver a intentarla.</li>
       <li>Cuando respondés todas las preguntas que estás viendo, aparece <b>Repetir las incorrectas</b>: te deja respondiendo solo las que erraste o te salieron a medias, hasta tenerlas todas bien.</li>
     </ul>
     <h3>Puntaje</h3>
-    <p>Cada pregunta vale 1 punto, al estilo Moodle: en las de selección múltiple cada opción mal marcada descuenta una bien marcada, y en las de relacionar vale cada fila. Las tarjetas informativas no suman puntaje.</p>
+    <p>Cada pregunta corregible vale 1 punto, al estilo Moodle: en las de selección múltiple cada opción mal marcada descuenta una bien marcada, y en las de relacionar vale cada fila. ${hasOpenQuestions ? "Las preguntas abiertas" : "Las tarjetas informativas"} no suman puntaje.</p>
     <h3>${esc(L.topics)} y opciones</h3>
     <ul>
       <li><b>${esc(L.topics)}</b>: ${pick
@@ -283,6 +287,12 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   </details>`;
   root.innerHTML = `<div class="wrap">
     ${heading}
+    ${hasOpenQuestions ? `<div class="viewmode practice-mode" id="practiceMode" role="group" aria-label="Secciones del cuestionario">
+      <button type="button" class="seg" data-practice="all">Todas las preguntas</button>
+      <button type="button" class="seg" data-practice="quiz">Cuestionario</button>
+      <button type="button" class="seg" data-practice="open">Preguntas Abiertas</button>
+    </div>
+    <p class="sub" id="openHelp" hidden>Desarrollá tu respuesta y comparala con la orientación del apunte. Sin corrección automática ni puntaje.</p>` : ""}
     ${intro}
     ${howto}
     <details class="filters" id="filters" open>
@@ -365,6 +375,8 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   function applyFilters() {
     let idx = DATA.questions.map((q, i) => i).filter((i) => {
       const q = DATA.questions[i];
+      if (state.practice === "open" && !isOpen(q)) return false;
+      if (state.practice === "quiz" && isOpen(q)) return false;
       if (!state.topics.includes(String(q.topic))) return false;
       if (state.section !== "all" && q.section !== state.section) return false;
       if (state.status === "retry") return state.retry.includes(q.id);
@@ -379,6 +391,10 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     bulkMsg = "";
     saveState();
     $("filterHint").textContent = `${view.length} de ${DATA.questions.length}`;
+    if (hasOpenQuestions) {
+      $("practiceMode").querySelectorAll(".seg").forEach((b) => b.setAttribute("aria-pressed", b.dataset.practice === state.practice));
+      $("openHelp").hidden = state.practice !== "open";
+    }
     renderTopicNotes();
     render();
   }
@@ -393,11 +409,11 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     const by = (st) => done.filter((q) => statusOf(q) === st).length;
     const infos = qs.filter((q) => q.type === "info");
     const seen = infos.filter((q) => state.answers[q.id]).length;
-    $("stats").innerHTML = `<span>Respondidas <b>${done.length}/${scored.length}</b></span>
+    $("stats").innerHTML = `${scored.length || !hasOpenQuestions ? `<span>Respondidas <b>${done.length}/${scored.length}</b></span>
       <span><b class="c-ok">✔︎ ${by("ok")}</b> · <b class="c-bad">✘︎ ${by("bad")}</b> · <b class="c-part">◐︎ ${by("part")}</b></span>
       <span>Puntaje <b>${fmt(pts)}</b></span>
-      <span>Acierto <b>${done.length ? pct + "%" : "–"}</b></span>
-      ${infos.length ? `<span>Informativas vistas <b>${seen}/${infos.length}</b></span>` : ""}`;
+      <span>Acierto <b>${done.length ? pct + "%" : "–"}</b></span>` : ""}
+      ${infos.length ? `<span>${hasOpenQuestions ? "Respuestas consultadas" : "Informativas vistas"} <b>${seen}/${infos.length}</b></span>` : ""}`;
     const total = scored.length + infos.length;
     $("barFill").style.width = total ? ((done.length + seen) / total) * 100 + "%" : "0";
   }
@@ -542,6 +558,10 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
 
     let body = "", actions = "";
     if (q.type === "info") {
+      if (isOpen(q)) body = `<label class="open-answer" for="answer-${esc(q.id)}">Tu desarrollo
+        <textarea id="answer-${esc(q.id)}" rows="6" ${locked ? "readonly" : ""} aria-describedby="help-${esc(q.id)}" placeholder="Escribí tu respuesta antes de consultar la orientación…">${esc(state.writtenAnswers[q.id] || "")}</textarea>
+        <span class="kind" id="help-${esc(q.id)}">Se guarda en este navegador. Compará tu desarrollo con la respuesta orientativa; no suma puntaje.</span>
+      </label>`;
       actions = locked
         ? `<button class="btn retry" type="button">Ocultar respuesta</button>`
         : `<button class="btn primary check" type="button">Ver respuesta</button>`;
@@ -590,13 +610,13 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
           <span class="qnum">Pregunta ${p + 1}</span>${swatch(topic)}<span>${esc(topic ? topic.name : q.topic)}</span>
           ${q.section ? `<span class="badge">${esc(q.section)}</span>` : ""}
           ${q.type === "multi" ? `<span class="badge">Selección múltiple</span>` : ""}
-          ${q.type === "info" ? `<span class="badge info">Informativa</span>` : ""}
+          ${q.type === "info" ? `<span class="badge info">${isOpen(q) ? "Pregunta abierta" : "Informativa"}</span>` : ""}
           ${topic && topic.note ? `<span class="tnote">${esc(topic.note)}</span>` : ""}
           ${q.tip ? `<span class="qtip">${esc(q.tip)}</span>` : ""}
         </div>
         <p class="qtext">${esc(q.text)}</p>
         ${renderQuestionFigure(q)}
-        <p class="kind">${kindLabel[q.type]}</p>
+        <p class="kind">${isOpen(q) ? "Desarrollá tu respuesta y luego consultá la orientación del material." : kindLabel[q.type]}</p>
         ${body ? `<div class="opts">${body}</div>` : ""}
         <div class="actions">${actions}</div>
         ${locked ? (q.type === "info" ? renderInfoReview(q) : renderReview(q, saved)) : ""}
@@ -637,7 +657,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
 
   function renderInfoReview(q) {
     return `<section class="review" aria-live="polite" tabindex="-1">
-      <h3>Respuesta</h3>${renderFigure(q)}<div class="answer">${esc(q.answer)}</div>${renderNote(q)}${renderSource(q)}${renderOrigin(q)}
+      <h3>${isOpen(q) ? "Respuesta orientativa" : "Respuesta"}</h3>${renderFigure(q)}<div class="answer">${esc(q.answer)}</div>${renderNote(q)}${renderSource(q)}${renderOrigin(q)}
     </section>`;
   }
 
@@ -669,7 +689,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   };
   $("main").addEventListener("change", (e) => {
     const c = cardOf(e.target);
-    if (!c || state.answers[c.q.id]) return;
+    if (!c || isOpen(c.q) || state.answers[c.q.id]) return;
     const { card, q } = c;
     const opts = card.querySelector(".opts");
     // selects are in shuffled row order: data-i maps each one back to its stem
@@ -681,6 +701,13 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     if (check) check.disabled = !hasAnswer(q, drafts[q.id]);
     bulkMsg = "";
     renderSubmitAll();
+  });
+  $("main").addEventListener("input", (e) => {
+    if (!e.target.matches(".open-answer textarea")) return;
+    const c = cardOf(e.target);
+    if (!c || !isOpen(c.q) || state.answers[c.q.id]) return;
+    state.writtenAnswers[c.q.id] = e.target.value;
+    saveState();
   });
   $("main").addEventListener("click", (e) => {
     const btn = e.target.closest("button");
@@ -697,7 +724,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       delete rowOrder[c.q.id];
       saveState();
       update(c.p);
-      focusIn(c.p, ".opts input, .opts select, .check");
+      focusIn(c.p, ".opts textarea, .opts input, .opts select, .check");
     }
   });
 
@@ -760,6 +787,15 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   }
 
   // ---------- global controls ----------
+  if (hasOpenQuestions) $("practiceMode").querySelectorAll(".seg").forEach((b) => b.addEventListener("click", () => {
+    if (state.practice === b.dataset.practice) return;
+    state.practice = b.dataset.practice;
+    state.topics = topicIds.slice();
+    state.section = "all";
+    if ($("sectionFilter")) $("sectionFilter").value = "all";
+    buildChips();
+    setStatus("all");
+  }));
   $("statusFilter").value = state.status;
   $("retryOpt").hidden = !state.retry.length;
   if ($("sectionFilter")) {
@@ -798,7 +834,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   }
   $("reset").addEventListener("click", () => {
     if (!confirm("¿Borrar todas tus respuestas guardadas?")) return;
-    state.answers = {}; drafts = {}; optOrder = {}; rowOrder = {};
+    state.answers = {}; state.writtenAnswers = {}; drafts = {}; optOrder = {}; rowOrder = {};
     setStatus(state.status === "retry" ? "all" : state.status);
   });
   // keyboard, "one" mode only: 1–9 pick options, Enter sends (or goes on once sent), arrows navigate

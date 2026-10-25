@@ -175,6 +175,7 @@ página no aparezca primero con el otro tema.
   "emptyFeedback": "La cátedra no incluyó…",   // texto si falta "fb"; null oculta la sección
   "topicFilter": "multi",                      // opcional: "multi" (chips independientes) o
                                                // "pick" ("Todas" + chips que se combinan)
+  "openQuestions": true,                      // opcional: presenta las info como preguntas abiertas
   "labels": {                                  // opcional, textos del filtro
     "topics": "Temas", "allTopics": "Todos los temas", "noTopics": "Ninguno", "section": "Sección",
     "feedback": "Explicación de la cátedra"    // título de la explicación ("fb")
@@ -190,6 +191,15 @@ página no aparezca primero con el otro tema.
 ```
 
 `about` y `footer` se insertan como HTML sin escapar. Son contenido del repo, no de los usuarios.
+
+Con `openQuestions: true`, el cuestionario ofrece las secciones «Todas las preguntas», «Cuestionario» y
+«Preguntas Abiertas». Las preguntas `info` permiten escribir un desarrollo y consultar una respuesta
+orientativa, con sus referencias `source` y `origin`. No se corrigen automáticamente ni suman puntaje.
+El texto se guarda mientras se escribe en `writtenAnswers`, dentro de la misma clave de `localStorage`
+del parcial. Ocultar la respuesta conserva el desarrollo y permite editarlo; «Borrar mis respuestas»
+también borra estos textos. Cambiar de sección restablece los filtros de unidades, parcial y estado.
+Sin esta opción, las tarjetas `info` conservan su comportamiento habitual. TEPLA utiliza esta modalidad
+para las consignas del modelo 2025, las reconstruidas del resumen 2024 y las propuestas de práctica.
 `about` lleva solo lo propio del banco: de dónde salen las preguntas, qué significa cada tema o categoría y
 las salvedades. Cómo usar el cuestionario lo explica el motor en «Cómo funciona este cuestionario», igual
 en todos los parciales, así que no se repite en `about`. `footer` lleva los créditos o la lista de fuentes.
@@ -251,6 +261,12 @@ más seguido que por azar, avisa con ⚠ y lista las preguntas donde la correcta
 que los distractores (ver [`criterios.md`](criterios.md)). Ese aviso no cuenta como error.
 
 Si encuentra errores, sale con código 1.
+
+La modalidad de preguntas abiertas también tiene una prueba de navegador. Con Python, Playwright
+(`pip install playwright`) y Chrome instalado, ejecutá `python scripts/test-open-questions.py`.
+Para Edge, agregá `--channel msedge`. Verifica filtros, persistencia del desarrollo, compatibilidad
+con progreso previo, exclusión del puntaje, vista móvil y tarjetas informativas de ASI. Usa un servidor
+local temporal y un perfil de navegador aislado.
 
 ## Referencias a la teoría
 

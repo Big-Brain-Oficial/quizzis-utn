@@ -81,6 +81,7 @@ function checkExam(slug, exam, meta) {
   if (!HEX.test(data.accent || "")) err("", `'accent' debe ser un color #RRGGBB (vino ${JSON.stringify(data.accent)})`);
   if (data.accentDark !== undefined && !HEX.test(data.accentDark)) err("", "'accentDark' debe ser un color #RRGGBB");
   if (data.topicFilter !== undefined && !["pick", "multi"].includes(data.topicFilter)) err("", "'topicFilter' debe ser pick|multi");
+  if (data.openQuestions !== undefined && typeof data.openQuestions !== "boolean") err("", "'openQuestions' debe ser booleano");
   if (!data.topics || typeof data.topics !== "object") { err("", "falta 'topics'"); return; }
   for (const [k, t] of Object.entries(data.topics)) {
     if (!t || typeof t.name !== "string") err(`topic ${k}`, "falta 'name'");

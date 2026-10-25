@@ -1,7 +1,7 @@
 {
   "subject": "Tecnologías para la Automatización",
   "exam": "1er parcial",
-  "description": "Repaso de las Unidades 1 a 4 y, en categorías aparte, preguntas de parcial de las Unidades 1, 2, 3 y 4.",
+  "description": "Repaso de las Unidades 1 a 4, preguntas de parcial y una sección de Preguntas Abiertas para desarrollar y contrastar con el apunte.",
   "accent": "#087F8C",
   "accentDark": "#42C5CF",
   "emptyFeedback": null,
@@ -19,7 +19,8 @@
     "<p><b>Unidad 1 - Preguntas parcial</b> trae enunciados de parciales que se responden con la Unidad 1, con las opciones de la cátedra. Salen del <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de teoría del 25 de octubre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de primer parcial de 2025</a>. Al corregir se ve el recorte del apunte donde está la respuesta y la captura de la pregunta en el parcial. No entran las de sensores, transformadas aplicadas, Routh o PID, ni el segundo parcial de 2025, que es de otra parte de la materia.</p>",
     "<p><b>Unidad 2 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 2, con las opciones de la cátedra. Salen del mismo <a href=\"sources/1er%20parcial.pdf\" target=\"_blank\" rel=\"noopener\">primer parcial de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de estabilidad aplicada, error en estado estable, PID ni el segundo parcial, que siguen en otra unidad.</p>",
     "<p><b>Unidad 3 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 3, con las opciones de la cátedra. Salen del <a href=\"sources/2do%20parcial%202021%20(mega%20PDF).pdf\" target=\"_blank\" rel=\"noopener\">segundo parcial de teoría del 29 de noviembre de 2021</a> y del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo de 2025</a>. No entran las de lugar de las raíces, Bode ni Nyquist, que siguen en la Unidad 4.</p>",
-    "<p><b>Unidad 4 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 4, con las opciones de la cátedra. Salen del <a href=\"sources/2do%20parcial%202021%20(mega%20PDF).pdf\" target=\"_blank\" rel=\"noopener\">segundo parcial de teoría del 29 de noviembre de 2021</a>. No entran las de polos en el semiplano, muestreo ni transformada Z, que en este apunte están en la Unidad 2. El modelo de 2025 no trae preguntas de esta unidad.</p>"
+    "<p><b>Unidad 4 - Preguntas parcial</b> trae enunciados que se responden con la Unidad 4, con las opciones de la cátedra. Salen del <a href=\"sources/2do%20parcial%202021%20(mega%20PDF).pdf\" target=\"_blank\" rel=\"noopener\">segundo parcial de teoría del 29 de noviembre de 2021</a>. No entran las de polos en el semiplano, muestreo ni transformada Z, que en este apunte están en la Unidad 2. El modelo de 2025 no trae preguntas de esta unidad.</p>",
+    "<p><b>Preguntas Abiertas</b> reúne las diez consignas del <a href=\"sources/1er%20parcial%202025.pdf\" target=\"_blank\" rel=\"noopener\">modelo 2025</a>, tres consignas reconstruidas a partir del <a href=\"sources/1er%20parcial%202024.jpeg\" target=\"_blank\" rel=\"noopener\">resumen del parcial 2024</a> y once propuestas de desarrollo basadas en el Apunte Solana y los temas de los parciales. Las consignas del modelo se conservan textuales; las reconstruidas y las de práctica se identifican como tales. Las respuestas son orientativas, elaboradas a partir del apunte, y no una clave oficial de la cátedra.</p>"
   ],
   "topics": {
     "1": {
@@ -4599,6 +4600,309 @@
         "crop": [[0, 31.3, 100, 59.2]],
         "img": "sources/pages/2do parcial 2021 (mega PDF)-p53-64460b.webp"
       }
+    },
+    {
+      "id": "tepla-p1-abierta-2025-bloques",
+      "topic": "5",
+      "type": "info",
+      "catedra": true,
+      "section": "Modelo 2025",
+      "text": "A partir de un diagrama de bloques con dos subsistemas en serie y uno en retroalimentación unitaria, deduzca la función de transferencia equivalente.",
+      "answer": "Suponiendo realimentación negativa alrededor de ambos subsistemas, sean T1(s) y T2(s) las funciones de los bloques en serie. La trayectoria directa equivale a T(s) = T1(s)T2(s).\nCon realimentación unitaria, Se(s) = Si(s) − So(s) y So(s) = T(s)Se(s). Sustituyendo: So(s) = T(s)[Si(s) − So(s)].\nAgrupando: So(s)[1 + T(s)] = T(s)Si(s). Por lo tanto, So(s)/Si(s) = T1(s)T2(s)/[1 + T1(s)T2(s)].\nLa reducción aplica las relaciones de lazo cerrado de las páginas 22–23 del apunte.",
+      "tip": "Consigna textual del modelo 2025.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 23,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 26.8]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p23-485c05.webp"
+      },
+      "note": "El modelo no adjunta un diagrama ni especifica el signo o el alcance de la realimentación. Esta deducción supone realimentación negativa unitaria alrededor de los dos bloques en serie.",
+      "origin": {
+        "file": "sources/1er parcial 2025.pdf",
+        "page": 1,
+        "label": "Modelo de 1er parcial 2025",
+        "crop": [[0, 80, 100, 90]],
+        "img": "sources/pages/1er parcial 2025-p1-6deb4d.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-2024-estabilidad",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Resumen 2024",
+      "text": "Explique cómo se relaciona la estabilidad de un sistema con la ubicación de los polos de su función de transferencia de lazo cerrado. Compare polos con parte real negativa y positiva.",
+      "answer": "Los polos son los valores de s que anulan el denominador de la función de transferencia. Si todos están en el semiplano izquierdo, sus partes reales son negativas y el apunte clasifica al sistema como estable. Los términos exponenciales asociados decaen con el tiempo.\nUn polo con parte real positiva produce un término que crece y corresponde a un sistema inestable. Para polos complejos conjugados, la parte imaginaria determina la frecuencia de oscilación: con parte real negativa la oscilación se amortigua y con parte real positiva su amplitud crece.\nLa ubicación de los polos permite anticipar el comportamiento temporal sin obtener toda la respuesta.",
+      "tip": "Consigna reconstruida desde el resumen de 2024; no es una transcripción del examen.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 36,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 60.0]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p36-dd5f52.webp"
+      },
+      "note": "La captura de 2024 enumera el tema, pero no incluye un enunciado completo ni una resolución oficial. La consigna y la orientación se elaboraron a partir del apunte.",
+      "origin": {
+        "file": "sources/1er parcial 2024.jpeg",
+        "page": 1,
+        "label": "Resumen del 1er parcial 2024 (consignas reconstruidas)",
+        "crop": [[0, 16.5, 100, 24.5]],
+        "img": "sources/pages/1er parcial 2024-p1-327f55.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-2024-perturbaciones",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Resumen 2024",
+      "text": "Deduzca la ecuación de salida de un sistema con realimentación negativa R, dos bloques en serie T1 y T2 y una perturbación aditiva P a la salida del trayecto directo. Identifique el término debido a P.",
+      "answer": "Sean Si la referencia, So la salida y F = R·So la señal realimentada. La entrada al trayecto directo es Si − R·So.\nComo P se suma después de los dos bloques: So = T1·T2·(Si − R·So) + P.\nAgrupando términos: So·(1 + T1·T2·R) = T1·T2·Si + P.\nEntonces So = [T1·T2/(1 + T1·T2·R)]·Si + [1/(1 + T1·T2·R)]·P.\nEl segundo sumando es la contribución de la perturbación. La expresión depende de dónde ingresa P: si se suma entre T1 y T2, su contribución pasa a ser [T2/(1 + T1·T2·R)]·P, como muestra el otro esquema del apunte.",
+      "tip": "Consigna reconstruida desde el resumen de 2024; no es una transcripción del examen.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 24,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 35, 100, 97]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p24-1e3a27.webp"
+      },
+      "note": "La captura de 2024 enumera el tema, pero no incluye un enunciado completo ni una resolución oficial. La consigna y la orientación se elaboraron a partir del apunte.",
+      "origin": {
+        "file": "sources/1er parcial 2024.jpeg",
+        "page": 1,
+        "label": "Resumen del 1er parcial 2024 (consignas reconstruidas)",
+        "crop": [[0, 16.5, 100, 24.5]],
+        "img": "sources/pages/1er parcial 2024-p1-327f55.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-2024-control-clasico",
+      "topic": "1",
+      "type": "info",
+      "catedra": false,
+      "section": "Resumen 2024",
+      "text": "Describa el modelo clásico de un sistema de control e indique qué función cumplen la referencia, el comparador, el controlador, el actuador, el proceso y el elemento de medición.",
+      "answer": "El sistema mide una variable, la compara con una referencia y actúa sobre el proceso para reducir el error y mantener el comportamiento deseado.\n• Referencia: valor deseado de la variable a controlar.\n• Comparador: compara la referencia con la señal medida y produce la señal de error.\n• Controlador: recibe el error y decide la acción de control.\n• Actuador o elemento de corrección: realiza el cambio en el proceso.\n• Proceso o planta: sistema sobre el que se controla la variable.\n• Elemento de medición: mide la salida y proporciona la señal de realimentación al comparador.\nEn la realimentación negativa, el error se obtiene restando la señal realimentada a la referencia.",
+      "tip": "Consigna reconstruida desde el resumen de 2024; no es una transcripción del examen.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 4,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 13.6, 100, 86.7]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p4-0b35bc.webp"
+      },
+      "note": "La captura de 2024 enumera el tema, pero no incluye un enunciado completo ni una resolución oficial. La consigna y la orientación se elaboraron a partir del apunte.",
+      "origin": {
+        "file": "sources/1er parcial 2024.jpeg",
+        "page": 1,
+        "label": "Resumen del 1er parcial 2024 (consignas reconstruidas)",
+        "crop": [[0, 16.5, 100, 24.5]],
+        "img": "sources/pages/1er parcial 2024-p1-327f55.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-superposicion",
+      "topic": "1",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Explique el principio de superposición y cómo permite distinguir un sistema lineal de uno no lineal.",
+      "answer": "La superposición combina homogeneidad y aditividad. Si x1(t) produce y1(t) y x2(t) produce y2(t), un sistema lineal responde a a·x1(t) + b·x2(t) con a·y1(t) + b·y2(t).\nLa homogeneidad conserva el factor que multiplica una entrada; la aditividad permite sumar las respuestas a entradas individuales. Los sistemas no lineales no cumplen, en general, esta relación. Por eso no se puede suponer que la respuesta a varias entradas sea la suma de las respuestas individuales cuando el sistema no es lineal.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 5,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 38.3, 100, 80.3]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p5-83a6a6.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-capas",
+      "topic": "1",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Describa las cuatro capas de un sistema de control y explique por qué el trabajo en la capa de aplicación requiere conocer las otras capas.",
+      "answer": "La capa física garantiza la transmisión de señales analógicas y digitales y su integridad. La capa de conectividad garantiza las comunicaciones mediante el medio y el protocolo correspondientes. La capa de control comanda el sistema. La capa de aplicación contiene el software que controla a la capa de control.\nEl ingeniero en sistemas suele trabajar en el diseño e implementación de ese software, pero debe conocer la estructura de las demás capas para comprender el recorrido de las señales y el funcionamiento del sistema completo. La organización en capas ayuda a diseñar sistemas que puedan crecer de manera controlable.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 7,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 56]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p7-abc894.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-entradas-multiples",
+      "topic": "1",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "¿Cómo se obtiene la salida de un sistema lineal con una entrada de referencia y varias perturbaciones usando diagramas de bloques?",
+      "answer": "Se considera una entrada por vez y se hacen nulas las restantes. Se reduce el diagrama resultante a una trayectoria directa y una de realimentación, y se calcula la salida debida a esa entrada. Se repite el procedimiento para cada entrada de referencia o perturbación.\nLa salida total se obtiene sumando algebraicamente las contribuciones individuales. Esta suma aplica el principio de superposición, por lo que la consigna supone un sistema lineal.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 13,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 27.3, 100, 64.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p13-b37b01.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-realimentacion-ventajas",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Explique las ventajas y desventajas del trayecto de realimentación frente a los cambios en componentes y a las perturbaciones.",
+      "answer": "El apunte destaca una menor sensibilidad a las perturbaciones externas y a los cambios no deseados de los componentes, una respuesta más exacta respecto del valor requerido y una mayor velocidad de respuesta. La medición de la salida permite actuar sobre la diferencia respecto de la referencia.\nComo contrapartida, el sistema resulta más complejo y costoso, pierde ganancia y puede presentar inestabilidad. Por eso incorporar realimentación requiere analizar también la estabilidad del sistema.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 25,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 49.2, 100, 82.4]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p25-39bf16.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-potenciometro",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Explique cómo un potenciómetro convierte una posición en una señal eléctrica. Interprete la relación Vs = K·Pp y sus unidades.",
+      "answer": "El contacto deslizante cambia de posición y determina la tensión de salida del potenciómetro. Esa tensión es proporcional al desplazamiento.\nEn Vs = K·Pp, Vs es la tensión de salida en volts, Pp es la posición y K es la sensibilidad del sensor. Para una posición angular, K puede expresarse en volts por radián; para un desplazamiento lineal, en volts por milímetro.\nLa relación permite transformar una posición mecánica en una señal eléctrica que el sistema de control pueda procesar.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 16,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 29, 100, 80.5]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p16-b49c71.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-routh-signos",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "En una tabla de Routh sin ceros ni casos especiales, ¿qué información aporta la primera columna? ¿Alcanza con que el polinomio tenga todos sus coeficientes positivos?",
+      "answer": "El número de cambios de signo en la primera columna indica cuántas raíces de la ecuación característica tienen parte real positiva, es decir, cuántos polos de lazo cerrado están en el semiplano derecho. No es necesario calcular el valor de cada raíz.\nTener todos los coeficientes positivos es una condición necesaria, pero por sí sola no alcanza: también se examina la primera columna de la tabla. Para el caso regular y con el coeficiente principal positivo, todos sus elementos deben ser positivos para que las raíces estén en el semiplano izquierdo.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 37,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 100]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p37-b7af57.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-control-digital",
+      "topic": "2",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Describa el recorrido de una señal en un sistema de control con microprocesador, conversor analógico-digital y conversor digital-analógico.",
+      "answer": "La señal continua de entrada pasa por el conversor analógico-digital (CAD), que la transforma en datos digitales. El microprocesador procesa esos datos según la estrategia de control almacenada en su programa.\nEl conversor digital-analógico (CDA) convierte la salida digital del controlador en una señal analógica que acciona el elemento de corrección sobre el proceso. La salida real se mide y se compara con la referencia para cerrar el lazo.\nLa transformada Z es la herramienta matemática que el apunte introduce para analizar el comportamiento en tiempo discreto, de manera análoga al uso de Laplace en tiempo continuo.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 38,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 7.0, 100, 91.1]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p38-8ba9ac.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-lugar-raices",
+      "topic": "4",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "¿Qué representa el lugar de las raíces y cómo permite estudiar el efecto de variar la ganancia K sobre un sistema de lazo cerrado?",
+      "answer": "Representa en el plano complejo s las posiciones de los polos de lazo cerrado a medida que varía un parámetro, normalmente la ganancia K. El método parte de la función de transferencia de lazo abierto y permite estudiar la ubicación de las raíces de la ecuación característica.\nComo la respuesta transitoria y la estabilidad dependen de la posición de los polos de lazo cerrado, el recorrido de las ramas permite observar cómo cambian al variar K. Así se pueden estudiar los valores de ganancia compatibles con el comportamiento buscado.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 59,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 0, 100, 100], [0, 0, 100, 45.5, 60]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p59-b215b7.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-trazado-raices",
+      "topic": "4",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Describa los pasos principales para trazar el lugar de las raíces. Indique dónde comienzan y terminan las ramas y cómo se reconocen los tramos del eje real.",
+      "answer": "1. Hallar los polos y ceros de lazo abierto y determinar la cantidad de ramas.\n2. Identificar los segmentos del eje real: un punto pertenece al lugar cuando tiene una cantidad impar de polos y ceros reales de lazo abierto a su derecha.\n3. Determinar los ángulos y el punto de encuentro de las asíntotas.\n4. Hallar los puntos de ruptura a partir de dK/ds = 0 y comprobar su pertenencia al lugar.\n5. Determinar los cruces con el eje imaginario y los valores de K correspondientes.\n6. Dibujar las ramas respetando esos elementos.\nLas ramas parten de polos de lazo abierto cuando K = 0 y terminan en ceros de lazo abierto o en el infinito.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 63,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 60.4, 100, 100, 62], [0, 0, 100, 100], [0, 0, 100, 79.1, 64]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p63-630fda.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-bode",
+      "topic": "4",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "¿Qué información contienen los diagramas de magnitud y fase de Bode? Explique las escalas y la utilidad de representar ambos.",
+      "answer": "Bode representa la respuesta en frecuencia mediante dos gráficas. La de magnitud muestra el módulo de la función de transferencia en decibelios; la de fase muestra el desplazamiento de fase entre la salida y la entrada, en grados o radianes.\nEn ambas se representa la frecuencia en escala logarítmica. Esta escala permite cubrir un intervalo amplio de frecuencias y trabajar con aproximaciones asintóticas de líneas rectas.\nLas dos gráficas describen cómo cambian la ganancia y el desfase al variar la frecuencia de una entrada senoidal.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 68,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 15, 100, 100]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p68-d0b443.webp"
+      }
+    },
+    {
+      "id": "tepla-p1-abierta-margenes",
+      "topic": "4",
+      "type": "info",
+      "catedra": false,
+      "section": "Práctica abierta",
+      "text": "Explique qué miden el margen de ganancia y el margen de fase y en qué puntos de la respuesta en frecuencia se determinan.",
+      "answer": "El margen de ganancia es el factor por el que puede multiplicarse la ganancia antes de alcanzar la condición crítica. Se evalúa donde la fase de la función de lazo abierto alcanza −180°: el factor necesario para que el módulo llegue a 1 es MG = 1/|G(jω)| en ese cruce. El apunte expresa este margen en decibelios.\nEl margen de fase se evalúa donde el módulo de la función de lazo abierto vale 1. Es el ángulo adicional que llevaría ese punto al eje real negativo, es decir, al punto crítico −1 del diagrama de Nyquist.\nPor eso cada margen se lee en un cruce distinto: fase de −180° para el de ganancia y módulo unitario para el de fase.",
+      "tip": "Consigna de práctica elaborada a partir del apunte.",
+      "source": {
+        "file": "sources/apunte-solana-p1-tpla.pdf",
+        "page": 72,
+        "confidence": "high",
+        "label": "Apunte Solana P1 - TPLA",
+        "crop": [[0, 23.2, 100, 100]],
+        "img": "sources/pages/apunte-solana-p1-tpla-p72-554312.webp"
+      }
     }
-  ]
+  ],
+  "openQuestions": true
 }
