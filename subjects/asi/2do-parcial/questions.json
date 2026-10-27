@@ -13,9 +13,10 @@
   },
   "about": [
     "<p><b>Cuestionarios de las Unidades 4, 5 y 6:</b> son las preguntas de los cuestionarios de estudio de la cátedra (Desarrollo y Mantenimiento de RRHH, Seguimiento de Recursos, y Seguridad y Auditoría de los SI/TI), convertidas a opción múltiple. La cátedra no publica las respuestas: la opción correcta y la justificación salen del apunte de teoría de cada unidad.</p>",
-    "<p><b>Eval. Formativa 3 — Unidades 4 y 5:</b> son las preguntas de la evaluación formativa, tal cual las tomó la cátedra y con la respuesta confirmada en la corrección. La justificación sale del apunte de teoría.</p>"
+    "<p><b>Eval. Formativa 3 — Unidades 4 y 5:</b> son las preguntas de la evaluación formativa, tal cual las tomó la cátedra y con la respuesta confirmada en la corrección. La justificación sale del apunte de teoría.</p>",
+    "<p><b>Parciales — Unidades 4, 5 y 6:</b> son las preguntas de parciales anteriores que se responden con estas unidades: el <a href=\"sources/2024%20-%202do%20Parcial%20ADR%20%28corregido%29.pdf\" target=\"_blank\" rel=\"noopener\">2do parcial del 3 de julio de 2024</a> (hay también una <a href=\"sources/2024%20-%202do%20Parcial%20ADR.pdf\" target=\"_blank\" rel=\"noopener\">versión sin corregir con transcripciones</a>), el <a href=\"sources/2024%20-%203er%20Parcial%20ADR.pdf\" target=\"_blank\" rel=\"noopener\">3er parcial del 4 de septiembre de 2024</a>, el <a href=\"sources/2025%20-%201er%20Parcial%20ADSI%20%28con%20respuestas%29.pdf\" target=\"_blank\" rel=\"noopener\">1er parcial 2025 resuelto</a> y los temas <a href=\"sources/2025%202do%20Parcial%20-%20Tema%201%20%28corregido%29.pdf\" target=\"_blank\" rel=\"noopener\">1</a> y <a href=\"sources/2025%202do%20Parcial%20-%20Tema%202%20%28corregido%29.pdf\" target=\"_blank\" rel=\"noopener\">2</a> del 2do parcial del 5 de noviembre de 2025. Cada pregunta indica de qué parcial y de qué unidad sale. Al corregir se ve la captura de la pregunta en el parcial, con la corrección, y el recorte del apunte que la respalda. Las de opción múltiple, verdadero o falso y relacionar conservan el enunciado y las opciones del parcial; las que había que completar se convirtieron a relacionar con opciones nuestras, y las de desarrollo quedan como tarjetas con una respuesta orientativa. No entran las de alineamiento, provisión, aplicación ni planificación estratégica, que son de otras unidades.</p>"
   ],
-  "footer": "Fuentes: cuestionarios de estudio de la cátedra (Subsistema de Desarrollo y Mantenimiento de RRHH · Subsistema de Seguimiento de Recursos · Subsistema de Seguridad y Auditoría de los SI/TI), Evaluación Formativa 3 (Unidades 4 y 5) y apunte de teoría de las Unidades 4, 5 y 6. Los cuestionarios de la cátedra no constituyen las preguntas de los exámenes.",
+  "footer": "Fuentes: cuestionarios de estudio de la cátedra (Subsistema de Desarrollo y Mantenimiento de RRHH · Subsistema de Seguimiento de Recursos · Subsistema de Seguridad y Auditoría de los SI/TI), Evaluación Formativa 3 (Unidades 4 y 5), parciales de 2024 y 2025 y apunte de teoría de las Unidades 4, 5 y 6. Los cuestionarios de la cátedra no constituyen las preguntas de los exámenes.",
   "topics": {
     "U4": {
       "name": "Cuestionario Unidad 4 — Desarrollo y Mantenimiento de RRHH",
@@ -32,6 +33,10 @@
     "EF3": {
       "name": "Eval. Formativa 3 — Unidades 4 y 5",
       "color": "#2E9E57"
+    },
+    "PAR": {
+      "name": "Parciales — Unidades 4, 5 y 6",
+      "color": "#B7791F"
     }
   },
   "questions": [
@@ -6449,6 +6454,1073 @@
         "confidence": "high",
         "crop": [[0, 16.3, 100, 95.1]],
         "img": "sources/pages/u6-seguridad-y-auditoria-p35-030c13.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-01",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Cuando se debe llevar a la práctica un entrenamiento, hay múltiples factores que deben tenerse en cuenta. Indique sí o no según la pertenencia de cada elemento a la etapa de implementación o ejecución de un entrenamiento para programadores de la gerencia de SI/TI a su cargo",
+      "stems": [
+        "Calidad del material sobre metodologías ágiles.",
+        "Cálculo de la relación costo-beneficio del programa.",
+        "Disponibilidad de tiempo del área de programación para capacitación.",
+        "Cooperación del Jefe de Desarrollo."
+      ],
+      "choices": [
+        "Sí",
+        "No"
+      ],
+      "correct": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "fb": "La ejecución del entrenamiento depende de la adecuación del programa a las necesidades de la organización, la calidad del material, la cooperación de los jefes y dirigentes, la calidad y preparación de los instructores y la calidad de los aprendices (apunte U4, pág. 12). El cálculo de la relación costo-beneficio es un aspecto de la planeación del programa (pág. 10), y la disponibilidad de tiempo del área no figura entre los factores. Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 12,
+        "confidence": "high",
+        "crop": [[0, 57.5, 100, 84], [0, 74.5, 100, 76.7, 10]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p12-bba160.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 1,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 29, 100, 47]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p1-76fa60.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-02",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": false,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Indicá a qué concepto corresponde cada definición:",
+      "stems": [
+        "Es el ingreso en efectivo, generalmente por nómina, de cobro regular.",
+        "Son todas aquellas facilidades, comodidades, ventajas y servicios que las empresas ofrecen a sus empleados para ahorrarles esfuerzos y preocupaciones.",
+        "Es la forma de compensación que el empleado recibe si alcanza un determinado nivel de productividad."
+      ],
+      "choices": [
+        "Salario",
+        "Beneficios sociales",
+        "Remuneración variable",
+        "Reconocimiento o premio",
+        "Salario indirecto"
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "fb": "En el parcial había que escribir el concepto; las opciones del desplegable son nuestras. La remuneración fija son los ingresos regulares en efectivo, el salario básico (apunte U4, pág. 21). Los beneficios sociales son las facilidades, comodidades, ventajas y servicios que la empresa ofrece para ahorrar esfuerzos y preocupaciones (pág. 31). La remuneración variable depende de alcanzar las metas (pág. 29). El premio es discrecional y se otorga después del hecho (págs. 30-31), y el salario indirecto sale del convenio colectivo y de los beneficios (pág. 22). Respuestas confirmadas en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "high",
+        "crop": [[0, 57.3, 100, 69.3], [0, 26.4, 100, 30, 31], [0, 30.2, 100, 48.5, 29]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p21-759c55.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 1,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 47, 100, 67]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p1-68fb1d.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-03",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": false,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Completá el esquema del proceso de entrenamiento de RRHH: relacioná cada etapa con su lugar en el proceso.",
+      "stems": [
+        "Primera etapa",
+        "Segunda etapa",
+        "Tercera etapa",
+        "Cuarta etapa"
+      ],
+      "choices": [
+        "Inventario de necesidades de entrenamiento",
+        "Programación del entrenamiento",
+        "Ejecución del entrenamiento",
+        "Evaluación de los resultados del entrenamiento",
+        "Análisis y descripción de los cargos"
+      ],
+      "correct": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fb": "En el parcial había que completar el esquema; las opciones son nuestras. El proceso de entrenamiento tiene cuatro etapas: inventario de necesidades (diagnóstico), programación, implementación y ejecución, y evaluación de los resultados (apunte U4, pág. 5). En el esquema, si los resultados son insatisfactorios, la retroalimentación vuelve al inventario de necesidades; si son satisfactorios, vuelve a la ejecución. Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 5,
+        "confidence": "high",
+        "crop": [[0, 8.5, 100, 74.5]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p5-1a2618.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 1,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 67.5, 100, 91]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p1-c53bef.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-04",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": false,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Clasificación de los beneficios sociales: relacioná cada tipo de beneficio con el criterio de clasificación al que pertenece.",
+      "stems": [
+        "Legales",
+        "Voluntarios",
+        "Monetarios",
+        "No monetarios",
+        "Asistenciales",
+        "Recreativos",
+        "Supletorios"
+      ],
+      "choices": [
+        "Según su exigencia legal",
+        "Según su naturaleza",
+        "Según sus objetivos",
+        "Según el área de la vida del empleado"
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "fb": "En el parcial había que completar el esquema; las opciones son nuestras. Los beneficios sociales se clasifican según su exigencia legal (legales y voluntarios), según su naturaleza (monetarios y no monetarios) y según sus objetivos (asistenciales, recreativos y supletorios) (apunte U4, pág. 32). Las tres áreas de la vida del empleado (en el cargo, fuera del cargo pero dentro de la empresa, y en la comunidad) son otra forma de presentar los tipos de beneficios (pág. 31). Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 32,
+        "confidence": "high",
+        "crop": [[0, 0, 100, 65]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p32-331b0a.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 8, 100, 33]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p3-6e0b38.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-05",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 5",
+      "text": "Para pensar: El Ing. Escobar, responsable de los sistemas de venta de una importante casa de electrodomésticos, expresó: «Observo quincenalmente que el tiempo medio de respuesta sea el esperado; si no está en el valor aceptable, ajusto el sistema». ¿Qué herramientas y/o experimento está aplicando? Justifique su respuesta.",
+      "answer": "Aplica dos cosas:\n• Monitorización: observa periódicamente una magnitud de consumo de tiempo del sistema (el tiempo medio de respuesta) y la compara con un valor aceptable. El monitor es la herramienta que sigue la actividad del sistema mientras funciona.\n• Sintonización (tuning): cuando el valor no es el aceptable, ajusta los parámetros del sistema para que las prestaciones se adecuen a las necesarias. Es un proceso de experimentación: se ajustan los parámetros según una hipótesis y se valida si se alcanzan los objetivos.\n\nEn la corrección, a quien respondió solo «monitorización» le anotaron que no mencionaba el proceso de sintonización.",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 35,
+        "confidence": "high",
+        "crop": [[0, 0, 100, 12.5], [0, 3.6, 100, 7.5, 15]],
+        "img": "sources/pages/u5-seguimiento-p35-eb0e54.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 34, 100, 42], [0, 20, 100, 33, 4]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p3-ec90c5.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-06",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 5",
+      "text": "Para cada una de las siguientes herramientas (las capturas de Sysbench – E/S y de MRTG están en la figura), indique y justifique:\ni) Tipo de herramienta utilizada (según técnica implementada).\nii) Técnica de activación / Tipo de carga (según corresponda).\niii) Magnitudes que mide u observa y variables utilizadas para medir las magnitudes.",
+      "figure": "img/2024-2p-sysbench-mrtg.webp",
+      "answer": "1) SYSBENCH – E/S\n• Tipo: benchmark. Ejecuta una carga de prueba (acá, escritura secuencial de archivos) para evaluar las prestaciones: es benchmarking, no monitorización.\n• Tipo de carga: sintética (artificial), generada por el propio programa; se puede repetir y no afecta la operación del sistema.\n• Magnitudes y variables: trabajo realizado o productividad (throughput) → writes/s, fsyncs/s, MiB/s escritos y total de eventos; consumo de tiempo → latencia mínima, promedio, máxima y percentil 95, y tiempo total.\n\n2) MRTG\n• Tipo: monitor (software) que observa la red mientras funciona.\n• Técnica de activación: por muestreo (toma los valores a intervalos regulares de tiempo y los grafica).\n• Magnitudes y variables: trabajo realizado → bits por segundo de entrada (average bits in) y de salida (average bits out), es decir, las tasas de recepción y de transmisión a lo largo del tiempo.\n\nEn la corrección se pidió ser más específico en qué magnitud corresponde a cada variable.",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 15,
+        "confidence": "high",
+        "crop": [[0, 8.5, 100, 72]],
+        "img": "sources/pages/u5-seguimiento-p15-d86e69.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 42, 100, 95], [0, 6, 100, 20, 2], [0, 15, 100, 77, 4]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p3-be5695.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-07",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 5",
+      "text": "En un sistema informático de tipo interactivo, el tiempo de pensar del usuario (Z) no debe incluirse en el cálculo del tiempo de respuesta R de dicho sistema.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Verdadero. En un sistema interactivo, para obtener el tiempo promedio de respuesta hay que sacar la variable Z, el tiempo que el usuario piensa (apunte U5, págs. 25-26): la ley del tiempo de respuesta interactivo es R = N/X0 − Z. En la corrección, «Falso» está marcado como incorrecto.",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 25,
+        "confidence": "high",
+        "crop": [[0, 47, 100, 56], [0, 64, 100, 80.5, 26]],
+        "img": "sources/pages/u5-seguimiento-p25-c8df61.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 21, 100, 27.5], [0, 27.5, 100, 32]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-7f3cd0.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-08",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Formación Paga, Gimnasio, Flexibilidad Horaria son beneficios sociales.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Verdadero (confirmado en la corrección). Los beneficios sociales son facilidades, comodidades, ventajas y servicios que la empresa ofrece a sus empleados, y son derechos por pertenecer a la organización, no ligados a una meta (apunte U4, pág. 31). La flexibilidad horaria figura entre los asistenciales, y los clubes y las áreas de descanso, entre los recreativos (pág. 32).",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 31,
+        "confidence": "high",
+        "crop": [[0, 26.4, 100, 37.5], [0, 44, 100, 65, 32]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p31-5b4f52.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 21, 100, 27.5], [0, 31.5, 100, 34.6]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-2fc671.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-09",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Premio por mejor proyecto presentado debe liquidarse como parte de la remuneración básica de un empleado.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Falso (confirmado en la corrección). Los reconocimientos o premios son discrecionales: se otorgan después del hecho y el jefe elige a quién (apunte U4, págs. 30-31). La remuneración fija o básica, en cambio, son los ingresos regulares en efectivo (pág. 21).",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 30,
+        "confidence": "high",
+        "crop": [[0, 87.6, 100, 95.6], [0, 0, 100, 4.5, 31], [0, 57.3, 100, 62.4, 21]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p30-b0a9bc.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 21, 100, 27.5], [0, 34.4, 100, 38]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-29eab3.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-10",
+      "topic": "PAR",
+      "type": "multi",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "¿Cuáles son los principios de las compensaciones?",
+      "opts": [
+        "Inelasticidad a la baja",
+        "Igual Tarea, igual remuneración",
+        "Variantes de pago alternativas al salario",
+        "Ingresos regulares en efectivo",
+        "Equidad de las remuneraciones"
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "fb": "De la definición jurídica de las compensaciones en la Argentina se desprenden tres principios: inelasticidad a la baja, igual tarea igual remuneración y variantes de pago alternativas al salario (apunte U4, pág. 21). Los ingresos regulares en efectivo son la remuneración fija, un componente del esquema de compensaciones y no un principio. Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "high",
+        "crop": [[0, 72.5, 100, 84.5]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p21-7f1fac.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 38.5, 100, 55]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-26788d.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-11",
+      "topic": "PAR",
+      "type": "multi",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "En sistemas de remuneración variable, la remuneración total que percibe un empleado está compuesta por:",
+      "opts": [
+        "Remuneración Fija",
+        "Beneficios monetarios",
+        "Remuneración Variable",
+        "Bonos",
+        "Incentivos",
+        "Antigüedad"
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "fb": "En la Argentina, el esquema de compensaciones se compone de remuneración fija, beneficios sociales nominales y compensación variable (apunte U4, pág. 21). Los bonos y los incentivos son formas de compensación variable, no componentes aparte (pág. 30). Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "high",
+        "crop": [[0, 57.3, 100, 69.3]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p21-0999b4.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 38.5, 100, 40.8], [0, 56, 100, 76]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-865b9c.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-12",
+      "topic": "PAR",
+      "type": "multi",
+      "catedra": true,
+      "tip": "2do parcial 2024 · Unidad 4",
+      "text": "Los reconocimientos o premios:",
+      "opts": [
+        "Son discrecionales, el jefe determina o elige a qué empleado se le otorga.",
+        "Pueden ser dinerarios o no dinerarios",
+        "Estimulan comportamientos",
+        "Poseen inelasticidad a la baja",
+        "Son supletorios"
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "fb": "Los reconocimientos o premios estimulan comportamientos y distinguen el esfuerzo personal o grupal; pueden ser dinerarios o no dinerarios, se presupuestan y son discrecionales (apunte U4, págs. 30-31). La inelasticidad a la baja es un principio de las compensaciones, y los supletorios son una clase de beneficios sociales. Respuesta confirmada en la corrección.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 30,
+        "confidence": "high",
+        "crop": [[0, 87.6, 100, 95.6], [0, 0, 100, 4.5, 31]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p30-f16c4a.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 2do Parcial ADR (corregido).pdf",
+        "page": 2,
+        "label": "2do parcial, 3 jul 2024 (corregido)",
+        "crop": [[0, 38.5, 100, 40.8], [0, 78, 100, 95]],
+        "img": "sources/pages/2024 - 2do Parcial ADR (corregido)-p2-0fc39a.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-13",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "3er parcial 2024 · Unidad 6",
+      "text": "En la segunda etapa de la gestión de la seguridad de los SI/TI, para determinar el impacto potencial, primero se evalúan los costos empresariales que surjan de la brecha de seguridad.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Verdadero (confirmado en la corrección). La segunda etapa del management de la seguridad es el análisis del riesgo. El análisis del impacto potencial requiere dos etapas: la primera evalúa los costos empresariales que surgen de una brecha en la seguridad, y la segunda estima la frecuencia de ocurrencia de la falla (apunte U6, págs. 3 y 6).",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 6,
+        "confidence": "high",
+        "crop": [[0, 14.3, 100, 38.4]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p6-0b906a.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 3er Parcial ADR.pdf",
+        "page": 2,
+        "label": "3er parcial, 4 sep 2024 (corregido)",
+        "crop": [[0, 7.5, 100, 11], [0, 10.5, 100, 17.5]],
+        "img": "sources/pages/2024 - 3er Parcial ADR-p2-d23bfd.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-14",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "3er parcial 2024 · Unidad 6",
+      "text": "La segunda línea de defensa se implementa con medidas y contramedidas pensadas para recuperar los sistemas y restablecerlos en sus niveles de funcionamiento.",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Falso (confirmado en la corrección). La segunda línea de defensa es la detección: detectar fallas de seguridad a pesar de la primera línea. Recuperarse de una falla con pérdidas mínimas es la tercera línea de defensa (apunte U6, pág. 10).",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 10,
+        "confidence": "high",
+        "crop": [[0, 44, 100, 75.5]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p10-139be6.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 3er Parcial ADR.pdf",
+        "page": 2,
+        "label": "3er parcial, 4 sep 2024 (corregido)",
+        "crop": [[0, 7.5, 100, 11], [0, 17.5, 100, 24.5]],
+        "img": "sources/pages/2024 - 3er Parcial ADR-p2-10646b.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-15",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "3er parcial 2024 · Unidad 6",
+      "text": "Las políticas de seguridad deben definirse en la etapa de identificación del riesgo",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Falso (confirmado en la corrección). La política de seguridad documenta el resultado de la identificación y del análisis del riesgo, y las estrategias elegidas para manejarlo (apunte U6, pág. 9): se define en el manejo del riesgo, después de identificarlo y analizarlo. Las etapas del management de la seguridad son identificación, análisis y manejo del riesgo, y recuperación ante el desastre (pág. 3).",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 9,
+        "confidence": "high",
+        "crop": [[0, 37.8, 100, 57]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p9-54aec7.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 3er Parcial ADR.pdf",
+        "page": 2,
+        "label": "3er parcial, 4 sep 2024 (corregido)",
+        "crop": [[0, 7.5, 100, 11], [0, 25, 100, 29.5]],
+        "img": "sources/pages/2024 - 3er Parcial ADR-p2-35b244.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-16",
+      "topic": "PAR",
+      "type": "tf",
+      "catedra": true,
+      "tip": "3er parcial 2024 · Unidad 6",
+      "text": "El control interno es una actividad que tiene por finalidad garantizar concordancia del sistema con los objetivos (efectividad)",
+      "opts": [
+        "Verdadero",
+        "Falso"
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "Falso (en la corrección, «Verdadero» está tachado y se marca «Falso»). El control interno es cualquier actividad o acción, manual o automática, para prevenir o corregir errores o irregularidades que puedan afectar el funcionamiento de un sistema (apunte U6, pág. 23). La concordancia del sistema con los objetivos (efectividad) es una de las propiedades que verifica la auditoría de sistemas de información según Lardent (pág. 20).",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 23,
+        "confidence": "high",
+        "crop": [[0, 58.7, 100, 68.4], [0, 70, 100, 98, 20], [0, 0, 100, 4.5, 21]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p23-55fa63.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 3er Parcial ADR.pdf",
+        "page": 2,
+        "label": "3er parcial, 4 sep 2024 (corregido)",
+        "crop": [[0, 7.5, 100, 11], [0, 29.5, 100, 35.5]],
+        "img": "sources/pages/2024 - 3er Parcial ADR-p2-610a61.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-17",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": true,
+      "tip": "3er parcial 2024 · Unidad 6",
+      "text": "Este punto integra los conceptos desarrollados en forma compartida con la cátedra Ingeniería de Software. Relacione correctamente, armando los pares letra-número",
+      "stems": [
+        "Es la posibilidad de que la información obtenida tenga algún tipo de error que no se pueda detectar.",
+        "Conjunto de hechos que proveen información cualitativa y/o cuantitativa sobre el objeto de audito.",
+        "Intentan verificar la adecuación de los controles existentes para proteger a la información de la organización de acciones fraudulentas.",
+        "El personal del área de desarrollo debe contar con la formación adecuada y estar motivado para la realización de su trabajo."
+      ],
+      "choices": [
+        "Evidencia",
+        "Pruebas sustantivas",
+        "Objetivo de control de la Auditoría del Desarrollo",
+        "Pruebas de cumplimiento de indagación y detalle",
+        "Riesgo de la auditoría",
+        "Riesgo inherente",
+        "Técnica de control de la Auditoría del Desarrollo",
+        "Pruebas sustantivas de observación"
+      ],
+      "correct": [
+        4,
+        0,
+        1,
+        2
+      ],
+      "note": "En la corrección solo están confirmados los pares de la segunda y la cuarta definición (evidencia y objetivo de control). Los otros dos salen del apunte, y el de la primera coincide con el 1er parcial 2025 resuelto.",
+      "fb": "Primera: en la auditoría, el riesgo es la posibilidad de que la información contenga errores materiales o de que el auditor no detecte errores ocurridos (apunte U6, pág. 28); el riesgo inherente es solo uno de sus tipos. Segunda: la evidencia es el conjunto de información que reunió el auditor para determinar si se cumplen los objetivos de la auditoría (pág. 29). Tercera: las pruebas sustantivas intentan verificar la adecuación de los controles existentes para proteger a la organización de las actividades fraudulentas (pág. 30); observación e indagación son subtipos de las pruebas de cumplimiento. Cuarta: Piattini propone, para cada cosa a auditar, objetivos de control, y para cada objetivo, técnicas y pruebas (pág. 35); que el personal de desarrollo esté formado y motivado es un objetivo de control.",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 28,
+        "confidence": "high",
+        "crop": [[0, 38.5, 100, 49.5], [0, 72, 100, 81.5, 29], [0, 52.3, 100, 66.4, 30], [0, 16.5, 100, 40, 35]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p28-53e50f.webp"
+      },
+      "origin": {
+        "file": "sources/2024 - 3er Parcial ADR.pdf",
+        "page": 2,
+        "label": "3er parcial, 4 sep 2024 (corregido)",
+        "crop": [[0, 38, 100, 95]],
+        "img": "sources/pages/2024 - 3er Parcial ADR-p2-010ca6.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-18",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": true,
+      "tip": "1er parcial 2025 · Unidad 5",
+      "text": "La descripción y el análisis del cargo Supervisor de Sistemas de Sucursal, perteneciente a la estructura de una empresa proveedora de televisión digital, están en la figura.\n\nTodos los estándares indicados a continuación están correctamente enunciados, teniendo en cuenta que se tratan de estándares para desempeño de RRHH. Sin embargo, no todos son adecuados para el seguimiento del cargo en cuestión. Para cada uno de los estándares, indique cuáles no corresponden y cuáles sí son adecuados.",
+      "figure": "img/2025-1p-supervisor-sistemas.webp",
+      "stems": [
+        "El Supervisor de Sistemas debe cumplir el 100% de la programación de mantenimiento preventivo de HW.",
+        "El Supervisor de Sistemas debe documentar en forma completa las necesidades de cambios o pedidos de mantenimiento perfectivo de las aplicaciones en uso.",
+        "El Supervisor de Sistemas debe cumplir el 100% de la programación del mantenimiento preventivo de las redes de comunicación.",
+        "El Supervisor de Sistemas debe documentar el 100% de los cambios de código realizados en las aplicaciones en uso."
+      ],
+      "choices": [
+        "Es correcto",
+        "No es correcto"
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "note": "El PDF es un parcial resuelto, no corregido: las respuestas no están confirmadas por la cátedra. La del último estándar es la más dudosa (quien lo resolvió anotó «creo que…»).",
+      "fb": "Un estándar define el desempeño normal esperado del cargo (apunte U5, págs. 7-8), así que tiene que medir algo que el cargo hace. Entre sus actividades están el reemplazo y mantenimiento del HW y SW de la sucursal y la detección de necesidades de mejoras o cambios: por eso corresponden los dos primeros. El mantenimiento de las redes de comunicación no figura entre sus actividades (solo se le piden conocimientos de redes), y modificar el código de las aplicaciones tampoco: detecta las necesidades de cambios, pero no los realiza.",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 7,
+        "confidence": "high",
+        "crop": [[0, 85, 100, 97], [0, 0, 100, 53.5, 8]],
+        "img": "sources/pages/u5-seguimiento-p7-81bd0e.webp"
+      },
+      "origin": {
+        "file": "sources/2025 - 1er Parcial ADSI (con respuestas).pdf",
+        "page": 2,
+        "label": "1er parcial 2025 (resuelto)",
+        "crop": [[0, 32, 100, 78]],
+        "img": "sources/pages/2025 - 1er Parcial ADSI (con respuestas)-p2-c28147.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-19",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "1er parcial 2025 · Unidad 6",
+      "text": "Indique a qué concepto de Auditoría de las SI/TI corresponde cada definición:\ni. Es la posibilidad de que la información obtenida tenga algún tipo de error que no se pueda detectar.\nii. Conjunto de hechos que proveen información cualitativa y/o cuantitativa sobre el objeto de audito.\niii. El personal del área de desarrollo debe contar con la formación adecuada y estar motivado para la realización de su trabajo.",
+      "answer": "i. Riesgo de auditoría: la posibilidad de que la información contenga errores materiales o de que el auditor no detecte errores ocurridos.\nii. Evidencia: el conjunto de información (datos, documentos, registros o testimonios) que reúne el auditor para determinar si se cumplen los criterios u objetivos de la auditoría.\niii. Objetivo de control de la auditoría del desarrollo (Piattini: para cada cosa a auditar se definen objetivos de control, y para cada objetivo, técnicas y pruebas).\n\nSon las respuestas del parcial resuelto y coinciden con la P7 del 3er parcial 2024.",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 28,
+        "confidence": "high",
+        "crop": [[0, 38.5, 100, 49.5], [0, 72, 100, 81.5, 29], [0, 52.3, 100, 66.4, 30], [0, 16.5, 100, 40, 35]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p28-53e50f.webp"
+      },
+      "origin": {
+        "file": "sources/2025 - 1er Parcial ADSI (con respuestas).pdf",
+        "page": 2,
+        "label": "1er parcial 2025 (resuelto)",
+        "crop": [[0, 79, 100, 95]],
+        "img": "sources/pages/2025 - 1er Parcial ADSI (con respuestas)-p2-5b9e27.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-20",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "1er parcial 2025 · Unidad 6",
+      "text": "Caso de estudio «Control exterior» (revista Information Technology, junio 2016; el artículo está en la figura).\n\nPara el escenario anterior, proponer un esquema de seguridad desarrollando las etapas 1, 2 y 3 de Administración de Riesgos propuesta por Robson.\nAclaraciones:\n• Este ejercicio requiere de supuestos, los que deben estar bien detallados, coherentes y ajustados al escenario. Y el activo a proteger debe ser la aplicación descripta en el escenario únicamente.\n• Para la etapa 2, identificar cuáles serían los ítems de pérdidas potenciales, evaluando además el costo que implicaría el daño producido.\n• Para la etapa 3, dentro de las medidas y contramedidas, el desarrollo debe incluir 2 políticas de seguridad y su clasificación (no es que el desarrollo sean sólo las 2 políticas, sino que además deben incluirse 2 políticas).",
+      "figure": "img/2025-1p-control-exterior.webp",
+      "answer": "Respuesta orientativa: el parcial resuelto no desarrolla este punto, y los supuestos son ejemplos.\n\nActivo: la aplicación Exactian (SaaS en un datacenter de Amazon), con la documentación de contratistas y empleados que permite controlar la liquidación de sueldos, las cargas sociales, las pólizas y la higiene y seguridad.\n\nEtapa 1 – Identificación del riesgo: se identifican el activo, las amenazas (accesos no autorizados, caída del servicio del proveedor o del enlace, pérdida o alteración de la documentación, fuga de datos personales) y las vulnerabilidades (dependencia de un único proveedor SaaS, contraseñas compartidas, falta de un respaldo propio).\n\nEtapa 2 – Análisis del riesgo: primero se evalúan los costos empresariales de una brecha y después la frecuencia de ocurrencia; la pérdida esperada de cada amenaza es su probabilidad por la pérdida que causa. Ítems de pérdida: litigios con contratistas que no se pueden documentar, sanciones por empleo no registrado, reconstrucción de la documentación, horas de control perdidas y daño a la imagen ante los clientes. Se estiman en dinero, aunque sea de forma aproximada.\n\nEtapa 3 – Manejo del riesgo: estrategias de prevenir, asumir, reducir o transferir el riesgo, con controles y contramedidas en las tres líneas de defensa (prevención, detección y recuperación): control de acceso por usuario y perfil, registro de los ingresos fallidos, respaldo de la documentación fuera del proveedor y cláusulas de nivel de servicio o un seguro (transferencia).\nDos políticas, por ejemplo: «Solo el personal de Control de Contratistas accede a la documentación de los contratistas, con usuario y contraseña personales; todo otro acceso está denegado» (prohibitiva: lo que no está expresamente permitido está denegado) y «Los usuarios pueden consultar los informes automáticos de la aplicación, salvo los de sueldos» (permisiva: lo que no está expresamente prohibido está permitido).",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 3,
+        "confidence": "high",
+        "crop": [[0, 28, 100, 41.4]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p3-006d9c.webp"
+      },
+      "origin": {
+        "file": "sources/2025 - 1er Parcial ADSI (con respuestas).pdf",
+        "page": 1,
+        "label": "1er parcial 2025 (resuelto)",
+        "crop": [[0, 0, 100, 7], [0, 33, 100, 51]],
+        "img": "sources/pages/2025 - 1er Parcial ADSI (con respuestas)-p1-bfa804.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-21",
+      "topic": "PAR",
+      "type": "match",
+      "catedra": false,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "Conociendo los conceptos y los estadios de educación que implican el desarrollo de los recursos humanos, indicá a qué concepto corresponde cada definición:",
+      "stems": [
+        "La preparación que se sigue para desempeñar las funciones del cargo.",
+        "La adquisición de conocimientos técnicos, teóricos y prácticos que van a contribuir al crecimiento profesional dentro de su carrera.",
+        "El proceso complejo a través del cual se adquieren o modifican habilidades, destrezas, conocimientos, conductas o valores como resultado del estudio, la experiencia, la instrucción, el razonamiento y la observación."
+      ],
+      "choices": [
+        "Entrenamiento",
+        "Formación profesional",
+        "Perfeccionamiento o desarrollo profesional",
+        "Aprendizaje",
+        "Educación"
+      ],
+      "correct": [
+        0,
+        2,
+        3
+      ],
+      "note": "En el parcial corregido (Tema 1), la segunda definición se respondió «formación profesional» y no aparece marcada como error. Acá vale la del apunte, que relaciona la carrera dentro de una profesión con el perfeccionamiento.",
+      "fb": "En el parcial había que escribir el concepto; las opciones son nuestras. El entrenamiento adapta a la persona para cumplir un cargo o una función (corto plazo). El perfeccionamiento o desarrollo profesional la perfecciona para una carrera dentro de una profesión (mediano plazo), y la formación profesional la prepara para ejercer una profesión (largo plazo) (apunte U4, pág. 3). El aprendizaje es el proceso complejo que permite adquirir nuevos comportamientos (pág. 2); en la corrección, «especialización» está tachado y reemplazado por «aprendizaje».",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 3,
+        "confidence": "high",
+        "crop": [[0, 62, 100, 84], [0, 63.5, 100, 71.5, 2]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p3-9b5aab.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 1 (corregido).pdf",
+        "page": 1,
+        "label": "2do parcial, 5 nov 2025 · Tema 1 (corregido)",
+        "crop": [[0, 11.5, 100, 24.5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 1 (corregido)-p1-3b6ba1.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-22",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué establece el artículo 103 de la Ley de Contrato de Trabajo respecto de la remuneración?",
+      "opts": [
+        "Que la remuneración depende del resultado económico de la empresa.",
+        "Que el empleador debe pagar al trabajador por haber puesto su fuerza de trabajo a disposición, aunque no preste servicios.",
+        "Que las remuneraciones pueden ser suspendidas en casos de crisis.",
+        "Que la remuneración es libremente fijada por el empleador."
+      ],
+      "correct": [
+        1
+      ],
+      "note": "En las dos correcciones (Tema 1 y Tema 2) está marcada esta opción, pero sin el tilde de la cátedra, y el apunte no cita el artículo 103: la respuesta se deduce del principio de inelasticidad a la baja.",
+      "fb": "De la definición jurídica de las compensaciones en la Argentina se desprende la inelasticidad a la baja (apunte U4, pág. 21): la remuneración no se puede reducir ni suspender, y no depende del resultado de la empresa. Tampoco se fija libremente: hay que respetar el salario mínimo y los básicos del convenio colectivo (pág. 26).",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "medium",
+        "crop": [[0, 51, 100, 57.3], [0, 72.5, 100, 84.5]]
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[0, 13.3, 50, 30.5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-e0fe19.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-23",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "Según el texto, ¿por qué los costos salariales se consideran costos fijos?",
+      "opts": [
+        "Porque varían con el nivel de producción.",
+        "Porque deben pagarse aun cuando no haya producción.",
+        "Porque se ajustan mensualmente por inflación.",
+        "Porque dependen de la rentabilidad empresarial."
+      ],
+      "correct": [
+        1
+      ],
+      "note": "El «texto» del enunciado no está en el parcial ni en el apunte. En las dos correcciones está marcada esta opción, pero sin el tilde de la cátedra: la respuesta se deduce del apunte.",
+      "fb": "La remuneración fija son los ingresos regulares en efectivo, que no dependen de alcanzar metas (apunte U4, pág. 21), y por la inelasticidad a la baja no se reduce aunque baje la actividad. Por eso es un costo fijo: no varía con la producción ni con la rentabilidad. Lo que depende de los resultados es la remuneración variable (pág. 29).",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "medium",
+        "crop": [[0, 57.3, 100, 69.3], [0, 72.5, 100, 76]]
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[0, 31.5, 50, 47.2]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-b2b003.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-24",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué principio no se incluye entre los derivados de la definición jurídica de remuneración?",
+      "opts": [
+        "Inelasticidad a la baja.",
+        "Igual tarea, igual remuneración.",
+        "Variabilidad mensual del salario.",
+        "Variantes de pago alternativas al salario."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Los tres principios que se desprenden de la definición jurídica de las compensaciones en la Argentina son inelasticidad a la baja, igual tarea igual remuneración y variantes de pago alternativas al salario (apunte U4, pág. 21). La variabilidad mensual del salario contradice la inelasticidad a la baja. Respuesta confirmada en las dos correcciones.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 21,
+        "confidence": "high",
+        "crop": [[0, 72.5, 100, 84.5]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p21-7f1fac.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[0, 49, 50, 59.6]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-ad1f60.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-25",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "El equilibrio externo en la determinación de las remuneraciones se refiere a:",
+      "opts": [
+        "La comparación entre sueldos de diferentes puestos dentro de la empresa.",
+        "La comparación con los niveles salariales del mercado laboral.",
+        "El control de costos internos.",
+        "La motivación de los empleados mediante incentivos."
+      ],
+      "correct": [
+        1
+      ],
+      "fb": "El equilibrio externo compara los salarios con los de los mismos cargos en otras empresas, es decir, con el mercado laboral, y se obtiene con la investigación salarial (apunte U4, pág. 23). Comparar los cargos dentro de la organización es el equilibrio interno, que se obtiene con la evaluación y clasificación de cargos. Respuesta confirmada en las dos correcciones.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 23,
+        "confidence": "high",
+        "crop": [[0, 47.2, 100, 51.2], [0, 79.5, 100, 89.2]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p23-1ce447.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[0, 61.2, 50, 80]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-68000f.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-26",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué dimensión no forma parte de la importancia relativa de un puesto?",
+      "opts": [
+        "Carga de tareas.",
+        "Impacto en los resultados globales.",
+        "Antigüedad del ocupante.",
+        "Responsabilidad funcional."
+      ],
+      "correct": [
+        2
+      ],
+      "note": "La responsabilidad funcional tampoco figura en el apunte, pero es una característica del puesto; la cátedra marcó como correcta la antigüedad del ocupante.",
+      "fb": "Según Soria, la importancia de cada puesto resulta de la carga de tareas (dimensión cuantitativa) y del impacto de las tareas en los resultados globales (dimensión cualitativa), y estos sistemas se estructuran sobre los puestos y no sobre las personas que los ocupan (apunte U4, pág. 24). La antigüedad es un atributo del ocupante, no del puesto. Respuesta confirmada en la corrección del Tema 2.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 24,
+        "confidence": "high",
+        "crop": [[0, 44, 100, 57.2]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p24-42f073.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[0, 82.5, 50, 96.5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-0a9473.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-27",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Cuál de las siguientes afirmaciones define mejor la remuneración variable?",
+      "opts": [
+        "Es un beneficio social otorgado a todos los empleados.",
+        "Es el salario básico que se paga mensualmente.",
+        "Es el pago fijo establecido por convenio colectivo.",
+        "Es un ingreso sujeto al logro de metas o resultados previamente definidos."
+      ],
+      "correct": [
+        3
+      ],
+      "fb": "La remuneración variable es la porción de la remuneración total que depende de los resultados logrados en un período: el mayor ingreso se genera o no según se alcancen las metas, que son preestablecidas y conocidas por todos (apunte U4, pág. 29). Los beneficios sociales, en cambio, no están ligados a metas (pág. 31). Respuesta confirmada en las dos correcciones.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 29,
+        "confidence": "high",
+        "crop": [[0, 30.2, 100, 48.5]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p29-611ff1.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[50, 13.5, 100, 30.5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-6bf1c0.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-28",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué característica distingue a los incentivos de los premios?",
+      "opts": [
+        "Que los incentivos se otorgan bajo condiciones predeterminadas y no son discrecionales.",
+        "Que los premios son siempre dinerarios",
+        "Que los incentivos se entregan después del hecho.",
+        "Que los premios requieren contrato colectivo."
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "El incentivo es una compensación variable atribuida a una condición predeterminada y no es discrecional: cualquier empleado que la cumpla tiene derecho a él. Los premios se otorgan después del hecho, pueden ser dinerarios o no y son discrecionales: el jefe elige a quién (apunte U4, págs. 30-31). Respuesta confirmada en la corrección del Tema 2.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 30,
+        "confidence": "high",
+        "crop": [[0, 37.3, 100, 51.2], [0, 87.6, 100, 95.6], [0, 0, 100, 4.5, 31]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p30-dab4a0.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[50, 31.5, 100, 49.2]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-ac6cf0.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-29",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué caracteriza a los bonos dentro de la compensación variable?",
+      "opts": [
+        "Son no dinerarios y discrecionales.",
+        "Se otorgan por desempeño grupal y son opcionales.",
+        "Son dinerarios, presupuestados y asociados al cumplimiento de una tarea específica.",
+        "Son premios espontáneos sin presupuesto."
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El bono es una compensación variable asociada a una tarea específica: si la tarea se cumple, se accede al bono. Los bonos son siempre dinerarios, se presupuestan y no son discrecionales (apunte U4, pág. 30). Respuesta confirmada en las dos correcciones.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 30,
+        "confidence": "high",
+        "crop": [[0, 71.3, 100, 81.2]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p30-03709f.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[50, 49.5, 100, 65.2]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-8e2af4.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-30",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "¿Qué diferencia principal existe entre los beneficios sociales y la remuneración variable?",
+      "opts": [
+        "Los beneficios sociales son derechos del empleado por pertenecer a la organización, sin depender de metas.",
+        "La remuneración variable se otorga solo a directivos.",
+        "Los beneficios sociales se pagan según resultados",
+        "Los beneficios son nominales y legalmente obligatorios"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "Los beneficios sociales son derechos de los que goza el empleado por el simple hecho de pertenecer a la organización, y no están ligados a una meta ni a un resultado (apunte U4, pág. 31). La remuneración variable es selectiva, para algunos empleados y ejecutivos (pág. 29), y además de los beneficios legales hay voluntarios (pág. 32). Respuesta confirmada en las dos correcciones.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 31,
+        "confidence": "high",
+        "crop": [[0, 26.4, 100, 37.5]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p31-34a6f5.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 2 (corregido).pdf",
+        "page": 3,
+        "label": "2do parcial, 5 nov 2025 · Tema 2 (corregido)",
+        "crop": [[50, 66.8, 100, 89.5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 2 (corregido)-p3-db3876.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-31",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "El Gerente General de una firma que brinda servicios generales a otras empresas (instalación y mantenimiento de sistemas eléctricos, instalación y mantenimiento de redes de comunicaciones, albañilería menor, limpieza, etc.) recientemente ha tercerizado los servicios de SI/TI, debido a las crecientes necesidades de información y sistemas, y lo ha contratado a Ud. para que lo asesore sobre la organización y gestión del cargo que será el nexo coordinante con la/s empresa/s contratada/s. La definición del cargo y el resto del escenario están en la figura.\n\na) Subsistema de Desarrollo de RR.HH. Ubique en la descripción del caso situaciones que respondan a cada uno de los inventarios de necesidades de entrenamiento para el escenario planteado.",
+      "figure": "img/2025-2p-representante-outsourcing.webp",
+      "answer": "Hay un inventario por cada nivel de análisis:\n• Nivel organizacional (los objetivos de la organización, hacia dónde va): «La empresa plantea incorporarse a la IEEE … participar en los proyectos de innovación y desarrollo y ser ente certificador de las normas IEEE». Hacen falta capacitaciones en los estándares que la organización quiere certificar.\n• Nivel de recursos humanos (si las personas alcanzan, en cantidad y en calidad): «Existe una persona con cuatro años de experiencia en la empresa, en distintos cargos administrativos, con título de Ingeniero en Sistemas de Información, recibido en marzo de 2023».\n• Nivel de operaciones y tareas (requisitos del cargo − habilidades del ocupante): «El gerente general desea priorizar el reclutamiento interno para ocupar el cargo de Representante ante Outsourcing». El cargo pide experiencia en ingeniería de requerimientos, planificación de proyectos certificada y capacidad para detectar riesgos, que esa persona no tiene por su trayectoria administrativa.\n\nSigue la respuesta del parcial corregido.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 6,
+        "confidence": "high",
+        "crop": [[0, 0, 100, 28]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p6-727cbc.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 1 (corregido).pdf",
+        "page": 4,
+        "label": "2do parcial, 5 nov 2025 · Tema 1 (corregido)",
+        "crop": [[0, 9, 100, 18], [0, 4, 100, 40, 5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 1 (corregido)-p4-7180a7.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-32",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "El Gerente General de una firma que brinda servicios generales a otras empresas (instalación y mantenimiento de sistemas eléctricos, instalación y mantenimiento de redes de comunicaciones, albañilería menor, limpieza, etc.) recientemente ha tercerizado los servicios de SI/TI, debido a las crecientes necesidades de información y sistemas, y lo ha contratado a Ud. para que lo asesore sobre la organización y gestión del cargo que será el nexo coordinante con la/s empresa/s contratada/s. La definición del cargo y el resto del escenario están en la figura.\n\na) Subsistema de Desarrollo de RR.HH. Determine cuál es la necesidad prioritaria de formación para que esa persona sea promovida al cargo en cuestión. Justifique su propuesta. Desarrolle los elementos Finalidad, Duración y Criterios de Evaluación del Impacto para su propuesta.",
+      "figure": "img/2025-2p-representante-outsourcing.webp",
+      "answer": "Respuesta orientativa, basada en la del parcial corregido (calificada «Excelente»):\n• Necesidad prioritaria: formación en el relevamiento de necesidades de información (ingeniería de requerimientos) y en la gestión de contratos de tercerización, para que el ocupante pueda evaluar los requerimientos específicos del servicio que la organización terceriza. Es una necesidad del nivel de tareas: el cargo pide tres años en funciones de ingeniería de requerimientos, y la persona viene de cargos administrativos.\n• Finalidad: que el empleado pueda atender las necesidades de tercerización de la organización, evaluar la mejor alternativa y controlar el cumplimiento de los contratos.\n• Duración: por ejemplo, 4 semanas con 40 horas en total (10 horas semanales) dentro de la jornada laboral.\n• Criterios de evaluación del impacto: si el entrenamiento produjo los cambios de comportamiento buscados y si sus resultados se relacionan con las metas de la empresa; por ejemplo, la eficacia en el control del servicio contratado, la reducción de los tiempos de gestión de las actividades tercerizadas y un retorno medible del servicio a mediano plazo.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 10,
+        "confidence": "high",
+        "crop": [[0, 44, 100, 79], [0, 85.9, 100, 100, 12], [0, 0, 100, 74.5, 13]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p10-c29455.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 1 (corregido).pdf",
+        "page": 4,
+        "label": "2do parcial, 5 nov 2025 · Tema 1 (corregido)",
+        "crop": [[0, 9, 100, 25], [0, 40, 100, 69, 5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 1 (corregido)-p4-b6f95c.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-33",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": true,
+      "tip": "2do parcial 2025 · Unidad 4",
+      "text": "El Gerente General de una firma que brinda servicios generales a otras empresas (instalación y mantenimiento de sistemas eléctricos, instalación y mantenimiento de redes de comunicaciones, albañilería menor, limpieza, etc.) recientemente ha tercerizado los servicios de SI/TI, debido a las crecientes necesidades de información y sistemas, y lo ha contratado a Ud. para que lo asesore sobre la organización y gestión del cargo que será el nexo coordinante con la/s empresa/s contratada/s. La definición del cargo y el resto del escenario están en la figura.\n\nb) Subsistema de Mantenimiento de RR.HH. Proponga para el cargo descripto, justificando sus planteos:\n• Una forma de remuneración variable.\n• Una compensación no financiera.",
+      "figure": "img/2025-2p-representante-outsourcing.webp",
+      "answer": "Respuesta orientativa:\n• Remuneración variable: por ejemplo, un incentivo (compensación variable atribuida a una condición predeterminada, no discrecional) de un porcentaje del salario si el ocupante alcanza una calificación mínima en la evaluación de desempeño, o un bono dinerario y presupuestado si el servicio tercerizado cumple los niveles de servicio pactados. La meta, el plazo, el monto y la periodicidad tienen que estar preestablecidos y ser conocidos, y la meta tiene que depender del esfuerzo del empleado (umbral de desempeño). En la corrección se pidió precisar la frecuencia y la duración.\n• Compensación no financiera: una recompensa como el reconocimiento, el prestigio o la estabilidad en el empleo. En el parcial se propuso la seguridad en el puesto, porque la persona fue elegida por reclutamiento interno y capacitada para acceder a un cargo mayor.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 29,
+        "confidence": "high",
+        "crop": [[0, 29.5, 100, 64.5], [0, 63.7, 100, 67.6, 22]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p29-4cf690.webp"
+      },
+      "origin": {
+        "file": "sources/2025 2do Parcial - Tema 1 (corregido).pdf",
+        "page": 4,
+        "label": "2do parcial, 5 nov 2025 · Tema 1 (corregido)",
+        "crop": [[0, 25, 100, 34], [0, 69, 100, 95, 5]],
+        "img": "sources/pages/2025 2do Parcial - Tema 1 (corregido)-p4-eca098.webp"
       }
     }
   ]
