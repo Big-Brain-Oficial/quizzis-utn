@@ -5,35 +5,20 @@ Moodle y progreso guardado en el navegador. Es un sitio estático: HTML, CSS y J
 modules, sin frameworks, sin build y sin dependencias en runtime.
 
 Los cuestionarios están divididos por materia y, dentro de cada materia, por parcial: en la landing se
-elige la materia y después el parcial que se quiere practicar.
+elige la materia y después el parcial que se quiere practicar. Cada cuestionario explica arriba, en «Cómo
+funciona este cuestionario», los botones, los filtros, el puntaje, los atajos de teclado y cómo se guardan
+las respuestas.
 
-Las preguntas se pueden ver de a una o todas juntas en una página. La vista "Todas en una página" sirve
-para buscar una pregunta con Ctrl+F.
+Materias y parciales incluidos (`node scripts/validate.mjs` muestra cuántas preguntas tiene cada uno):
 
-Cada pregunta se envía por separado. Si quedan preguntas con opciones marcadas sin enviar, al final aparece
-**Enviar todas** para corregirlas de una vez; las que no tienen nada marcado quedan sin responder.
-
-Cuando se responden todas las preguntas que se están viendo, aparece **Repetir las incorrectas**: borra esas
-respuestas y deja el filtro en «las que estoy repitiendo», para volver a intentar solo las erradas o
-parciales hasta tenerlas todas bien. Cada cuestionario explica arriba, en «Cómo funciona este cuestionario»,
-los botones, los filtros, el puntaje y cómo se guardan las respuestas.
-
-En la vista "Una por vez" hay atajos de teclado: `1`–`9` marcan opciones, `Enter` envía la respuesta (o
-pasa a la siguiente si ya estaba enviada) y `←` `→` cambian de pregunta.
-
-El botón de arriba a la derecha (sol/luna) cambia entre modo claro y oscuro. Si nunca se tocó, el sitio
-sigue el tema del sistema.
-
-Materias y parciales incluidos:
-
-| Materia | Parcial | Carpeta | Preguntas |
+| Materia | Parcial | Carpeta | Contenido |
 |---|---|---|---|
-| Administración de Sistemas de Información | 1er parcial | `subjects/asi/1er-parcial/` | 87 (78 con puntaje + 9 informativas) |
-| | 2do parcial | `subjects/asi/2do-parcial/` | 270 (261 con puntaje + 9 informativas): los cuestionarios de la cátedra de las Unidades 4, 5 y 6, cada uno como categoría, la Evaluación Formativa 3 y 33 preguntas de parciales de 2024 y 2025 (categoría «Parciales»; cada una indica de qué parcial sale y trae su captura) |
-| Redes de Datos | 1er parcial | `subjects/redes/1er-parcial/` | 97 (89 con link a la página de la teoría) |
-| | 2do parcial | `subjects/redes/2do-parcial/` | 219 del PDF de parciales (las revisiones del cuestionario de estudio), por unidad (4 a 8), 120 con la retroalimentación de la cátedra como imagen y 186 con link a la página de la teoría (175 con el recorte de la diapositiva) |
-| Sistemas de Información Geográfica | 1er parcial | `subjects/gis/1er-parcial/` | 84 (las ★ importantes y las 33 del 1er parcial 2025, con la página del apunte) |
-| Tecnologías para la Automatización (TEPLA) | 1er parcial | `subjects/tepla/1er-parcial/` | 168: 104 elaboradas a partir de *Apunte Solana P1 - TPLA* (24 de U1, 36 de U2, 22 de U3 y 22 de U4) y 64 de parcial en categorías aparte (24 de U1, 17 de U2, 14 de U3 y 9 de U4; 9 son abiertas del modelo). Cada una tiene el recorte del apunte y, si sale de un parcial, el de esa pregunta |
+| Administración de Sistemas de Información | 1er parcial | `subjects/asi/1er-parcial/` | Cuestionarios de la cátedra, Evaluaciones Formativas 1 y 2 y preguntas de parciales de teoría |
+| | 2do parcial | `subjects/asi/2do-parcial/` | Cuestionarios de las Unidades 4, 5 y 6, Evaluación Formativa 3 y preguntas de parciales de 2024 y 2025, con la captura de cada una |
+| Redes de Datos | 1er parcial | `subjects/redes/1er-parcial/` | Revisiones del cuestionario de estudio, con link a la página de la teoría |
+| | 2do parcial | `subjects/redes/2do-parcial/` | PDF de parciales (las revisiones del cuestionario de estudio) por unidad (4 a 8), con la retroalimentación de la cátedra y el recorte de la diapositiva |
+| Sistemas de Información Geográfica | 1er parcial | `subjects/gis/1er-parcial/` | Las preguntas ★ importantes y las del 1er parcial 2025, con la página del apunte |
+| Tecnologías para la Automatización (TEPLA) | 1er parcial | `subjects/tepla/1er-parcial/` | Práctica de las Unidades 1 a 4 elaborada a partir de *Apunte Solana P1 - TPLA*, preguntas de parcial de cada unidad y preguntas abiertas, con el recorte del apunte y, si sale de un parcial, el de esa pregunta |
 
 Las de GIS salen del banco de [matiasgzlez/GIS](https://github.com/matiasgzlez/GIS): solo las marcadas como
 importantes en clase y las del parcial 2025 (con sus variantes), en el orden de lectura de los apuntes.
@@ -155,14 +140,8 @@ Los ids de las preguntas empiezan con `<slug>-` y son únicos en todo el sitio. 
 4. Agregá el slug a `subjects/subjects.json` para que aparezca en la landing.
 5. Corré `node scripts/validate.mjs` hasta que no marque errores.
 
-El progreso de cada parcial se guarda en `localStorage` con la clave `quiz-<slug>-<parcial>-v1`. Los 1er
-parcial de ASI, Redes y GIS le pasan además `legacyKey: "quiz-<slug>-v1"` al motor, para leer el progreso
-guardado antes de que las materias se dividieran por parcial. Si cambiás los ids de preguntas ya publicadas,
+El progreso se guarda en el navegador por id de pregunta: si cambiás los ids de preguntas ya publicadas,
 las respuestas guardadas de esas preguntas se pierden.
-
-El tema elegido con el botón claro/oscuro se guarda en `localStorage` con la clave `quiz-theme` (`light` o
-`dark`). Cada `index.html` lo aplica con un script corto en el `<head>`, antes de cargar el CSS, para que la
-página no aparezca primero con el otro tema.
 
 ## Esquema de `questions.json`
 
@@ -194,16 +173,11 @@ página no aparezca primero con el otro tema.
 `about` y `footer` se insertan como HTML sin escapar. Son contenido del repo, no de los usuarios.
 
 Con `openQuestions: true`, el cuestionario ofrece las secciones «Todas las preguntas», «Cuestionario» y
-«Preguntas Abiertas». Las preguntas `info` permiten escribir un desarrollo y consultar una respuesta
-orientativa, con sus referencias `source` y `origin`. No se corrigen automáticamente ni suman puntaje.
-El texto se guarda mientras se escribe en `writtenAnswers`, dentro de la misma clave de `localStorage`
-del parcial. Ocultar la respuesta conserva el desarrollo y permite editarlo; «Borrar mis respuestas»
-también borra estos textos. Cambiar de sección restablece los filtros de unidades, parcial y estado.
-Sin esta opción, las tarjetas `info` conservan su comportamiento habitual. TEPLA utiliza esta modalidad
-para las consignas del modelo 2025, las reconstruidas del resumen 2024 y las propuestas de práctica.
-`about` lleva solo lo propio del banco: de dónde salen las preguntas, qué significa cada tema o categoría y
-las salvedades. Cómo usar el cuestionario lo explica el motor en «Cómo funciona este cuestionario», igual
-en todos los parciales, así que no se repite en `about`. `footer` lleva los créditos o la lista de fuentes.
+«Preguntas Abiertas»: en las `info` se puede escribir un desarrollo y compararlo con la respuesta
+orientativa (`answer`). No se corrigen ni suman puntaje. Sin esta opción, las `info` son tarjetas que solo
+muestran la respuesta. TEPLA usa esta modalidad.
+
+Qué va en `about` lo explica [`criterios.md`](criterios.md). `footer` lleva los créditos o la lista de fuentes.
 En `topics`, `striped` dibuja la muestra rayada (como los pares de cable T568B) y `note` agrega una
 aclaración sobre el tema, visible en los filtros y en cada pregunta.
 
@@ -265,9 +239,8 @@ Si encuentra errores, sale con código 1.
 
 La modalidad de preguntas abiertas también tiene una prueba de navegador. Con Python, Playwright
 (`pip install playwright`) y Chrome instalado, ejecutá `python scripts/test-open-questions.py`.
-Para Edge, agregá `--channel msedge`. Verifica filtros, persistencia del desarrollo, compatibilidad
-con progreso previo, exclusión del puntaje, vista móvil y tarjetas informativas de ASI. Usa un servidor
-local temporal y un perfil de navegador aislado.
+Para Edge, agregá `--channel msedge`. Levanta un servidor local temporal y usa un perfil de navegador
+aislado.
 
 ## Referencias a la teoría
 
