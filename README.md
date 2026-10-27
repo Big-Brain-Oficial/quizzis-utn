@@ -29,7 +29,7 @@ Materias y parciales incluidos:
 | Materia | Parcial | Carpeta | Preguntas |
 |---|---|---|---|
 | Administración de Sistemas de Información | 1er parcial | `subjects/asi/1er-parcial/` | 87 (78 con puntaje + 9 informativas) |
-| | 2do parcial | `subjects/asi/2do-parcial/` | 237 (235 con puntaje + 2 informativas): los cuestionarios de la cátedra de las Unidades 4, 5 y 6, cada uno como categoría, y la Evaluación Formativa 3 |
+| | 2do parcial | `subjects/asi/2do-parcial/` | 270 (261 con puntaje + 9 informativas): los cuestionarios de la cátedra de las Unidades 4, 5 y 6, cada uno como categoría, la Evaluación Formativa 3 y 33 preguntas de parciales de 2024 y 2025 (categoría «Parciales»; cada una indica de qué parcial sale y trae su captura) |
 | Redes de Datos | 1er parcial | `subjects/redes/1er-parcial/` | 97 (89 con link a la página de la teoría) |
 | | 2do parcial | `subjects/redes/2do-parcial/` | 219 del PDF de parciales (las revisiones del cuestionario de estudio), por unidad (4 a 8), 120 con la retroalimentación de la cátedra como imagen y 186 con link a la página de la teoría (175 con el recorte de la diapositiva) |
 | Sistemas de Información Geográfica | 1er parcial | `subjects/gis/1er-parcial/` | 84 (las ★ importantes y las 33 del 1er parcial 2025, con la página del apunte) |
@@ -57,10 +57,11 @@ subjects/
       index.html        # carga el motor con initQuiz({ slug: "asi", exam: "1er-parcial" })
       questions.json
       img/              # imágenes referenciadas por las preguntas
-    2do-parcial/        # cuestionarios de la cátedra (Unidades 4, 5 y 6) y Evaluación Formativa 3
+    2do-parcial/        # cuestionarios de la cátedra (Unidades 4, 5 y 6), Evaluación Formativa 3 y parciales
       index.html
       questions.json
-      sources/          # PDFs de teoría (y sus páginas como imagen en pages/)
+      img/              # casos y capturas que forman parte del enunciado de las preguntas de parciales
+      sources/          # PDFs de teoría y de parciales (y sus recortes como imagen en pages/)
       cuestionarios/    # PDFs de los cuestionarios de estudio de la cátedra
   redes/
     index.html, subject.json
