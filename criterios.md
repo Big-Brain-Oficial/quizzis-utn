@@ -42,9 +42,9 @@ criterios y con `"catedra": false`.
   corregirla o la anotación es ambigua), se deduce del apunte y se avisa con `note`, que aparece al
   corregir. Si el material no alcanza para decidir, `correct: []` y la pregunta no se corrige.
 - Cuando el PDF está en el repo, la pregunta lleva `source` con la página donde está la respuesta (ver
-  [Referencias a la teoría](README.md#referencias-a-la-teoría)).
+  [Referencias a la teoría y a los parciales](CLAUDE.md#referencias-a-la-teoría-y-a-los-parciales)).
 - Si la pregunta sale de un parcial, lleva `origin` con el PDF, la página y el recorte de esa pregunta
-  (ver [De qué parcial sale la pregunta](README.md#de-qué-parcial-sale-la-pregunta)).
+  (ver [Referencias a la teoría y a los parciales](CLAUDE.md#referencias-a-la-teoría-y-a-los-parciales)).
 - Si el parcial la pide para desarrollar y no trae opciones, queda como `info`. No se inventan opciones.
 - En `about` se nombra de dónde sale el banco. Si el material está en Google Drive, se enlaza el archivo:
   quien tiene acceso lo abre, y quien no, ve la pantalla de Google para pedirlo. `about` no explica cómo
