@@ -42,9 +42,9 @@ Para reforzar un tema que cubre una pregunta de la cátedra, agregá preguntas n
 - Si cambiás `page`, `confidence` o `crop` de un `source`, o `page` o `crop` de un `origin`, volvé a
   correr `python scripts/render-source-pages.py <materia>/<parcial>` (ver
   [Referencias a la teoría y a los parciales](#referencias-a-la-teoría-y-a-los-parciales)).
-- Si agregás un parcial o cambia lo que contiene, actualizá su fila en la tabla de `README.md` (sin
-  cantidades: las informa el validador). Si agregás una categoría de la cátedra o de parciales,
-  actualizá la lista de `criterios.md` que dice qué categorías llevan `catedra: true`.
+- Si agregás una materia, sumala a la lista de materias de `README.md` (los parciales no se listan
+  ahí). Si agregás una categoría de la cátedra o de parciales, actualizá la lista de `criterios.md`
+  que dice qué categorías llevan `catedra: true`.
 
 ## Estructura
 

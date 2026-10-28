@@ -10,14 +10,10 @@ puntaje y los atajos de teclado.
 
 ## Materias
 
-| Materia | Parcial | Contenido |
-|---|---|---|
-| Administración de Sistemas de Información | 1er parcial | Cuestionarios de la cátedra, Evaluaciones Formativas 1 y 2 y preguntas de parciales de teoría |
-| | 2do parcial | Cuestionarios de las Unidades 4, 5 y 6, Evaluación Formativa 3 y preguntas de parciales de 2024 y 2025, con la captura de cada una |
-| Redes de Datos | 1er parcial | Revisiones del cuestionario de estudio, con link a la página de la teoría |
-| | 2do parcial | PDF de parciales (las revisiones del cuestionario de estudio) por unidad (4 a 8), con la retroalimentación de la cátedra y el recorte de la diapositiva |
-| Sistemas de Información Geográfica | 1er parcial | Las preguntas ★ importantes y las del 1er parcial 2025, con la página del apunte |
-| Tecnologías para la Automatización (TEPLA) | 1er parcial | Práctica de las Unidades 1 a 4 elaborada a partir de *Apunte Solana P1 - TPLA*, preguntas de parcial de cada unidad y preguntas abiertas, con el recorte del apunte y, si sale de un parcial, el de esa pregunta |
+- Administración de Sistemas de Información
+- Redes de Datos
+- Sistemas de Información Geográfica
+- Tecnologías para la Automatización (TEPLA)
 
 Las de GIS salen del banco de [matiasgzlez/GIS](https://github.com/matiasgzlez/GIS): solo las marcadas como
 importantes en clase y las del parcial 2025 (con sus variantes), en el orden de lectura de los apuntes.
