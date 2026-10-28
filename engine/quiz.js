@@ -37,6 +37,8 @@ const GITHUB_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3
 
 // question mark in a circle: the button that opens "Cómo funciona este cuestionario"
 const HELP_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>';
+// a monitor and a phone, for "Pasar a otro dispositivo"
+const DEVICES_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="13" height="10" rx="1.5"/><path d="M6 18h5M8.5 14v4"/><rect x="17" y="8" width="5.5" height="12" rx="1.2"/><path d="M19.75 17h.01"/></svg>';
 
 // GitHub mark + repo name, shown by topActions
 export function repoLink() {
@@ -141,7 +143,7 @@ function shuffle(arr) {
 }
 const fmt = (n) => n.toFixed(2).replace(".", ",");
 
-// "Pasar mi progreso a otro dispositivo": the progress of one exam as a short text to paste in another browser,
+// "Pasar a otro dispositivo": the progress of one exam as a short text to paste in another browser,
 // "<slug>.<exam>.<base64url>". The bytes: a flags byte (1: the rest is deflate-raw), 3 bytes fingerprinting the
 // bank (the answers go by position, so a code only loads into the same version of the questions), then per
 // question in bank order a bit for "answered" and the answer in as few bits as its options need (open questions:
@@ -376,18 +378,18 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       <li><b>Mezclar preguntas</b> cambia el orden de las preguntas; <b>Mezclar opciones</b>, el de las opciones y el de las filas de las preguntas de relacionar.</li>
       <li><b>Una por vez</b> muestra una pregunta con <b>Anterior</b> y <b>Siguiente</b>; <b>Todas en una página</b> las muestra juntas, para buscarlas con Ctrl+F. Los números de abajo llevan a cada pregunta y su color indica cómo te fue.</li>
       <li><b>Borrar mis respuestas</b> empieza de cero.</li>
-      <li><b>Pasar mi progreso a otro dispositivo</b> genera un código con tus respuestas de este parcial para pegarlo en otro navegador o dispositivo.</li>
+      <li><b>Pasar a otro dispositivo</b>, al lado del puntaje, genera un código con tus respuestas de este parcial para pegarlo en otro navegador o dispositivo.</li>
     </ul>
     <h3>Cómo se guardan tus respuestas</h3>
     <div class="storage-info">
-      <p>Se guardan en este navegador cuando las enviás. No hace falta cuenta, pero no pasan solas a otro navegador ni a otro dispositivo: para llevarlas, tocá <b>Pasar mi progreso a otro dispositivo</b>, copiá el código y pegalo en este mismo parcial en el otro. Al cargarlo se suman a las que ya tenías ahí; si una pregunta está en los dos, queda la del código.</p>
+      <p>Se guardan en este navegador cuando las enviás. No hace falta cuenta, pero no pasan solas a otro navegador ni a otro dispositivo: para llevarlas, tocá <b>Pasar a otro dispositivo</b>, copiá el código y pegalo en este mismo parcial en el otro. Al cargarlo se suman a las que ya tenías ahí; si una pregunta está en los dos, queda la del código.</p>
       <table>
         <thead><tr><th scope="col">Acción</th><th scope="col">Respuestas enviadas</th><th scope="col">Marcadas sin enviar</th></tr></thead>
         <tbody>
           <tr><th scope="row">F5 / recargar</th><td>Se mantienen</td><td>Se pierden</td></tr>
           <tr><th scope="row">Cerrar la pestaña o el navegador y volver</th><td>Se mantienen</td><td>Se pierden</td></tr>
           <tr><th scope="row">Abrir el mismo parcial en otra pestaña</th><td>Aparecen las enviadas hasta ese momento</td><td>No aparecen</td></tr>
-          <tr><th scope="row">Abrir el mismo parcial en otro navegador o dispositivo</th><td>Aparecen si pegás el código de «Pasar mi progreso a otro dispositivo»</td><td>No aparecen</td></tr>
+          <tr><th scope="row">Abrir el mismo parcial en otro navegador o dispositivo</th><td>Aparecen si pegás el código de «Pasar a otro dispositivo»</td><td>No aparecen</td></tr>
         </tbody>
       </table>
     </div>
@@ -431,21 +433,23 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       </div>
       <div class="row" style="margin-top:6px">
         <button class="linkbtn" id="reset" type="button">Borrar mis respuestas</button>
-        <button class="linkbtn" id="syncBtn" type="button" aria-expanded="false" aria-controls="sync">Pasar mi progreso a otro dispositivo</button>
         <button class="linkbtn storage-btn" id="howtoBtn" type="button">${HELP_ICON}Cómo funciona y cómo se guardan mis respuestas</button>
       </div>
-      <div class="sync" id="sync" hidden>
-        <p>Copiá el código en este dispositivo y pegalo en <b>este mismo parcial</b> en el otro. Lleva tus respuestas enviadas${hasOpenQuestions ? " y lo que escribiste en las preguntas abiertas" : ""}; no hace falta cuenta.</p>
-        <div class="actions"><button class="btn" type="button" id="syncMake">Copiar el código de mi progreso</button></div>
-        <textarea id="syncOut" rows="3" readonly hidden aria-label="Código de tu progreso"></textarea>
-        <label for="syncIn">¿Venís de otro dispositivo? Pegá acá su código:</label>
-        <textarea id="syncIn" rows="3" spellcheck="false" autocomplete="off" placeholder="${esc(`${slug}.${exam}.…`)}"></textarea>
-        <div class="actions"><button class="btn primary" type="button" id="syncLoad" disabled>Cargar el progreso</button></div>
-        <p class="sync-msg" id="syncMsg" role="status"></p>
-      </div>
     </details>
-    <div class="stats" id="stats"></div>
+    <div class="progress-head">
+      <div class="stats" id="stats"></div>
+      <button class="repo sync-btn" id="syncBtn" type="button" aria-expanded="false" aria-controls="sync">${DEVICES_ICON}Pasar a otro dispositivo</button>
+    </div>
     <div class="bar"><i id="barFill"></i></div>
+    <div class="sync" id="sync" hidden>
+      <p>Copiá el código en este dispositivo y pegalo en <b>este mismo parcial</b> en el otro. Lleva tus respuestas enviadas${hasOpenQuestions ? " y lo que escribiste en las preguntas abiertas" : ""}; no hace falta cuenta.</p>
+      <div class="actions"><button class="btn" type="button" id="syncMake">Copiar el código de mi progreso</button></div>
+      <textarea id="syncOut" rows="3" readonly hidden aria-label="Código de tu progreso"></textarea>
+      <label for="syncIn">¿Venís de otro dispositivo? Pegá acá su código:</label>
+      <textarea id="syncIn" rows="3" spellcheck="false" autocomplete="off" placeholder="${esc(`${slug}.${exam}.…`)}"></textarea>
+      <div class="actions"><button class="btn primary" type="button" id="syncLoad" disabled>Cargar el progreso</button></div>
+      <p class="sync-msg" id="syncMsg" role="status"></p>
+    </div>
     <div class="viewmode" id="viewMode" role="group" aria-label="Cómo mostrar las preguntas">
       <button type="button" class="seg" data-mode="one">Una por vez</button>
       <button type="button" class="seg" data-mode="all" title="Muestra todas las preguntas filtradas juntas, para buscarlas con Ctrl+F">Todas en una página</button>

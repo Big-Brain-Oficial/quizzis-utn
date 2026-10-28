@@ -142,8 +142,8 @@ Los ids de las preguntas empiezan con `<slug>-` y son únicos en todo el sitio. 
 5. Corré `node scripts/validate.mjs` hasta que no marque errores.
 
 El progreso se guarda en el navegador por id de pregunta: si cambiás los ids de preguntas ya publicadas,
-las respuestas guardadas de esas preguntas se pierden. Lo mismo pasa con el código de «Pasar mi progreso a
-otro dispositivo», que lleva las respuestas por id: al cargarlo se ignoran las de preguntas que ya no están.
+las respuestas guardadas de esas preguntas se pierden. Lo mismo pasa con el código de «Pasar a otro
+dispositivo», que lleva las respuestas por id: al cargarlo se ignoran las de preguntas que ya no están.
 
 ## Esquema de `questions.json`
 

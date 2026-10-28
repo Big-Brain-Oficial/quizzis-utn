@@ -102,8 +102,13 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:8px;
 .linkbtn{background:none;border:none;color:var(--accent);cursor:pointer;padding:6px 0;font-size:.93rem;text-decoration:underline;text-underline-offset:3px}
 .storage-btn{display:inline-flex;align-items:center;gap:6px}
 .storage-btn svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-/* "Pasar mi progreso a otro dispositivo" */
-.sync{margin-top:8px;border-top:1px solid var(--line);padding-top:10px;font-size:.93rem}
+/* "Pasar mi progreso a otro dispositivo": a pill next to the stats, opening a panel under the progress bar */
+.progress-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:16px 2px 10px}
+.progress-head .stats{margin:0}
+.sync-btn{margin-left:auto;min-height:36px;cursor:pointer;color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.sync-btn[aria-expanded="true"]{background:color-mix(in srgb,var(--accent) 12%,var(--surface));border-color:var(--accent)}
+.sync-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sync{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:-6px 0 18px;font-size:.93rem}
 .sync p{margin:0 0 10px}
 .sync label{display:block;margin-top:14px;font-weight:700}
 .sync .actions{margin-top:0}
