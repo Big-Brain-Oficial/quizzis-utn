@@ -1,7 +1,8 @@
 # Quizzes UTN
 
 Bancos de preguntas de repaso para materias de ISI (UTN FRRe), con corrección inmediata, puntaje estilo
-Moodle y progreso guardado en el navegador. Es un sitio estático: HTML, CSS y JavaScript vanilla con ES
+Moodle y progreso guardado en el navegador, que se puede pasar a otro navegador o dispositivo con un
+código. Es un sitio estático: HTML, CSS y JavaScript vanilla con ES
 modules, sin frameworks, sin build y sin dependencias en runtime.
 
 Los cuestionarios están divididos por materia y, dentro de cada materia, por parcial: en la landing se
@@ -141,7 +142,8 @@ Los ids de las preguntas empiezan con `<slug>-` y son únicos en todo el sitio. 
 5. Corré `node scripts/validate.mjs` hasta que no marque errores.
 
 El progreso se guarda en el navegador por id de pregunta: si cambiás los ids de preguntas ya publicadas,
-las respuestas guardadas de esas preguntas se pierden.
+las respuestas guardadas de esas preguntas se pierden. Lo mismo pasa con el código de «Pasar mi progreso a
+otro dispositivo», que lleva las respuestas por id: al cargarlo se ignoran las de preguntas que ya no están.
 
 ## Esquema de `questions.json`
 

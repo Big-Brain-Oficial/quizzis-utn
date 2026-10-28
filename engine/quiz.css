@@ -102,6 +102,18 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:8px;
 .linkbtn{background:none;border:none;color:var(--accent);cursor:pointer;padding:6px 0;font-size:.93rem;text-decoration:underline;text-underline-offset:3px}
 .storage-btn{display:inline-flex;align-items:center;gap:6px}
 .storage-btn svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* "Pasar mi progreso a otro dispositivo" */
+.sync{margin-top:8px;border-top:1px solid var(--line);padding-top:10px;font-size:.93rem}
+.sync p{margin:0 0 10px}
+.sync label{display:block;margin-top:14px;font-weight:700}
+.sync .actions{margin-top:0}
+.sync textarea{display:block;width:100%;margin:8px 0 10px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:.85rem/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;overflow-wrap:anywhere;resize:vertical}
+.sync textarea[hidden]{display:none}
+.sync textarea[readonly]{background:var(--bg)}
+.sync textarea:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px}
+.sync-msg:empty{display:none}
+.sync .sync-msg{margin:10px 0 0;font-weight:700}
+.sync-msg.ok{color:var(--ok)} .sync-msg.bad{color:var(--bad)}
 .storage-info{margin-top:8px;border-top:1px solid var(--line);padding-top:10px;font-size:.88rem}
 .storage-info p{margin:0 0 8px;color:var(--muted)}
 .storage-info table{width:100%;border-collapse:collapse}

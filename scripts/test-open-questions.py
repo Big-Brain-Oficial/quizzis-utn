@@ -4,6 +4,7 @@ Usage: python scripts/test-open-questions.py [--channel chrome|msedge]
 """
 import argparse
 import json
+import random
 import threading
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -16,6 +17,36 @@ KEY = 'quiz-tepla-1er-parcial-v1'
 DATA = json.loads((ROOT / 'subjects/tepla/1er-parcial/questions.json').read_text(encoding='utf-8'))
 OPEN = [q for q in DATA['questions'] if q['type'] == 'info']
 CLOSED = [q for q in DATA['questions'] if q['type'] != 'info']
+
+
+def score(q, ans):
+    if q['type'] == 'match':
+        return sum(a == c for a, c in zip(ans, q['correct'])) / len(q['correct'])
+    if q['type'] == 'multi':
+        hits = sum(a in q['correct'] for a in ans)
+        return max(0, (hits - (len(ans) - hits)) / len(q['correct']))
+    return 1 if len(ans) == 1 and ans[0] in q['correct'] else 0
+
+
+# stored progress with about two thirds of the bank answered, as the engine saves it
+def random_progress(bank, rng):
+    answers, written = {}, {}
+    for q in bank['questions']:
+        if q['type'] == 'info':
+            if bank.get('openQuestions') and rng.random() < .5:
+                written[q['id']] = rng.choice(['Mi desarrollo:\nñandú «citas» ', 'x', 'Texto 😀 con emoji']) * rng.randint(1, 3)
+            if rng.random() < .66:
+                answers[q['id']] = dict(seen=True)
+        elif q['correct'] and rng.random() < .66:
+            if q['type'] == 'match':
+                ans = [rng.randrange(-1, len(q['choices'])) for _ in q['stems']]
+                ans[0] = rng.randrange(len(q['choices']))
+            elif q['type'] == 'multi':
+                ans = rng.sample(range(len(q['opts'])), rng.randint(1, len(q['opts'])))
+            else:
+                ans = [rng.randrange(len(q['opts']))]
+            answers[q['id']] = dict(ans=ans, score=score(q, ans))
+    return answers, written
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -114,6 +145,40 @@ def run(channel):
             page.locator('#main .check').click()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
 
+            # Progress code: carries this exam's sent answers and written answers to another browser.
+            page.set_viewport_size({'width': 1280, 'height': 800})
+            page.locator('#filters').evaluate('(el) => el.open = true')
+            page.locator('#syncBtn').click()
+            expect(page.locator('#sync')).to_be_visible()
+            page.locator('#syncMake').click()
+            expect(page.locator('#syncMsg')).to_contain_text('en este mismo parcial en el otro dispositivo')
+            code = page.locator('#syncOut').input_value()
+            assert code.startswith('tepla.1er-parcial.'), code
+            saved = page.evaluate('(key) => JSON.parse(localStorage.getItem(key))', KEY)
+            other = browser.new_context(reduced_motion='reduce')
+            other.route('https://fonts.**', lambda route: route.abort())
+            page2 = other.new_page()
+            page2.on('pageerror', lambda error: errors.append(str(error)))
+            page2.goto(base + '/subjects/tepla/1er-parcial/')
+            page2.locator('#filters').evaluate('(el) => el.open = true')
+            page2.locator('#syncBtn').click()
+            page2.locator('#syncIn').fill('tepla.1er-parcial.zno-es-un-codigo')
+            page2.locator('#syncLoad').click()
+            expect(page2.locator('#syncMsg')).to_contain_text('no es válido')
+            page2.locator('#syncIn').fill(code.replace('tepla.1er-parcial.', 'asi.1er-parcial.'))
+            page2.locator('#syncLoad').click()
+            expect(page2.locator('#syncMsg')).to_contain_text('otro parcial')
+            # chat apps may wrap the code: whitespace is ignored
+            page2.locator('#syncIn').fill(code[:20] + '\n' + code[20:])
+            page2.locator('#syncLoad').click()
+            expect(page2.locator('#syncMsg')).to_contain_text('Listo')
+            loaded = page2.evaluate('(key) => JSON.parse(localStorage.getItem(key))', KEY)
+            assert loaded['answers'] == saved['answers'], (loaded['answers'], saved['answers'])
+            assert loaded['writtenAnswers'] == saved['writtenAnswers']
+            other.close()
+            page.set_viewport_size({'width': 360, 'height': 800})
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+
             page.once('dialog', lambda dialog: dialog.accept())
             page.locator('#reset').click()
             expect(page.locator('#main textarea')).to_have_value('')
@@ -130,9 +195,48 @@ def run(channel):
             expect(page.locator('#main textarea')).to_have_count(0)
             page.get_by_role('button', name='Ver respuesta', exact=True).first.click()
             expect(page.get_by_role('heading', name='Respuesta', exact=True).first).to_be_visible()
+
+            # Progress code round trip in every exam, with random answers of every type (the score is recomputed
+            # on load), and a code from another version of the questions is rejected.
+            rng = random.Random(1)
+            for bank_file in sorted(ROOT.glob('subjects/*/*/questions.json')):
+                slug, exam = bank_file.parent.parent.name, bank_file.parent.name
+                bank = json.loads(bank_file.read_text(encoding='utf-8'))
+                answers, written = random_progress(bank, rng)
+                key = f'quiz-{slug}-{exam}-v1'
+                page.goto(f'{base}/subjects/{slug}/{exam}/')
+                page.evaluate('([key, state]) => localStorage.setItem(key, JSON.stringify(state))',
+                              [key, dict(answers=answers, writtenAnswers=written)])
+                page.reload()
+                page.locator('#filters').evaluate('(el) => el.open = true')
+                page.locator('#syncBtn').click()
+                page.locator('#syncMake').click()
+                expect(page.locator('#syncOut')).to_be_visible()
+                code = page.locator('#syncOut').input_value()
+                page.evaluate('(keys) => keys.forEach((k) => localStorage.removeItem(k))', [key, f'quiz-{slug}-v1'])
+                page.reload()
+                page.locator('#filters').evaluate('(el) => el.open = true')
+                page.locator('#syncBtn').click()
+                cut = len(f'{slug}.{exam}.') + 2  # inside the bank fingerprint
+                page.locator('#syncIn').fill(code[:cut] + ('A' if code[cut] != 'A' else 'B') + code[cut + 1:])
+                page.locator('#syncLoad').click()
+                expect(page.locator('#syncMsg')).to_contain_text('otra versión de las preguntas')
+                page.locator('#syncIn').fill(code)
+                page.locator('#syncLoad').click()
+                expect(page.locator('#syncMsg')).to_contain_text('Listo')
+                loaded = page.evaluate('(key) => JSON.parse(localStorage.getItem(key))', key)
+                by_id = {q['id']: q for q in bank['questions']}
+                for qid, ans in answers.items():
+                    q = by_id[qid]
+                    if q['type'] == 'multi':
+                        ans = dict(ans=sorted(ans['ans']), score=ans['score'])
+                    assert loaded['answers'][qid] == ans, (qid, loaded['answers'][qid], ans)
+                assert loaded['answers'].keys() == answers.keys()
+                assert loaded['writtenAnswers'] == written
+                print(f'  {slug}/{exam}: {len(answers)} respuestas, {len(written)} desarrollos -> {len(code)} caracteres')
             assert not errors, errors
             browser.close()
-            print(f'OK: {len(OPEN)} abiertas; filtros, guardado, progreso previo, puntaje, móvil y ASI.')
+            print(f'OK: {len(OPEN)} abiertas; filtros, guardado, progreso previo, puntaje, móvil, código de progreso y ASI.')
     finally:
         server.shutdown()
         server.server_close()
