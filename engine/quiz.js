@@ -37,6 +37,8 @@ const GITHUB_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3
 
 // question mark in a circle: the button that opens "Cómo funciona este cuestionario"
 const HELP_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>';
+// a monitor and a phone, for "Pasar a otro dispositivo"
+const DEVICES_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="13" height="10" rx="1.5"/><path d="M6 18h5M8.5 14v4"/><rect x="17" y="8" width="5.5" height="12" rx="1.2"/><path d="M19.75 17h.01"/></svg>';
 
 // GitHub mark + repo name, shown by topActions
 export function repoLink() {
@@ -140,6 +142,112 @@ function shuffle(arr) {
   return a;
 }
 const fmt = (n) => n.toFixed(2).replace(".", ",");
+
+// "Pasar a otro dispositivo": the progress of one exam as a short text to paste in another browser,
+// "<slug>.<exam>.<base64url>". The bytes: a flags byte (1: the rest is deflate-raw), 3 bytes fingerprinting the
+// bank (the answers go by position, so a code only loads into the same version of the questions), then per
+// question in bank order a bit for "answered" and the answer in as few bits as its options need (open questions:
+// one more bit for "has text"), and after the bits the open answers' texts, separated by \0.
+const BAD_CODE = "El código no es válido. Copialo de nuevo completo desde el otro dispositivo.";
+const bitsFor = (n) => Math.max(1, Math.ceil(Math.log2(n)));
+function toB64(bytes) {
+  let s = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+const fromB64 = (s) => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
+const pipeBytes = async (bytes, stream) => new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(stream)).arrayBuffer());
+
+// 24-bit FNV-1a of what the positions depend on: ids, types and option counts
+function bankPrint(questions) {
+  const s = questions.map((q) => `${q.id}:${q.type}:${q.type === "match" ? `${q.stems.length}/${q.choices.length}` : (q.opts || []).length}`).join("|");
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return h >>> 8;
+}
+
+// answers: id -> saved answer; written: id -> open answer text
+async function packProgress(slug, exam, questions, isOpen, answers, written) {
+  const out = [], texts = [];
+  let acc = 0, n = 0;
+  const put = (v, bits) => {
+    for (let b = bits - 1; b >= 0; b--) {
+      acc = (acc << 1) | ((v >> b) & 1);
+      if (++n === 8) { out.push(acc); acc = n = 0; }
+    }
+  };
+  questions.forEach((q) => {
+    const saved = answers[q.id];
+    if (q.type === "info") {
+      put(saved ? 1 : 0, 1);
+      if (isOpen(q)) {
+        put(written[q.id] ? 1 : 0, 1);
+        if (written[q.id]) texts.push(written[q.id].replace(/\0/g, ""));
+      }
+    } else if (isScored(q)) {
+      const sent = !!saved && Array.isArray(saved.ans);
+      put(sent ? 1 : 0, 1);
+      if (!sent) return;
+      if (q.type === "match") q.stems.forEach((s, i) => put((saved.ans[i] ?? -1) + 1, bitsFor(q.choices.length + 1)));
+      else if (q.type === "multi") q.opts.forEach((o, i) => put(saved.ans.includes(i) ? 1 : 0, 1));
+      else put(saved.ans[0], bitsFor(q.opts.length));
+    }
+  });
+  if (n) put(0, 8 - n);
+  const text = texts.length ? new TextEncoder().encode(texts.join("\0")) : [];
+  let body = new Uint8Array([...out, ...text]), flags = 0;
+  if (typeof CompressionStream === "function") {
+    const z = await pipeBytes(body, new CompressionStream("deflate-raw"));
+    if (z.length < body.length) { body = z; flags = 1; }
+  }
+  const print = bankPrint(questions);
+  return `${slug}.${exam}.${toB64(new Uint8Array([flags, print >> 16, (print >> 8) & 255, print & 255, ...body]))}`;
+}
+
+// { slug, exam, print, body }; throws Error with a message for the user. Whitespace is ignored: chat apps wrap long lines
+async function readProgressCode(code) {
+  const [slug, exam, data, extra] = code.replace(/\s+/g, "").split(".");
+  if (extra !== undefined || !data || !/^[a-z0-9-]+$/.test(slug) || !/^[a-z0-9-]+$/.test(exam) || !/^[\w-]{6,}$/.test(data)) throw new Error(BAD_CODE);
+  let bytes;
+  try { bytes = fromB64(data); } catch (e) { throw new Error(BAD_CODE); }
+  if (bytes[0] > 1) throw new Error(BAD_CODE);
+  let body = bytes.subarray(4);
+  if (bytes[0] === 1) {
+    if (typeof DecompressionStream !== "function") throw new Error("Este navegador no puede leer el código. Actualizalo o probá con otro.");
+    try { body = await pipeBytes(body, new DecompressionStream("deflate-raw")); } catch (e) { throw new Error(BAD_CODE); }
+  }
+  return { slug, exam, print: (bytes[1] << 16) | (bytes[2] << 8) | bytes[3], body };
+}
+
+// the inverse of packProgress, for a body whose print matched: { a: id -> answer (1 for a seen info card), w: id -> text }
+function unpackProgress(body, questions, isOpen) {
+  const a = {}, w = {}, withText = [];
+  let pos = 0;
+  const get = (bits) => {
+    let v = 0;
+    for (let b = 0; b < bits; b++, pos++) {
+      if (pos >> 3 >= body.length) throw new Error(BAD_CODE);
+      v = (v << 1) | ((body[pos >> 3] >> (7 - (pos & 7))) & 1);
+    }
+    return v;
+  };
+  questions.forEach((q) => {
+    if (q.type === "info") {
+      if (get(1)) a[q.id] = 1;
+      if (isOpen(q) && get(1)) withText.push(q.id);
+    } else if (isScored(q) && get(1)) {
+      if (q.type === "match") a[q.id] = q.stems.map(() => get(bitsFor(q.choices.length + 1)) - 1);
+      else if (q.type === "multi") a[q.id] = q.opts.map((o, i) => (get(1) ? i : -1)).filter((i) => i >= 0);
+      else a[q.id] = [get(bitsFor(q.opts.length))];
+    }
+  });
+  if (withText.length) {
+    const texts = new TextDecoder().decode(body.subarray(Math.ceil(pos / 8))).split("\0");
+    if (texts.length !== withText.length) throw new Error(BAD_CODE);
+    withText.forEach((id, i) => { w[id] = texts[i]; });
+  }
+  return { a, w };
+}
 
 // legacyKey: storage key used before the subject was split by exam; read once if the new key is empty
 export async function initQuiz({ slug, exam, legacyKey, root = document.getElementById("app") }) {
@@ -270,16 +378,18 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       <li><b>Mezclar preguntas</b> cambia el orden de las preguntas; <b>Mezclar opciones</b>, el de las opciones y el de las filas de las preguntas de relacionar.</li>
       <li><b>Una por vez</b> muestra una pregunta con <b>Anterior</b> y <b>Siguiente</b>; <b>Todas en una página</b> las muestra juntas, para buscarlas con Ctrl+F. Los números de abajo llevan a cada pregunta y su color indica cómo te fue.</li>
       <li><b>Borrar mis respuestas</b> empieza de cero.</li>
+      <li><b>Pasar a otro dispositivo</b>, al lado del puntaje, genera un código con tus respuestas de este parcial para pegarlo en otro navegador o dispositivo.</li>
     </ul>
     <h3>Cómo se guardan tus respuestas</h3>
     <div class="storage-info">
-      <p>Se guardan en este navegador cuando las enviás. No hace falta cuenta, pero tampoco pasan a otro navegador ni a otro dispositivo.</p>
+      <p>Se guardan en este navegador cuando las enviás. No hace falta cuenta, pero no pasan solas a otro navegador ni a otro dispositivo: para llevarlas, tocá <b>Pasar a otro dispositivo</b>, copiá el código y pegalo en este mismo parcial en el otro. Al cargarlo se suman a las que ya tenías ahí; si una pregunta está en los dos, queda la del código.</p>
       <table>
         <thead><tr><th scope="col">Acción</th><th scope="col">Respuestas enviadas</th><th scope="col">Marcadas sin enviar</th></tr></thead>
         <tbody>
           <tr><th scope="row">F5 / recargar</th><td>Se mantienen</td><td>Se pierden</td></tr>
           <tr><th scope="row">Cerrar la pestaña o el navegador y volver</th><td>Se mantienen</td><td>Se pierden</td></tr>
           <tr><th scope="row">Abrir el mismo parcial en otra pestaña</th><td>Aparecen las enviadas hasta ese momento</td><td>No aparecen</td></tr>
+          <tr><th scope="row">Abrir el mismo parcial en otro navegador o dispositivo</th><td>Aparecen si pegás el código de «Pasar a otro dispositivo»</td><td>No aparecen</td></tr>
         </tbody>
       </table>
     </div>
@@ -326,8 +436,20 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
         <button class="linkbtn storage-btn" id="howtoBtn" type="button">${HELP_ICON}Cómo funciona y cómo se guardan mis respuestas</button>
       </div>
     </details>
-    <div class="stats" id="stats"></div>
+    <div class="progress-head">
+      <div class="stats" id="stats"></div>
+      <button class="repo sync-btn" id="syncBtn" type="button" aria-expanded="false" aria-controls="sync">${DEVICES_ICON}Pasar a otro dispositivo</button>
+    </div>
     <div class="bar"><i id="barFill"></i></div>
+    <div class="sync" id="sync" hidden>
+      <p>Copiá el código en este dispositivo y pegalo en <b>este mismo parcial</b> en el otro. Lleva tus respuestas enviadas${hasOpenQuestions ? " y lo que escribiste en las preguntas abiertas" : ""}; no hace falta cuenta.</p>
+      <div class="actions"><button class="btn" type="button" id="syncMake">Copiar el código de mi progreso</button></div>
+      <textarea id="syncOut" rows="3" readonly hidden aria-label="Código de tu progreso"></textarea>
+      <label for="syncIn">¿Venís de otro dispositivo? Pegá acá su código:</label>
+      <textarea id="syncIn" rows="3" spellcheck="false" autocomplete="off" placeholder="${esc(`${slug}.${exam}.…`)}"></textarea>
+      <div class="actions"><button class="btn primary" type="button" id="syncLoad" disabled>Cargar el progreso</button></div>
+      <p class="sync-msg" id="syncMsg" role="status"></p>
+    </div>
     <div class="viewmode" id="viewMode" role="group" aria-label="Cómo mostrar las preguntas">
       <button type="button" class="seg" data-mode="one">Una por vez</button>
       <button type="button" class="seg" data-mode="all" title="Muestra todas las preguntas filtradas juntas, para buscarlas con Ctrl+F">Todas en una página</button>
@@ -837,6 +959,75 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
     state.answers = {}; state.writtenAnswers = {}; drafts = {}; optOrder = {}; rowOrder = {};
     setStatus(state.status === "retry" ? "all" : state.status);
   });
+
+  // ---------- passing progress to another device ----------
+  // the code carries the sent answers and the open answers' texts (packProgress); the score is recomputed on load
+  const byId = new Map(DATA.questions.map((q) => [q.id, q]));
+  const validAns = (q, ans) => Array.isArray(ans) && ans.every(Number.isInteger) && hasAnswer(q, ans) && (q.type === "match"
+    ? ans.length === q.stems.length && ans.every((a) => a >= -1 && a < q.choices.length)
+    : new Set(ans).size === ans.length && ans.every((a) => a >= 0 && a < q.opts.length) && (q.type === "multi" || ans.length === 1));
+  const plural = (n, one, many) => `<b>${n}</b> ${n === 1 ? one : many}`;
+  function syncMsg(html, ok) {
+    $("syncMsg").className = `sync-msg ${ok ? "ok" : "bad"}`;
+    $("syncMsg").innerHTML = html;
+  }
+  $("syncBtn").addEventListener("click", () => {
+    const open = $("sync").hidden;
+    $("sync").hidden = !open;
+    $("syncBtn").setAttribute("aria-expanded", open);
+    if (open) $("syncMake").focus();
+  });
+  $("syncMake").addEventListener("click", async () => {
+    const out = $("syncOut");
+    if (!DATA.questions.some((q) => state.answers[q.id] || (isOpen(q) && state.writtenAnswers[q.id]))) {
+      out.hidden = true;
+      return syncMsg("Todavía no tenés respuestas guardadas en este parcial.", false);
+    }
+    out.value = await packProgress(slug, exam, DATA.questions, isOpen, state.answers, state.writtenAnswers);
+    out.hidden = false;
+    let copied = false;
+    try { await navigator.clipboard.writeText(out.value); copied = true; } catch (e) { /* no clipboard access: copied by hand */ }
+    out.focus();
+    out.select();
+    syncMsg(copied ? "Código copiado. Pegalo en este mismo parcial en el otro dispositivo."
+      : "Copiá el código (ya está seleccionado) y pegalo en este mismo parcial en el otro dispositivo.", true);
+  });
+  $("syncIn").addEventListener("input", (e) => { $("syncLoad").disabled = !e.target.value.trim(); });
+  $("syncLoad").addEventListener("click", async () => {
+    let got, data;
+    try { got = await readProgressCode($("syncIn").value); } catch (e) { return syncMsg(esc(e.message), false); }
+    if (got.slug !== slug || got.exam !== exam) {
+      return syncMsg(`Este código es de otro parcial. <a href="../../${got.slug}/${got.exam}/">Abrí ese parcial</a> y pegalo ahí.`, false);
+    }
+    if (got.print !== bankPrint(DATA.questions)) {
+      return syncMsg("Este código se generó con otra versión de las preguntas de este parcial. Recargá la página en los dos dispositivos y generá el código de nuevo.", false);
+    }
+    try { data = unpackProgress(got.body, DATA.questions, isOpen); } catch (e) { return syncMsg(esc(e.message), false); }
+    let n = 0, w = 0;
+    const { a: answers, w: written } = data;
+    Object.entries(answers).forEach(([id, ans]) => {
+      const q = byId.get(id);
+      if (!q) return;
+      if (q.type === "info" && ans === 1) state.answers[id] = { seen: true };
+      else if (q.type !== "info" && isScored(q) && validAns(q, ans)) state.answers[id] = { ans, score: score(q, ans) };
+      else return;
+      delete drafts[id];
+      n++;
+    });
+    Object.entries(written).forEach(([id, text]) => {
+      const q = byId.get(id);
+      if (!q || !isOpen(q) || typeof text !== "string" || !text) return;
+      state.writtenAnswers[id] = text;
+      w++;
+    });
+    if (!n && !w) return syncMsg("El código no trae respuestas de preguntas que sigan en este parcial.", false);
+    $("syncIn").value = "";
+    $("syncLoad").disabled = true;
+    applyFilters();
+    syncMsg(`Listo: se cargaron ${plural(n, "respuesta", "respuestas")}${hasOpenQuestions ? ` y ${plural(w, "desarrollo", "desarrollos")}` : ""}.
+      Las que ya tenías en este navegador y no venían en el código se mantienen.`, true);
+  });
+
   // keyboard, "one" mode only: 1–9 pick options, Enter sends (or goes on once sent), arrows navigate
   document.addEventListener("keydown", (e) => {
     if (state.mode === "all" || e.ctrlKey || e.metaKey || e.altKey || e.target.closest("select, textarea")) return;
