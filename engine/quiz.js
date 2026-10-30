@@ -39,6 +39,8 @@ const GITHUB_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3
 const HELP_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>';
 // a monitor and a phone, for "Pasar a otro dispositivo"
 const DEVICES_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="13" height="10" rx="1.5"/><path d="M6 18h5M8.5 14v4"/><rect x="17" y="8" width="5.5" height="12" rx="1.2"/><path d="M19.75 17h.01"/></svg>';
+// a box with an arrow leaving it, for the links to other sites ("links")
+const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
 
 // GitHub mark + repo name, shown by topActions
 export function repoLink() {
@@ -348,6 +350,13 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
   // what is particular to this bank (sources, categories, caveats); how to use the quiz goes in howto
   const intro = DATA.about && DATA.about.length
     ? `<details class="intro" id="intro" ${firstVisit ? "open" : ""}><summary>Sobre este banco de preguntas</summary>${DATA.about.join("")}</details>` : "";
+  // other sites to study the same exam, always visible above the intro
+  const links = DATA.links && DATA.links.length
+    ? `<aside class="extlinks" aria-label="Otros sitios para repasar">${DATA.links.map((l) => `<a class="extlink" href="${esc(l.url)}" target="_blank" rel="noopener">
+        <span class="extlink-icon">${EXTERNAL_ICON}</span>
+        <span class="extlink-body"><b>${esc(l.title)}</b>${l.text ? `<span>${esc(l.text)}</span>` : ""}</span>
+        <span class="extlink-go">Abrir<span class="sr-only"> en una pestaña nueva</span></span>
+      </a>`).join("")}</aside>` : "";
   // same guide in every exam; the lines about notes, info cards and theory pages only show if the bank has them
   const hasNotes = DATA.questions.some((q) => q.note);
   const hasInfo = DATA.questions.some((q) => q.type === "info");
@@ -403,6 +412,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       <button type="button" class="seg" data-practice="open">Preguntas Abiertas</button>
     </div>
     <p class="sub" id="openHelp" hidden>Desarrollá tu respuesta y comparala con la orientación del apunte. Sin corrección automática ni puntaje.</p>` : ""}
+    ${links}
     ${intro}
     ${howto}
     <details class="filters" id="filters" open>

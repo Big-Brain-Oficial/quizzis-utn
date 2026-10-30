@@ -48,6 +48,20 @@ h1{font:700 2.1rem/1 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing
 .theme-toggle{justify-content:center;width:32px;padding:0;cursor:pointer}
 .theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
+/* other sites to study the exam ("links" in questions.json): a bordered card that stands out from the intro */
+.extlinks{display:grid;gap:10px;margin:0 0 14px}
+.extlink{display:flex;align-items:center;gap:14px;padding:14px 16px;border:2px solid var(--accent);border-radius:14px;background:color-mix(in srgb,var(--accent) 9%,var(--surface));color:var(--ink);text-decoration:none;transition:background .15s,box-shadow .15s}
+.extlink:hover{background:color-mix(in srgb,var(--accent) 15%,var(--surface));box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 22%,transparent)}
+.extlink-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;background:var(--accent);color:var(--accent-ink)}
+.extlink-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.extlink-body{display:grid;gap:2px;min-width:0}
+.extlink-body b{font-size:1.02rem}
+.extlink-body span{font-size:.9rem;color:var(--muted)}
+.extlink-go{flex:none;margin-left:auto;padding:7px 14px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:.85rem;font-weight:700}
+.extlink .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media (max-width:480px){.extlink{flex-wrap:wrap;gap:10px 12px}.extlink-body{flex:1 1 0}.extlink-go{width:100%;text-align:center}}
+@media (prefers-reduced-motion:reduce){.extlink{transition:none}}
+
 /* subject intro (about paragraphs from questions.json) */
 .intro{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 14px;font-size:.92rem;color:var(--muted)}
 .intro summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none}
