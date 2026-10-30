@@ -82,6 +82,14 @@ function checkExam(slug, exam, meta) {
   if (data.accentDark !== undefined && !HEX.test(data.accentDark)) err("", "'accentDark' debe ser un color #RRGGBB");
   if (data.topicFilter !== undefined && !["pick", "multi"].includes(data.topicFilter)) err("", "'topicFilter' debe ser pick|multi");
   if (data.openQuestions !== undefined && typeof data.openQuestions !== "boolean") err("", "'openQuestions' debe ser booleano");
+  if (data.links !== undefined) {
+    if (!Array.isArray(data.links)) err("", "'links' debe ser una lista");
+    else data.links.forEach((l, i) => {
+      if (!/^https:\/\//.test(l?.url || "")) err(`links #${i}`, "'url' debe empezar con https://");
+      if (typeof l?.title !== "string" || !l.title) err(`links #${i}`, "falta 'title'");
+      if (l?.text !== undefined && typeof l.text !== "string") err(`links #${i}`, "'text' debe ser texto");
+    });
+  }
   if (!data.topics || typeof data.topics !== "object") { err("", "falta 'topics'"); return; }
   for (const [k, t] of Object.entries(data.topics)) {
     if (!t || typeof t.name !== "string") err(`topic ${k}`, "falta 'name'");

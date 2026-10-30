@@ -133,6 +133,7 @@ En los dos casos, corré `node scripts/validate.mjs` hasta que no marque errores
   },
   "imageCaption": "Imagen de referencia",      // opcional, título de las imágenes en la revisión
   "about": ["<p>…</p>"],                       // opcional, HTML: "Sobre este banco de preguntas"
+  "links": [{ "url": "https://…", "title": "…", "text": "…" }], // opcional, otros sitios para repasar
   "footer": "…",                               // opcional, HTML: créditos o lista de fuentes
   "topics": {
     "1": { "name": "Modelo de capas", "color": "#E8772E", "striped": true, "note": "…" }
@@ -141,6 +142,9 @@ En los dos casos, corré `node scripts/validate.mjs` hasta que no marque errores
 }
 ```
 
+- `links` muestra cada sitio como una tarjeta con borde de acento entre el título y «Sobre este banco de
+  preguntas», siempre visible. `title` y `text` (opcional) son texto plano; `url` empieza con `https://`
+  y se abre en otra pestaña. Lo usa el 2do parcial de ASI.
 - `about` y `footer` se insertan como HTML sin escapar (son contenido del repo, no de los usuarios). Qué
   va en `about` lo dice `criterios.md`.
 - `openQuestions: true` ofrece las secciones «Todas las preguntas», «Cuestionario» y «Preguntas
@@ -216,7 +220,7 @@ Scripts:
 ## Al cambiar el motor
 
 `engine/quiz.js`, `engine/subject.js` y `engine/quiz.css` los usan todos los parciales, y no todos
-activan lo mismo: TEPLA usa `openQuestions`, Redes usa `striped`, GIS tiene `source` sin `file` y los
+activan lo mismo: TEPLA usa `openQuestions`, Redes usa `striped`, el 2do parcial de ASI usa `links`, GIS tiene `source` sin `file` y los
 1er parcial de ASI, Redes y GIS pasan `legacyKey`. Probá el cambio en más de una materia, en modo claro
 y oscuro y en ancho de celular.
 
