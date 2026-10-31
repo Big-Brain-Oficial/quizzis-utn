@@ -4029,22 +4029,19 @@
         "Es una pérdida relativamente fácil de evaluar, y estos elementos suelen estar asegurados",
         "Su costo de reemplazo no tiene relación con el costo original de desarrollo",
         "Es la pérdida más seria y la más difícil de cuantificar",
-        "La duración de la interrupción es la variable clave para determinar el valor de la pérdida",
         "Puede ser significativa por su conocimiento teórico o por su competencia práctica"
       ],
       "choices": [
         "Hardware",
         "Software",
         "Datos e información",
-        "Capacidad de procesamiento",
         "Personal"
       ],
       "correct": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ],
       "fb": "Son las características de cada activo vulnerable a pérdidas según el apunte (U6, págs. 4-5). La pérdida de software, además, genera una pérdida de la capacidad de procesamiento, que debe incluirse en su cuantificación.",
       "source": {
