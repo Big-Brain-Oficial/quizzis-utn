@@ -137,7 +137,7 @@
       "topic": "U4",
       "type": "single",
       "catedra": false,
-      "text": "Según el apunte, el desarrollo de una persona debe entenderse como:",
+      "text": "El desarrollo de una persona debe entenderse como:",
       "opts": [
         "Un evento puntual de capacitación que ocurre una sola vez, al ingresar a la organización",
         "Un cambio que depende solo de la antigüedad en el cargo y que se da en forma automática",
@@ -312,7 +312,7 @@
       "topic": "U4",
       "type": "multi",
       "catedra": false,
-      "text": "¿Cuáles de los siguientes son conceptos clave del aprendizaje según el apunte? (Seleccioná todas las correctas)",
+      "text": "¿Cuáles de los siguientes son conceptos clave del aprendizaje? (Seleccioná todas las correctas)",
       "opts": [
         "Se aprende con conocimientos y experiencias",
         "El aprendizaje afecta actitudes, intereses y motivaciones",
@@ -1005,7 +1005,7 @@
       "topic": "U4",
       "type": "single",
       "catedra": false,
-      "text": "Según el apunte, la única manera posible de cambiar las organizaciones es:",
+      "text": "La única manera posible de cambiar las organizaciones es:",
       "opts": [
         "Reemplazar a los gerentes de línea por agentes de cambio externos que impongan nuevas normas y procedimientos de trabajo",
         "Transformar su cultura, es decir, cambiar los sistemas dentro de los cuales trabajan y viven las personas",
@@ -3341,7 +3341,7 @@
       "topic": "U5",
       "type": "multi",
       "catedra": false,
-      "text": "¿Qué circunstancias pueden influir en los resultados de un benchmarking? Elegí las principales dificultades que plantea el apunte. (Seleccioná todas las correctas)",
+      "text": "¿Qué circunstancias pueden influir en los resultados de un benchmarking? Elegí las principales dificultades. (Seleccioná todas las correctas)",
       "opts": [
         "Cómo determinar una carga característica suficientemente reducida para ser manejable y suficientemente extensa para ser representativa",
         "Cómo valorar el aprovechamiento que hacen los programas de las peculiaridades de cada sistema",
@@ -4029,22 +4029,19 @@
         "Es una pérdida relativamente fácil de evaluar, y estos elementos suelen estar asegurados",
         "Su costo de reemplazo no tiene relación con el costo original de desarrollo",
         "Es la pérdida más seria y la más difícil de cuantificar",
-        "La duración de la interrupción es la variable clave para determinar el valor de la pérdida",
         "Puede ser significativa por su conocimiento teórico o por su competencia práctica"
       ],
       "choices": [
         "Hardware",
         "Software",
         "Datos e información",
-        "Capacidad de procesamiento",
         "Personal"
       ],
       "correct": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ],
       "fb": "Son las características de cada activo vulnerable a pérdidas según el apunte (U6, págs. 4-5). La pérdida de software, además, genera una pérdida de la capacidad de procesamiento, que debe incluirse en su cuantificación.",
       "source": {
