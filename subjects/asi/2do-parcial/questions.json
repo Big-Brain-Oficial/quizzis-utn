@@ -7638,6 +7638,57 @@
       }
     },
     {
+      "id": "asi-p2-parcial-34",
+      "topic": "PAR_U5",
+      "type": "multi",
+      "catedra": true,
+      "tip": "1er parcial 2025 · Unidad 5",
+      "text": "¿Qué implica el seguimiento de RRHH?",
+      "opts": [
+        "Aumentar la cantidad de personal",
+        "Evaluar el desempeño de los recursos humanos",
+        "Reducir costos de personal",
+        "Mejorar la comunicación interna"
+      ],
+      "correct": [
+        1
+      ],
+      "note": "Pregunta recuperada del banco del 1er parcial, sección «1er parcial 2025». Se conservan el enunciado, las opciones y la respuesta de esa transcripción; no se dispone de una captura de esta consigna en los PDFs locales.",
+      "fb": "El seguimiento de los RRHH se realiza mediante la evaluación del desempeño y la auditoría de la función de RRHH. La evaluación del desempeño califica la actuación del personal según normas establecidas y permite verificar y asegurar el desempeño de las tareas (apunte U5, pág. 5).",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 5,
+        "confidence": "high",
+        "img": "sources/pages/u5-seguimiento-p5.webp"
+      }
+    },
+    {
+      "id": "asi-p2-parcial-35",
+      "topic": "PAR_U5",
+      "type": "multi",
+      "catedra": true,
+      "tip": "1er parcial 2025 · Unidad 5",
+      "text": "El seguimiento de los RRHH en las organizaciones debe incluir:",
+      "opts": [
+        "El desempeño de las personas en sus tareas",
+        "Ajuste a las reglas, y los aspectos formales",
+        "Los procesos de definición de políticas y la forma y criterios con que se aplican sobre los RRHH",
+        "Cómo se define cada cargo"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "note": "Pregunta recuperada del banco del 1er parcial, sección «1er parcial 2025». Se conservan el enunciado, las opciones y la respuesta de esa transcripción; no se dispone de una captura de esta consigna en los PDFs locales.",
+      "fb": "El apunte vincula los procesos de seguimiento de RRHH con el desempeño de las personas en sus tareas, el ajuste a las reglas y los aspectos formales, como horarios, ausencias y retrasos. Por eso corresponden las dos primeras opciones (apunte U5, pág. 5).",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 5,
+        "confidence": "high",
+        "img": "sources/pages/u5-seguimiento-p5.webp"
+      }
+    },
+    {
       "id": "asi-p2-253",
       "topic": "PAR_U6",
       "type": "single",
