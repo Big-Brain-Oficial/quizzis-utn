@@ -307,7 +307,9 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
       const raw = localStorage.getItem(STORE_KEY) || (legacyKey && localStorage.getItem(legacyKey));
       if (!raw) return base;
       const s = Object.assign(base, JSON.parse(raw));
-      s.topics = s.topics.map(String).filter((t) => topicIds.includes(t));
+      // Expand renamed or split topics so saved selections keep the same questions.
+      s.topics = [...new Set(s.topics.map(String).flatMap((t) => DATA.topicAliases?.[t] || [t]))]
+        .filter((t) => topicIds.includes(t));
       if (pick && !s.topics.length) s.topics = topicIds.slice();
       if (s.section !== "all" && !sections.includes(s.section)) s.section = "all";
       if (!Array.isArray(s.retry)) s.retry = [];

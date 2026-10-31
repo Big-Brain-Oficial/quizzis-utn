@@ -150,6 +150,8 @@ En los dos casos, corré `node scripts/validate.mjs` hasta que no marque errores
 - `openQuestions: true` ofrece las secciones «Todas las preguntas», «Cuestionario» y «Preguntas
   Abiertas»: en las `info` se escribe un desarrollo y se compara con `answer`, sin corrección ni puntaje.
   Sin la opción, las `info` son tarjetas que solo muestran la respuesta.
+- `topicAliases` permite migrar filtros guardados al renombrar o separar categorías: por ejemplo,
+  `"topicAliases": { "PAR": ["PAR_U4", "PAR_U5", "PAR_U6"] }` conserva la selección anterior de parciales.
 - En `topics`, `striped` dibuja la muestra rayada (como los pares de cable T568B) y `note` agrega una
   aclaración visible en los filtros y en cada pregunta.
 

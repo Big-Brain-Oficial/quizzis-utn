@@ -19,7 +19,7 @@ Hay dos clases de preguntas, y cada pregunta indica a cuál pertenece con el cam
   En TEPLA, las categorías «Unidad 1 - Preguntas parcial» a «Unidad 4 - Preguntas parcial» también:
   el enunciado y las opciones quedan como en el parcial, incluidos los errores de escritura y las
   opciones que son un dibujo. Las cuatro unidades de práctica se armaron a partir del apunte y llevan
-  `"catedra": false`. En el 2do parcial de ASI, la categoría «Parciales — Unidades 4, 5 y 6» también,
+  `"catedra": false`. En el 2do parcial de ASI, las categorías «Parcial - U4», «Parcial - U5» y «Parcial - U6» también,
   salvo las consignas que había que completar sin opciones: se convirtieron a relacionar con opciones
   nuestras y llevan `"catedra": false`.
 - **Preguntas armadas a partir del material** (`"catedra": false`): las que escribimos nosotros con

@@ -6,6 +6,7 @@
   "accentDark": "#8A9CF0",
   "emptyFeedback": null,
   "topicFilter": "pick",
+  "topicAliases": { "PAR": ["PAR_U4", "PAR_U5", "PAR_U6"] },
   "labels": {
     "topics": "Categorías",
     "allTopics": "Todas",
@@ -41,8 +42,16 @@
       "name": "Eval. Formativa 3 — Unidades 4 y 5",
       "color": "#2E9E57"
     },
-    "PAR": {
-      "name": "Parciales — Unidades 4, 5 y 6",
+    "PAR_U4": {
+      "name": "Parcial - U4",
+      "color": "#B7791F"
+    },
+    "PAR_U5": {
+      "name": "Parcial - U5",
+      "color": "#B7791F"
+    },
+    "PAR_U6": {
+      "name": "Parcial - U6",
       "color": "#B7791F"
     }
   },
@@ -6465,7 +6474,7 @@
     },
     {
       "id": "asi-p2-parcial-01",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "match",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6504,7 +6513,7 @@
     },
     {
       "id": "asi-p2-parcial-02",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "match",
       "catedra": false,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6544,7 +6553,7 @@
     },
     {
       "id": "asi-p2-parcial-03",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "match",
       "catedra": false,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6586,7 +6595,7 @@
     },
     {
       "id": "asi-p2-parcial-04",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "match",
       "catedra": false,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6633,7 +6642,7 @@
     },
     {
       "id": "asi-p2-parcial-05",
-      "topic": "PAR",
+      "topic": "PAR_U5",
       "type": "info",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 5",
@@ -6656,7 +6665,7 @@
     },
     {
       "id": "asi-p2-parcial-06",
-      "topic": "PAR",
+      "topic": "PAR_U5",
       "type": "info",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 5",
@@ -6680,7 +6689,7 @@
     },
     {
       "id": "asi-p2-parcial-07",
-      "topic": "PAR",
+      "topic": "PAR_U5",
       "type": "tf",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 5",
@@ -6710,7 +6719,7 @@
     },
     {
       "id": "asi-p2-parcial-08",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "tf",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6740,7 +6749,7 @@
     },
     {
       "id": "asi-p2-parcial-09",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "tf",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6770,7 +6779,7 @@
     },
     {
       "id": "asi-p2-parcial-10",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "multi",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6805,7 +6814,7 @@
     },
     {
       "id": "asi-p2-parcial-11",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "multi",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6841,7 +6850,7 @@
     },
     {
       "id": "asi-p2-parcial-12",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "multi",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
@@ -6876,7 +6885,7 @@
     },
     {
       "id": "asi-p2-parcial-13",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "tf",
       "catedra": true,
       "tip": "3er parcial 2024 · Unidad 6",
@@ -6906,7 +6915,7 @@
     },
     {
       "id": "asi-p2-parcial-14",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "tf",
       "catedra": true,
       "tip": "3er parcial 2024 · Unidad 6",
@@ -6936,7 +6945,7 @@
     },
     {
       "id": "asi-p2-parcial-15",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "tf",
       "catedra": true,
       "tip": "3er parcial 2024 · Unidad 6",
@@ -6966,7 +6975,7 @@
     },
     {
       "id": "asi-p2-parcial-16",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "tf",
       "catedra": true,
       "tip": "3er parcial 2024 · Unidad 6",
@@ -6996,7 +7005,7 @@
     },
     {
       "id": "asi-p2-parcial-17",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "match",
       "catedra": true,
       "tip": "3er parcial 2024 · Unidad 6",
@@ -7042,7 +7051,7 @@
     },
     {
       "id": "asi-p2-parcial-18",
-      "topic": "PAR",
+      "topic": "PAR_U5",
       "type": "match",
       "catedra": true,
       "tip": "1er parcial 2025 · Unidad 5",
@@ -7083,7 +7092,7 @@
     },
     {
       "id": "asi-p2-parcial-19",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "info",
       "catedra": true,
       "tip": "1er parcial 2025 · Unidad 6",
@@ -7106,7 +7115,7 @@
     },
     {
       "id": "asi-p2-parcial-20",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "info",
       "catedra": true,
       "tip": "1er parcial 2025 · Unidad 6",
@@ -7130,7 +7139,7 @@
     },
     {
       "id": "asi-p2-parcial-21",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "match",
       "catedra": false,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7149,11 +7158,11 @@
       ],
       "correct": [
         0,
-        2,
+        1,
         3
       ],
-      "note": "En el parcial corregido (Tema 1), la segunda definición se respondió «formación profesional» y no aparece marcada como error. Acá vale la del apunte, que relaciona la carrera dentro de una profesión con el perfeccionamiento.",
-      "fb": "En el parcial había que escribir el concepto; las opciones son nuestras. El entrenamiento adapta a la persona para cumplir un cargo o una función (corto plazo). El perfeccionamiento o desarrollo profesional la perfecciona para una carrera dentro de una profesión (mediano plazo), y la formación profesional la prepara para ejercer una profesión (largo plazo) (apunte U4, pág. 3). El aprendizaje es el proceso complejo que permite adquirir nuevos comportamientos (pág. 2); en la corrección, «especialización» está tachado y reemplazado por «aprendizaje».",
+      "note": "Se respeta la respuesta del parcial corregido (Tema 1): «formación profesional», que no aparece marcada como error. Hay una diferencia con la terminología del apunte U4 (pág. 3), que vincula la carrera dentro de una profesión con el perfeccionamiento o desarrollo profesional.",
+      "fb": "En el parcial había que escribir el concepto; las opciones son nuestras. Las respuestas se toman del parcial corregido: entrenamiento, formación profesional y aprendizaje. En la segunda definición figura «formación profesional» sin marcar como error; en la tercera, «especialización» está tachado y reemplazado por «aprendizaje». El apunte U4 distingue formación profesional (prepara para ejercer una profesión, a largo plazo), perfeccionamiento o desarrollo profesional (perfecciona para una carrera dentro de una profesión, a mediano plazo) y entrenamiento (adapta para cumplir un cargo o una función, a corto plazo) (pág. 3). Define el aprendizaje como el proceso que permite adquirir nuevos comportamientos (pág. 2).",
       "source": {
         "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
         "page": 3,
@@ -7171,7 +7180,7 @@
     },
     {
       "id": "asi-p2-parcial-22",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7203,7 +7212,7 @@
     },
     {
       "id": "asi-p2-parcial-23",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7235,7 +7244,7 @@
     },
     {
       "id": "asi-p2-parcial-24",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7267,7 +7276,7 @@
     },
     {
       "id": "asi-p2-parcial-25",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7299,7 +7308,7 @@
     },
     {
       "id": "asi-p2-parcial-26",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7332,7 +7341,7 @@
     },
     {
       "id": "asi-p2-parcial-27",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7364,7 +7373,7 @@
     },
     {
       "id": "asi-p2-parcial-28",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7396,7 +7405,7 @@
     },
     {
       "id": "asi-p2-parcial-29",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7428,7 +7437,7 @@
     },
     {
       "id": "asi-p2-parcial-30",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7460,7 +7469,7 @@
     },
     {
       "id": "asi-p2-parcial-31",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "info",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7484,7 +7493,7 @@
     },
     {
       "id": "asi-p2-parcial-32",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "info",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7508,7 +7517,7 @@
     },
     {
       "id": "asi-p2-parcial-33",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "info",
       "catedra": true,
       "tip": "2do parcial 2025 · Unidad 4",
@@ -7532,7 +7541,7 @@
     },
     {
       "id": "asi-p2-251",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "single",
       "catedra": false,
       "tip": "Unidad 4",
@@ -7557,7 +7566,7 @@
     },
     {
       "id": "asi-p2-255",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "multi",
       "catedra": false,
       "tip": "Unidad 4",
@@ -7594,7 +7603,7 @@
     },
     {
       "id": "asi-p2-254",
-      "topic": "PAR",
+      "topic": "PAR_U4",
       "type": "info",
       "catedra": false,
       "tip": "Unidad 4",
@@ -7605,7 +7614,7 @@
     },
     {
       "id": "asi-p2-252",
-      "topic": "PAR",
+      "topic": "PAR_U5",
       "type": "single",
       "catedra": false,
       "tip": "Unidad 5",
@@ -7630,7 +7639,7 @@
     },
     {
       "id": "asi-p2-253",
-      "topic": "PAR",
+      "topic": "PAR_U6",
       "type": "single",
       "catedra": false,
       "tip": "Unidad 6",
