@@ -7529,6 +7529,129 @@
         "crop": [[0, 25, 100, 34], [0, 69, 100, 95, 5]],
         "img": "sources/pages/2025 2do Parcial - Tema 1 (corregido)-p4-eca098.webp"
       }
+    },
+    {
+      "id": "asi-p2-251",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": false,
+      "tip": "Unidad 4",
+      "text": "¿Cuál es la diferencia entre el salario bruto y el salario neto?",
+      "opts": [
+        "El bruto es el volumen de dinero asignado en el contrato por el cargo; el neto es la cantidad de bienes que el empleado puede adquirir con ese dinero",
+        "El bruto es la contraprestación directa por el servicio en el cargo; el neto es el salario indirecto que resulta de la convención colectiva y de los beneficios",
+        "El bruto es el básico más los otros componentes remunerativos, antes de descuentos; el neto es el bruto menos las retenciones obligatorias, como jubilación y obra social",
+        "El bruto es el dinero que el trabajador recibe en mano; el neto es el básico más los adicionales, calculado antes de descontar jubilación y obra social"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "El salario bruto es el monto total que la empresa paga antes de descuentos: el básico más los otros componentes remunerativos. El neto es lo que el trabajador recibe después de las retenciones obligatorias (jubilación, obra social): bruto menos deducciones (apunte U4, pág. 22). El dinero del contrato y lo que se puede comprar con él son el salario nominal y el real; el pago por el cargo y el que surge de la convención colectiva son el salario directo y el indirecto.",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 22,
+        "confidence": "high",
+        "crop": [[0, 82.5, 100, 95]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p22-95245b.webp"
+      }
+    },
+    {
+      "id": "asi-p2-255",
+      "topic": "PAR",
+      "type": "multi",
+      "catedra": false,
+      "tip": "Unidad 4",
+      "text": "¿Cuáles de los siguientes son principios para implementar beneficios sociales? Seleccioná todas las correctas.",
+      "opts": [
+        "Principio del retorno de la inversión: el beneficio debe contribuir a la organización tanto como cuesta, o al menos compensar ese costo",
+        "Inelasticidad a la baja: la remuneración pactada no puede reducirse una vez acordada",
+        "Deben responder a una necesidad real",
+        "Igual tarea, igual remuneración: a igual tarea corresponde igual pago",
+        "Principio de responsabilidad mutua: el costo de los beneficios se comparte entre la organización y los empleados",
+        "Variantes de pago alternativas al salario, distintas del sueldo en efectivo",
+        "Orientados a los objetivos de corto y largo plazo de la organización",
+        "No deben despertar connotaciones paternalistas o elitistas",
+        "Deben definirse sobre bases económico-financieras sustentables",
+        "Deben planificarse en tiempo, dinero y administración del servicio"
+      ],
+      "correct": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "fb": "El apunte da dos principios con nombre (retorno de la inversión y responsabilidad mutua) y cinco criterios más para implementar los beneficios: necesidad real, objetivos de corto y largo plazo, sin connotación paternalista o elitista, bases económico-financieras sustentables, y planificación (apunte U4, pág. 34). La inelasticidad a la baja, igual tarea igual remuneración y las variantes de pago alternativas al salario son principios de las compensaciones, no de los beneficios (pág. 21).",
+      "source": {
+        "file": "sources/u4-desarrollo-y-mantenimiento-rrhh.pdf",
+        "page": 34,
+        "confidence": "high",
+        "crop": [[0, 0, 100, 33.2]],
+        "img": "sources/pages/u4-desarrollo-y-mantenimiento-rrhh-p34-ff04d1.webp"
+      }
+    },
+    {
+      "id": "asi-p2-254",
+      "topic": "PAR",
+      "type": "info",
+      "catedra": false,
+      "tip": "Unidad 4",
+      "text": "Indique las interacciones del Subsistema de Desarrollo y Mantenimiento de Recursos Humanos con los restantes subsistemas de la administración de recursos que aparecen en el gráfico.",
+      "figure": "img/u4-interacciones-dym.webp",
+      "answer": "El enunciado del práctico pide tres como mínimo. En el gráfico resuelto, Desarrollo y Mantenimiento de RRHH tiene estas:\n\nProvisión → Desarrollo y Mantenimiento\n• Necesidades de capacitación\n• Personal seleccionado\n• Mercados de RRHH\n\nDesarrollo y Mantenimiento → Provisión\n• Políticas salariales\n• Resultados de las capacitaciones\n• Plan de carrera\n• Beneficios sociales\n\nAplicación → Desarrollo y Mantenimiento\n• Requisitos del cargo (DyA)\n\nDesarrollo y Mantenimiento → Aplicación\n• Plan de carrera\n• Necesidades de entrenamiento\n\nDesarrollo y Mantenimiento → Seguimiento\n• Inventario de necesidades\n• Políticas de seguridad e higiene\n\nSeguimiento → Desarrollo y Mantenimiento\n• Evaluación del desempeño\n• Resultados de seguimiento\n\nSeguridad y Auditoría de SI no tiene una flecha directa con Desarrollo y Mantenimiento.",
+      "note": "Las flechas no están en el apunte de la unidad. Salen del gráfico resuelto que acompaña el material de la materia."
+    },
+    {
+      "id": "asi-p2-252",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": false,
+      "tip": "Unidad 5",
+      "text": "¿Qué caracteriza a la evaluación de desempeño de 360°?",
+      "opts": [
+        "Cada persona puede evaluar a cualquier persona de su entorno, y en esa evaluación intervienen los pares y los clientes",
+        "Se califica el cumplimiento de metas fijadas de común acuerdo, con una medición conjunta y continua que el evaluado tiene que poder seguir",
+        "Se usan factores definidos de antemano y graduados: las filas son los factores y las columnas indican el grado de cada uno",
+        "El evaluador redacta un ensayo que describe al empleado e indica sus fortalezas y sus debilidades en el cargo"
+      ],
+      "correct": [
+        0
+      ],
+      "fb": "En la evaluación de 360° cada persona puede evaluar a cualquier persona de su entorno, e incluye pares y clientes (apunte U5, pág. 10). Calificar metas acordadas, con medición conjunta, es la administración por objetivos. Los factores graduados en filas y columnas son las escalas gráficas. El ensayo sobre fortalezas y debilidades es una forma narrativa.",
+      "source": {
+        "file": "sources/u5-seguimiento.pdf",
+        "page": 10,
+        "confidence": "high",
+        "crop": [[0, 69.2, 100, 74.2]],
+        "img": "sources/pages/u5-seguimiento-p10-1dad87.webp"
+      }
+    },
+    {
+      "id": "asi-p2-253",
+      "topic": "PAR",
+      "type": "single",
+      "catedra": false,
+      "tip": "Unidad 6",
+      "text": "¿Qué alcanza el control del ambiente informático?",
+      "opts": [
+        "Las unidades centrales de procesamiento, sin el papel ni los equipos que están en las sedes remotas de la organización",
+        "El departamento de desarrollo de sistemas y los respaldos que se guardan fuera de las instalaciones principales",
+        "Cualquier punto donde se procesa información, aunque sea en papel, y las tecnologías y áreas relacionadas con ese procesamiento",
+        "La integridad, la disponibilidad y la confidencialidad, que son los aspectos que se pierden cuando un sistema falla"
+      ],
+      "correct": [
+        2
+      ],
+      "fb": "Los procesos de control del ambiente informático garantizan que las tecnologías y las áreas relacionadas con el procesamiento de la información funcionen, y alcanzan cualquier punto donde se procesa información, aunque sea en papel (apunte U6, pág. 1). El apunte pide, además, tener en cuenta los equipos de todo el ambiente y no solo las unidades centrales (pág. 13). Integridad, disponibilidad y confidencialidad son los aspectos de una pérdida de seguridad, no el alcance del ambiente.",
+      "source": {
+        "file": "sources/u6-seguridad-y-auditoria.pdf",
+        "page": 1,
+        "confidence": "high",
+        "crop": [[0, 26.2, 100, 36.6]],
+        "img": "sources/pages/u6-seguridad-y-auditoria-p1-abdde5.webp"
+      }
     }
   ]
 }
