@@ -127,6 +127,14 @@ function crumbs(subject) {
 
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+// **frase** marks the only bold span. The rest of that question stays in regular weight.
+export function qtextHTML(text) {
+  const s = String(text);
+  if (!s.includes("**")) return `<p class="qtext">${esc(s)}</p>`;
+  const html = s.split("**").map((part, i) => (i % 2 === 1 ? `<strong>${esc(part)}</strong>` : esc(part))).join("");
+  return `<p class="qtext plain">${html}</p>`;
+}
+
 // Sets the subject accent as CSS variables; the stylesheet picks light or dark.
 export function applyAccent(data, el = document.documentElement) {
   if (data.accent) el.style.setProperty("--accent-light", data.accent);
@@ -748,7 +756,7 @@ export async function initQuiz({ slug, exam, legacyKey, root = document.getEleme
           ${topic && topic.note ? `<span class="tnote">${esc(topic.note)}</span>` : ""}
           ${q.tip ? `<span class="qtip">${esc(q.tip)}</span>` : ""}
         </div>
-        <p class="qtext">${esc(q.text)}</p>
+        ${qtextHTML(q.text)}
         ${renderQuestionFigure(q)}
         <p class="kind">${isOpen(q) ? "Desarrollá tu respuesta y luego consultá la orientación del material." : kindLabel[q.type]}</p>
         ${body ? `<div class="opts">${body}</div>` : ""}
