@@ -3064,28 +3064,6 @@
       }
     },
     {
-      "id": "asi-p2-124",
-      "topic": "U5",
-      "type": "tf",
-      "catedra": false,
-      "text": "En general, la prioridad de un monitor software debe ser mayor que la de los acontecimientos que debe observar.",
-      "opts": [
-        "Verdadero",
-        "Falso"
-      ],
-      "correct": [
-        0
-      ],
-      "fb": "Apunte U5, pág. 30.",
-      "source": {
-        "file": "sources/u5-seguimiento.pdf",
-        "page": 30,
-        "confidence": "high",
-        "crop": [[0, 2.5, 100, 5.8]],
-        "img": "sources/pages/u5-seguimiento-p30-16f694.webp"
-      }
-    },
-    {
       "id": "asi-p2-125",
       "topic": "U5",
       "type": "single",
