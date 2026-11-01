@@ -6475,7 +6475,7 @@
       "type": "match",
       "catedra": true,
       "tip": "2do parcial 2024 · Unidad 4",
-      "text": "Cuando se debe llevar a la práctica un entrenamiento, hay múltiples factores que deben tenerse en cuenta. Indique sí o no según la pertenencia de cada elemento a la etapa de implementación o ejecución de un entrenamiento para programadores de la gerencia de SI/TI a su cargo",
+      "text": "Cuando se debe llevar a la práctica un entrenamiento, hay múltiples factores que deben tenerse en cuenta. Indique sí o no según la pertenencia de cada elemento a la **etapa de implementación o ejecución** de un entrenamiento para programadores de la gerencia de SI/TI a su cargo",
       "stems": [
         "Calidad del material sobre metodologías ágiles.",
         "Cálculo de la relación costo-beneficio del programa.",
@@ -7602,12 +7602,19 @@
       "id": "asi-p2-254",
       "topic": "PAR_U4",
       "type": "info",
-      "catedra": false,
-      "tip": "Unidad 4",
-      "text": "Indique las interacciones del Subsistema de Desarrollo y Mantenimiento de Recursos Humanos con los restantes subsistemas de la administración de recursos que aparecen en el gráfico.",
+      "catedra": true,
+      "tip": "Actividad teórico-práctica 2018 · Unidad 4",
+      "text": "Indique sobre el siguiente gráfico interacciones del Subsistema de Desarrollo y Mantenimiento de Recursos Humanos con los restantes subsistemas de la administración de recursos. (3 como mínimo).",
       "figure": "img/u4-interacciones-dym.webp",
-      "answer": "El enunciado del práctico pide tres como mínimo. En el gráfico resuelto, Desarrollo y Mantenimiento de RRHH tiene estas:\n\nProvisión → Desarrollo y Mantenimiento\n• Necesidades de capacitación\n• Personal seleccionado\n• Mercados de RRHH\n\nDesarrollo y Mantenimiento → Provisión\n• Políticas salariales\n• Resultados de las capacitaciones\n• Plan de carrera\n• Beneficios sociales\n\nAplicación → Desarrollo y Mantenimiento\n• Requisitos del cargo (DyA)\n\nDesarrollo y Mantenimiento → Aplicación\n• Plan de carrera\n• Necesidades de entrenamiento\n\nDesarrollo y Mantenimiento → Seguimiento\n• Inventario de necesidades\n• Políticas de seguridad e higiene\n\nSeguimiento → Desarrollo y Mantenimiento\n• Evaluación del desempeño\n• Resultados de seguimiento\n\nSeguridad y Auditoría de SI no tiene una flecha directa con Desarrollo y Mantenimiento.",
-      "note": "Las flechas no están en el apunte de la unidad. Salen del gráfico resuelto que acompaña el material de la materia."
+      "answer": "Actividad teórico-práctica de 2018. Pide tres como mínimo. Estas son las que se leen en las unidades:\n\nProvisión → Desarrollo y Mantenimiento\n• Las personas que ingresan: hay que entrenarlas. El entrenamiento las toma como entrada (U4, pág. 4).\n• El mercado de RRHH: si escasean los candidatos, sube la inversión en capacitación y en beneficios y se prioriza el reclutamiento interno; si sobran, bajan la capacitación y los beneficios (provisión, Chiavenato).\n\nAplicación → Desarrollo y Mantenimiento\n• Requisitos del cargo, que salen de la descripción y el análisis de cargos. Las necesidades de entrenamiento son esos requisitos menos las habilidades de quien ocupa el cargo (U4, pág. 7; la descripción de cargos es de aplicación, U5, pág. 4).\n\nSeguimiento → Desarrollo y Mantenimiento\n• La evaluación del desempeño, que sirve para inventariar las necesidades de entrenamiento y para definir la capacitación que adecua a la persona al puesto (U4, pág. 7; U5, págs. 11-12).\n• Para el mantenimiento: a quién promover, o sea el plan de carrera, más los incentivos y la remuneración variable (U5, pág. 12).\n\nDesarrollo y Mantenimiento → Provisión\n• La política salarial, con el salario de admisión y los reajustes frente al mercado, y los beneficios sociales (U4, pág. 28; provisión, Chiavenato).\n\nDesarrollo y Mantenimiento → Aplicación\n• El entrenamiento prepara a la persona para las tareas del cargo, y el plan de carrera redefine el puesto que va a ocupar (U4, págs. 4 y 17).\n\nSeguridad y Auditoría → Desarrollo y Mantenimiento\n• Evaluación del entrenamiento del personal para planes de contingencia o recuperación ante desastres (U6, págs. 13-14).",
+      "note": "No es una respuesta oficial: la actividad no trae corrección de la cátedra. Las interacciones se leen del apunte, que no dibuja estas flechas. Verificala con la cátedra.",
+      "origin": {
+        "file": "sources/2018 - Actividad teorico-practica Desarrollo y Mantenimiento.pdf",
+        "page": 1,
+        "label": "Actividad teórico-práctica 2018",
+        "crop": [[0, 0, 100, 78]],
+        "img": "sources/pages/2018 - Actividad teorico-practica Desarrollo y Mantenimiento-p1-0ba114.webp"
+      }
     },
     {
       "id": "asi-p2-252",

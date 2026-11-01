@@ -155,6 +155,8 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:8px;
 .qtip{flex-basis:100%;font-size:.84rem}
 .qtip::before{content:"★ ";color:var(--note-line)}
 .qtext{font-size:1.12rem;font-weight:700;margin:4px 0 6px;line-height:1.45;white-space:pre-line}
+.qtext.plain{font-weight:400}
+.qtext.plain strong{font-weight:700}
 .kind{color:var(--muted);font-size:.9rem;margin:0 0 12px;font-style:italic}
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 12px;cursor:pointer;position:relative}
