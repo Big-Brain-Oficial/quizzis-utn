@@ -13,7 +13,7 @@ puntaje y los atajos de teclado.
 - Administración de Sistemas de Información
 - Redes de Datos
 - Sistemas de Información Geográfica
-- Tecnologías para la Automatización (TEPLA)
+- Tecnologías para la Automatización (TPLA)
 
 Las de GIS salen del banco de [matiasgzlez/GIS](https://github.com/matiasgzlez/GIS): solo las marcadas como
 importantes en clase y las del parcial 2025 (con sus variantes), en el orden de lectura de los apuntes.

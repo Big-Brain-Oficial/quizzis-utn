@@ -16,7 +16,7 @@ Hay dos clases de preguntas, y cada pregunta indica a cuál pertenece con el cam
   anteriores»). Todo el 1er parcial de ASI y los dos parciales de Redes (el 2do sale del PDF de
   parciales, las revisiones del cuestionario de estudio) son de esta clase. El 1er
   parcial de GIS también está marcado como de la cátedra hasta revisar de dónde salen sus preguntas.
-  En TEPLA, las categorías «Unidad 1 - Preguntas parcial» a «Unidad 4 - Preguntas parcial» también:
+  En TPLA, las categorías «Unidad 1 - Preguntas parcial» a «Unidad 4 - Preguntas parcial» también:
   el enunciado y las opciones quedan como en el parcial, incluidos los errores de escritura y las
   opciones que son un dibujo. Las cuatro unidades de práctica se armaron a partir del apunte y llevan
   `"catedra": false`. En el 2do parcial de ASI, las categorías «Parcial - U4», «Parcial - U5» y «Parcial - U6» también,
