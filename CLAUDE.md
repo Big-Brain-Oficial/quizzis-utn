@@ -12,7 +12,7 @@ Es la regla más importante del repo. Cada pregunta tiene el campo `catedra`:
 
 - `"catedra": true`: viene tal cual de un cuestionario, una evaluación formativa o un parcial.
   **No cambies `text`, `opts` ni `correct`**, aunque la respuesta parezca equivocada, la correcta sea la
-  opción más larga o haya errores de escritura (en TEPLA se conservan a propósito). Tampoco cambies
+  opción más larga o haya errores de escritura (en TPLA se conservan a propósito). Tampoco cambies
   `catedra` a `false` para poder editarla, ni cambies su `type`.
 - `"catedra": false`: la armamos nosotros a partir del material. Se puede modificar y tiene que cumplir
   todos los criterios de `criterios.md`.
@@ -206,7 +206,7 @@ pregunta como aparece en el parcial, con su número y sus opciones. No lleva `co
 `crop` es una lista de recuadros `[x0, y0, x1, y1]` en porcentaje de la página (sin los márgenes
 blancos), que se apilan uno debajo del otro. Un quinto valor toma el recuadro de otra página:
 `[[0, 80, 100, 100], [0, 0, 100, 12, 5]]` muestra el final de `page` y el principio de la página 5. En
-el 2do parcial de ASI, el 2do de Redes y TEPLA, el recorte de `source` es la frase o el diagrama que
+el 2do parcial de ASI, el 2do de Redes y TPLA, el recorte de `source` es la frase o el diagrama que
 responde.
 
 Scripts:
@@ -222,7 +222,7 @@ Scripts:
 ## Al cambiar el motor
 
 `engine/quiz.js`, `engine/subject.js` y `engine/quiz.css` los usan todos los parciales, y no todos
-activan lo mismo: TEPLA usa `openQuestions`, Redes usa `striped`, el 2do parcial de ASI usa `links`, GIS tiene `source` sin `file` y los
+activan lo mismo: TPLA usa `openQuestions`, Redes usa `striped`, el 2do parcial de ASI usa `links`, GIS tiene `source` sin `file` y los
 1er parcial de ASI, Redes y GIS pasan `legacyKey`. Probá el cambio en más de una materia, en modo claro
 y oscuro y en ancho de celular.
 
@@ -258,6 +258,6 @@ msedge` para Edge). Levanta un servidor temporal y usa un perfil de navegador ai
 - Todo el contenido, los comentarios del repo y los mensajes de commit van en español rioplatense
   (voseo: «corré», «leé»).
 - Commits en tercera persona del presente, describiendo el cambio: «Agrega las preguntas de parcial de
-  la Unidad 2 de TEPLA».
+  la Unidad 2 de TPLA».
 - Los cambios entran por rama y pull request, no directo a `main`.
 - `/Apuntes y parciales/` es material local de referencia y no se versiona.
